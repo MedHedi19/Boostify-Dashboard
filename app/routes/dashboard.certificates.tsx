@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useLoaderData, Link } from "react-router";
-import connectDB from '../lib/db';
-import QuizResultModel from '../models/QuizResult';
-import User from '../models/User';
-import UserProgress from '../models/UserProgress';
-import UpskillingProgress from '../models/UpskillingProgress';
+import connectDB from '../lib/db.server';
+import QuizResultModel from '../models/QuizResult.server';
+import User from '../models/User.server';
+import UpskillingProgress from '../models/UpskillingProgress.server';
 
 type QuizResult = {
   _id: string;

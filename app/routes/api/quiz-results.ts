@@ -1,5 +1,5 @@
-import connectDB from '../../lib/db';
-import QuizResult from '../../models/QuizResult';
+import connectDB from '../../lib/db.server';
+import QuizResult from '../../models/QuizResult.server';
 
 export default async function handler(req: any, res: any) {
   await connectDB();

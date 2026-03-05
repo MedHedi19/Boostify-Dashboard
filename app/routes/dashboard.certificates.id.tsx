@@ -1,7 +1,7 @@
 import { Link, useLoaderData } from "react-router";
-import connectDB from "../lib/db";
-import User from "../models/User";
-import UpskillingProgress, { type IUpskillingProgress } from "../models/UpskillingProgress";
+import connectDB from "../lib/db.server";
+import User from "../models/User.server";
+import UpskillingProgress, { type IUpskillingProgress } from "../models/UpskillingProgress.server";
 
 export async function loader({ params }: any) {
     try {

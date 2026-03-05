@@ -1,8 +1,8 @@
 import { Link, useParams, useLoaderData, Form, redirect } from "react-router";
 import { useState } from "react";
-import connectDB from "../lib/db";
-import User from "../models/User";
-import PersonalityTest from "../models/PersonalityTest";
+import connectDB from "../lib/db.server";
+import User from "../models/User.server";
+import PersonalityTest from "../models/PersonalityTest.server";
 import type { Route } from "./+types/dashboard.users.$id";
 
 // Loader function to fetch user data from MongoDB
@@ -333,17 +333,17 @@ export default function UserDetail() {
                 <p className="text-sm text-gray-600 mt-1">Days Active</p>
               </div>
               <div className={`p-4 border rounded-lg text-center flex flex-col justify-center min-h-[104px] ${personalityTest?.dominantColor === 'R' ? 'bg-red-50 border-red-200' :
-                  (personalityTest?.dominantColor === 'V' || personalityTest?.dominantColor === 'G') ? 'bg-green-50 border-green-200' :
-                    (personalityTest?.dominantColor === 'J' || personalityTest?.dominantColor === 'Y') ? 'bg-yellow-50 border-yellow-200' :
-                      personalityTest?.dominantColor === 'B' ? 'bg-blue-50 border-blue-200' :
-                        'bg-gray-50 border-gray-200'
+                (personalityTest?.dominantColor === 'V' || personalityTest?.dominantColor === 'G') ? 'bg-green-50 border-green-200' :
+                  (personalityTest?.dominantColor === 'J' || personalityTest?.dominantColor === 'Y') ? 'bg-yellow-50 border-yellow-200' :
+                    personalityTest?.dominantColor === 'B' ? 'bg-blue-50 border-blue-200' :
+                      'bg-gray-50 border-gray-200'
                 }`}>
                 {personalityTest?.dominantColor ? (
                   <>
                     <p className={`text-4xl font-bold ${personalityTest.dominantColor === 'R' ? 'text-red-600' :
-                        (personalityTest.dominantColor === 'V' || personalityTest.dominantColor === 'G') ? 'text-green-600' :
-                          (personalityTest.dominantColor === 'J' || personalityTest.dominantColor === 'Y') ? 'text-yellow-600' :
-                            'text-blue-600'
+                      (personalityTest.dominantColor === 'V' || personalityTest.dominantColor === 'G') ? 'text-green-600' :
+                        (personalityTest.dominantColor === 'J' || personalityTest.dominantColor === 'Y') ? 'text-yellow-600' :
+                          'text-blue-600'
                       }`}>
                       {personalityTest.dominantColor}
                     </p>

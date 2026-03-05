@@ -1,5 +1,5 @@
-import connectDB from '../../lib/db';
-import QuizResult from '../../models/QuizResult';
+import connectDB from '../../lib/db.server';
+import QuizResult from '../../models/QuizResult.server';
 
 // This file implements two behaviors depending on method:
 // GET /api/quiz-results?quizKey=empowring -> returns array of results

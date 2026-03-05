@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Link, useLoaderData } from "react-router";
 import fs from "node:fs";
 import path from "node:path";
-import connectDB from "../lib/db";
-import User from "../models/User";
-import UserProgress from "../models/UserProgress";
+import connectDB from "../lib/db.server";
+import User from "../models/User.server";
+import UserProgress from "../models/UserProgress.server";
 // import type { Route } from "./+types/dashboard.quizzes.$id"; // Temporarily disabled if typegen is slow
 
 export async function loader({ params }: any) {

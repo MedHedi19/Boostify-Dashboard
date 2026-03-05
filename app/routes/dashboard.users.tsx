@@ -1,10 +1,10 @@
 import { Link, useLoaderData } from "react-router";
 import { useState } from "react";
 import type { Route } from "./+types/dashboard.users";
-import connectDB from "~/lib/db";
-import User from "~/models/User";
-import UserProgress from "~/models/UserProgress";
-import UpskillingProgress from "~/models/UpskillingProgress";
+import connectDB from "~/lib/db.server";
+import User from "~/models/User.server";
+import UserProgress from "~/models/UserProgress.server";
+import UpskillingProgress from "~/models/UpskillingProgress.server";
 
 // Loader function to fetch users from MongoDB
 export async function loader() {

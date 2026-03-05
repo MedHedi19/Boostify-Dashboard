@@ -1,12 +1,12 @@
 import { Link, useLoaderData } from "react-router";
-import connectDB from "~/lib/db";
-import User from "~/models/User";
+import connectDB from "~/lib/db.server";
+import User from "~/models/User.server";
 
 // Loader function to fetch recent users from MongoDB
 export async function loader() {
   try {
     await connectDB();
-    
+
     // Get the 5 most recent users
     const recentUsers = await User.find()
       .select('firstName lastName email createdAt payment profilePhoto')
@@ -14,16 +14,22 @@ export async function loader() {
       .limit(5)
       .lean();
 
+    // Map to ensure IDs are strings for reliable client-side hydration and keys
+    const mappedUsers = recentUsers.map((user: any) => ({
+      ...user,
+      _id: user._id.toString()
+    }));
+
     // Get total counts for stats
     const totalUsers = await User.countDocuments();
 
-    return { 
-      recentUsers,
+    return {
+      recentUsers: mappedUsers,
       totalUsers
     };
   } catch (error) {
     console.error('Error fetching dashboard data:', error);
-    return { 
+    return {
       recentUsers: [],
       totalUsers: 0
     };
@@ -43,7 +49,7 @@ export default function DashboardHome() {
   // Format time ago helper
   const timeAgo = (date: Date) => {
     const seconds = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
-    
+
     if (seconds < 60) return `${seconds} seconds ago`;
     const minutes = Math.floor(seconds / 60);
     if (minutes < 60) return `${minutes} min ago`;
@@ -68,9 +74,8 @@ export default function DashboardHome() {
               <div>
                 <p className="text-sm font-medium text-gray-600">{stat.label}</p>
                 <p className="text-3xl font-bold text-gray-900 mt-2">{stat.value}</p>
-                <p className={`text-sm font-medium mt-2 ${
-                  stat.change.startsWith('+') ? 'text-green-600' : 'text-red-600'
-                }`}>
+                <p className={`text-sm font-medium mt-2 ${stat.change.startsWith('+') ? 'text-green-600' : 'text-red-600'
+                  }`}>
                   {stat.change} from last month
                 </p>
               </div>
@@ -87,14 +92,14 @@ export default function DashboardHome() {
           <div className="space-y-4">
             {recentUsers.length > 0 ? (
               recentUsers.map((user: any, index: number) => (
-                <Link 
-                  key={user._id} 
+                <Link
+                  key={user._id}
                   to={`/dashboard/users/${user._id}`}
                   className="flex items-center space-x-3 pb-3 border-b border-gray-100 last:border-0 hover:bg-gray-50 -mx-3 px-3 py-2 rounded-lg transition-colors"
                 >
                   {user.profilePhoto ? (
-                    <img 
-                      src={user.profilePhoto} 
+                    <img
+                      src={user.profilePhoto}
                       alt={`${user.firstName} ${user.lastName}`}
                       className="w-10 h-10 rounded-full object-cover border-2 border-gray-200"
                       referrerPolicy="no-referrer"
