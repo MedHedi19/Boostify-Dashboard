@@ -1,0 +1,321 @@
+{
+  "Présentation": [
+    {
+      "question": "A votre avis, quelle est la durée pour une bonne présentation de soi dans un entretien d’embauche ?",
+      "options": [
+        "Rester vague",
+        "Donner le contexte, ton rôle, l’action et le résultat (méthode CAR)",
+        "Se concentrer uniquement sur la difficulté"
+      ],
+      "correct": "Donner le contexte, ton rôle, l’action et le résultat (méthode CAR)"
+    },
+    {
+      "question": "Lors d’une présentation, il faut :",
+      "options": [
+        "Mentir",
+        "Respirer, reformuler la question et répondre calmement",
+        "S’enfuir"
+      ],
+      "correct": "Respirer, reformuler la question et répondre calmement"
+    },
+    {
+      "question": "Une présentation doit comprendre :",
+      "options": [
+        "Votre nom et situation actuelle",
+        "Votre parcours académique",
+        "Vos Stages et/ou expériences professionnelles"
+      ],
+      "correct": "Vos Stages et/ou expériences professionnelles"
+    },
+    {
+      "question": "Pensez-vous que dans une présentation, il faut :",
+      "options": [
+        "Trop monotone",
+        "Naturel, assuré et adapté au contexte",
+        "Trop théâtral"
+      ],
+      "correct": "Naturel, assuré et adapté au contexte"
+    },
+    {
+      "question": "A votre avis, quelles sont les astuces nécessaires pour réussir une présentation lors d’un entretien d’embauche ?",
+      "options": [
+        "Tous les détails techniques",
+        "Les éléments qui démontrent ta valeur pour le poste",
+        "Les anecdotes personnelles longues"
+      ],
+      "correct": "Les éléments qui démontrent ta valeur pour le poste"
+    },
+    {
+      "question": "Comment peut-on diminuer le taux du stress au cours d’une présentation ?",
+      "options": [
+        "Faire une structure du discours",
+        "Etre clair, net et précis lors de la présentation",
+        "Se Concentrer sur le mouvement des mains"
+      ],
+      "correct": "Des exemples précis d’impacts et réalisations"
+    },
+    {
+      "question": "Pour avoir une bonne impression en entretien, il faut :",
+      "options": [
+        "Maîtriser le langage corporel durant l’échange",
+        "Respecter l’heure d’arrivée à l'entretien",
+        "Toutes les réponses précédentes"
+      ],
+      "correct": "Situation / Tâche / Action / Résultat (STAR/CAR)"
+    },
+    {
+      "question": "Est-il nécessaire de faire une recherche à propos des questions posées dans un entretien qui peuvent être en relation avec la poste ?",
+      "options": [
+        "Répondre n’importe quoi",
+        "Prendre un instant pour réfléchir puis répondre clairement",
+        "Ignorer la question"
+      ],
+      "correct": "Prendre un instant pour réfléchir puis répondre clairement"
+    },
+    {
+      "question": "Avant de passer un entretien, est-il nécessaire de faire une recherche sur l’entreprise d'accueil ?",
+      "options": [
+        "Regarder le sol",
+        "Maintenir le regard, posture droite, gestes mesurés",
+        "Croiser les bras"
+      ],
+      "correct": "Maintenir le regard, posture droite, gestes mesurés"
+    },
+    {
+      "question": "Pensez-vous qu’il est nécessaire de s’entraîner à une situation similaire avant l’entretien ?",
+      "options": [
+        "Sans conclusion",
+        "Par un résumé et une ouverture (question ou intérêt pour le poste)",
+        "En demandant le salaire immédiatement"
+      ],
+      "correct": "Par un résumé et une ouverture (question ou intérêt pour le poste)"
+    },
+    {
+      "question": "Quel est le but d’une bonne présentation en entretien ?",
+      "options": [
+        "Raconter une histoire pertinente en lien avec le poste",
+        "Ajouter des blagues sans rapport",
+        "Lister des termes techniques"
+      ],
+      "correct": "Raconter une histoire pertinente en lien avec le poste"
+    },
+    {
+      "question": "Combien de minutes dure une bonne introduction ?",
+      "options": [
+        "En supposant que le recruteur comprend tout",
+        "En donnant un exemple concret où tu as fait la différence",
+        "En parlant uniquement de responsabilités"
+      ],
+      "correct": "En donnant un exemple concret où tu as fait la différence"
+    },
+    {
+      "question": "Quels éléments doivent figurer dans une présentation ?",
+      "options": [
+        "Trop de préparation",
+        "Vouloir tout dire au lieu de choisir l’essentiel",
+        "Être concis"
+      ],
+      "correct": "Vouloir tout dire au lieu de choisir l’essentiel"
+    },
+    {
+      "question": "Pourquoi faut-il éviter de réciter un texte appris ?",
+      "options": [
+        "Les lire intégralement",
+        "S’en servir pour illustrer quelques points clés",
+        "Les oublier complètement"
+      ],
+      "correct": "S’en servir pour illustrer quelques points clés"
+    },
+    {
+      "question": "Quel est le secret d'une bonne communication orale ?",
+      "options": [
+        "Placer tous les mots appris",
+        "Convaincre le recruteur que tu es apte pour le poste",
+        "Impressionner par le vocabulaire"
+      ],
+      "correct": "Convaincre le recruteur que tu es apte pour le poste"
+    }
+  ],
+  "Presentation": [
+    {
+      "question": "Le storytelling dans une interview vous permet de :",
+      "options": [
+        "Embrouiller le recruteur",
+        "Structurer votre récit professionnel pour le rendre mémorable",
+        "Parler de sujets hors-sujet"
+      ],
+      "correct": "Structurer votre récit professionnel pour le rendre mémorable"
+    },
+    {
+      "question": "Un bon pitch personnel devrait durer environ :",
+      "options": [
+        "3 minutes",
+        "30 minutes",
+        "30 secondes"
+      ],
+      "correct": "3 minutes"
+    },
+    {
+      "question": "Quels sont les composants clés d’une présentation en entretien ?",
+      "options": [
+        "Votre CV complet et rien d’autre",
+        "Qui vous êtes, votre parcours, vos contributions et votre objectif",
+        "Le salaire de départ souhaité"
+      ],
+      "correct": "Qui vous êtes, votre parcours, vos contributions et votre objectif"
+    },
+    {
+      "question": "Pour préparer votre discours, il est utile de :",
+      "options": [
+        "Improviser sans préparation",
+        "Le structurer en 3 à 5 points clés et s’entraîner",
+        "Raconter toute votre vie"
+      ],
+      "correct": "Le structurer en 3 à 5 points clés et s’entraîner"
+    },
+    {
+      "question": "Quelle technique aide à rendre une présentation convaincante ?",
+      "options": [
+        "Lire votre CV mot pour mot",
+        "Utiliser des exemples concrets et des chiffres",
+        "Parler très vite"
+      ],
+      "correct": "Utiliser des exemples concrets et des chiffres"
+    },
+    {
+      "question": "Lorsqu’on parle d’une expérience professionnelle, il est efficace de :",
+      "options": [
+        "Rester vague",
+        "Donner le contexte, votre rôle, l’action et le résultat (méthode CAR)",
+        "Se concentrer uniquement sur la difficulté"
+      ],
+      "correct": "Donner le contexte, votre rôle, l’action et le résultat (méthode CAR)"
+    },
+    {
+      "question": "Comment réagir en cas de trou de mémoire pendant une présentation ?",
+      "options": [
+        "Mentir",
+        "Respirer, reformuler la question et répondre calmement",
+        "S’enfuir"
+      ],
+      "correct": "Respirer, reformuler la question et répondre calmement"
+    },
+    {
+      "question": "Pourquoi doit-on s’entraîner à son pitch à l’avance ?",
+      "options": [
+        "Pour le réciter mécaniquement",
+        "Pour être plus fluide et naturel en entretien",
+        "Pour éviter de répondre aux questions"
+      ],
+      "correct": "Pour être plus fluide et naturel en entretien"
+    },
+    {
+      "question": "Quelle tonalité adopter dans votre présentation ?",
+      "options": [
+        "Trop monotone",
+        "Naturelle, confiante et adaptée au contexte",
+        "Trop théâtrale"
+      ],
+      "correct": "Naturelle, confiante et adaptée au contexte"
+    },
+    {
+      "question": "Pour une présentation de 3 minutes, sur quoi devez-vous vous concentrer ?",
+      "options": [
+        "Tous les détails techniques",
+        "Éléments qui démontrent votre valeur pour le poste",
+        "Longues anecdotes personnelles"
+      ],
+      "correct": "Éléments qui démontrent votre valeur pour le poste"
+    },
+    {
+      "question": "Qu’est-ce qui fait la plus grande impression sur un recruteur ?",
+      "options": [
+        "Une longue liste de postes",
+        "Des exemples précis d’impact et d’accomplissements",
+        "Des vêtements extravagants"
+      ],
+      "correct": "Des exemples précis d’impact et d’accomplissements"
+    },
+    {
+      "question": "Quelle structure devez-vous utiliser pour décrire un projet scolaire ou professionnel ?",
+      "options": [
+        "Début, milieu et fin sans lien",
+        "Situation/Tâche/Action/Résultat (STAR/CAR)",
+        "Lister uniquement les tâches"
+      ],
+      "correct": "Situation/Tâche/Action/Résultat (STAR/CAR)"
+    },
+    {
+      "question": "Que devez-vous faire si une question inattendue vous est posée lors de votre présentation ?",
+      "options": [
+        "Répondre au hasard",
+        "Prendre un moment pour réfléchir puis répondre clairement",
+        "Ignorer la question"
+      ],
+      "correct": "Prendre un moment pour réfléchir puis répondre clairement"
+    },
+    {
+      "question": "Quelle langue corporelle aide votre présentation ?",
+      "options": [
+        "Regarder par terre",
+        "Maintenir le contact visuel, se tenir droit, utiliser des gestes mesurés",
+        "Croiser les bras"
+      ],
+      "correct": "Maintenir le contact visuel, se tenir droit, utiliser des gestes mesurés"
+    },
+    {
+      "question": "Comment pouvez-vous terminer votre présentation efficacement ?",
+      "options": [
+        "Sans conclusion",
+        "Avec un résumé et une ouverture (question ou intérêt pour le poste)",
+        "En demandant immédiatement le salaire"
+      ],
+      "correct": "Avec un résumé et une ouverture (question ou intérêt pour le poste)"
+    },
+    {
+      "question": "Pour rendre votre discours mémorable, il est bon de :",
+      "options": [
+        "Raconter une histoire pertinente liée au poste",
+        "Ajouter des blagues hors sujet",
+        "Lister des termes techniques"
+      ],
+      "correct": "Raconter une histoire pertinente liée au poste"
+    },
+    {
+      "question": "Comment pouvez-vous intégrer la valeur ajoutée de vos compétences dans votre pitch ?",
+      "options": [
+        "Supposer que le recruteur comprend tout",
+        "Donner un exemple concret de l’impact que vous avez eu",
+        "Parler uniquement des responsabilités"
+      ],
+      "correct": "Donner un exemple concret de l’impact que vous avez eu"
+    },
+    {
+      "question": "Quelle erreur est souvent commise dans une présentation ?",
+      "options": [
+        "Trop de préparation",
+        "Vouloir tout dire au lieu de choisir l’essentiel",
+        "Être concis"
+      ],
+      "correct": "Vouloir tout dire au lieu de choisir l’essentiel"
+    },
+    {
+      "question": "Pendant une présentation, que devez-vous faire de vos documents (CV/portfolio) ?",
+      "options": [
+        "Les lire entièrement",
+        "Les utiliser pour illustrer quelques points clés",
+        "Les oublier totalement"
+      ],
+      "correct": "Les utiliser pour illustrer quelques points clés"
+    },
+    {
+      "question": "Quel est l’objectif principal d’une bonne présentation personnelle ?",
+      "options": [
+        "Utiliser tous les mots appris",
+        "Convaincre le recruteur que vous êtes la bonne personne pour le poste",
+        "Les impressionner par votre vocabulaire"
+      ],
+      "correct": "Convaincre le recruteur que vous êtes la bonne personne pour le poste"
+    }
+  ]
+}

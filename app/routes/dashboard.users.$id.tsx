@@ -2,18 +2,21 @@ import { Link, useParams, useLoaderData, Form, redirect } from "react-router";
 import { useState } from "react";
 import connectDB from "../lib/db";
 import User from "../models/User";
+import PersonalityTest from "../models/PersonalityTest";
 import type { Route } from "./+types/dashboard.users.$id";
 
 // Loader function to fetch user data from MongoDB
 export async function loader({ params }: Route.LoaderArgs) {
   await connectDB();
-  
+
   const user = await User.findById(params.id).lean();
-  
+
   if (!user) {
     throw new Response("User not found", { status: 404 });
   }
-  
+
+  const personalityTest = await PersonalityTest.findOne({ userId: params.id }).lean();
+
   // Add demo subscription data if not present
   if (!user.payment) {
     user.payment = {
@@ -22,17 +25,17 @@ export async function loader({ params }: Route.LoaderArgs) {
       totalSpent: 0,
     };
   }
-  
-  return { user };
+
+  return { user, personalityTest };
 }
 
 // Action function to handle form submissions (edit user)
 export async function action({ request, params }: Route.ActionArgs) {
   await connectDB();
-  
+
   const formData = await request.formData();
   const intent = formData.get("intent");
-  
+
   if (intent === "update") {
     const updates = {
       firstName: formData.get("firstName"),
@@ -40,31 +43,23 @@ export async function action({ request, params }: Route.ActionArgs) {
       email: formData.get("email"),
       phone: formData.get("phone"),
     };
-    
+
     await User.findByIdAndUpdate(params.id, updates);
     return redirect(`/dashboard/users/${params.id}`);
   }
-  
+
   return null;
 }
 
 export default function UserDetail() {
   const params = useParams();
-  const { user } = useLoaderData<typeof loader>();
+  const { user, personalityTest } = useLoaderData<typeof loader>();
   const [showBlockModal, setShowBlockModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
 
   const handleBlock = () => {
     alert("User blocked successfully!");
     setShowBlockModal(false);
-  };
-
-  const handleUnblock = () => {
-    alert("User unblocked successfully!");
-  };
-
-  const handleSendMessage = () => {
-    alert("Message feature coming soon!");
   };
 
   return (
@@ -81,8 +76,8 @@ export default function UserDetail() {
           <div className="flex items-start justify-between -mt-16">
             <div className="flex items-end space-x-4">
               {user.profilePhoto ? (
-                <img 
-                  src={user.profilePhoto} 
+                <img
+                  src={user.profilePhoto}
                   alt={`${user.firstName} ${user.lastName}`}
                   className="w-32 h-32 rounded-xl border-4 border-white shadow-lg object-cover"
                   referrerPolicy="no-referrer"
@@ -118,19 +113,19 @@ export default function UserDetail() {
             </div>
             <div className="flex items-center space-x-3 mt-4">
               <button
-                onClick={() => setShowEditModal(true)}
+                onClick={() => alert('Message feature coming soon!')}
                 className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
               >
                 ✏️ Edit Profile
               </button>
               <button
-                onClick={handleSendMessage}
+                onClick={() => alert('Message feature coming soon!')}
                 className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
               >
                 💬 Message
               </button>
               <button
-                onClick={() => setShowBlockModal(true)}
+                onClick={() => alert('Message feature coming soon!')}
                 className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
               >
                 🚫 Block User
@@ -225,23 +220,21 @@ export default function UserDetail() {
             <div className="space-y-3">
               <div>
                 <p className="text-xs text-gray-500 uppercase mb-1">Plan</p>
-                <span className={`px-3 py-1 inline-flex text-sm font-semibold rounded-full ${
-                  user.payment?.subscriptionType === "premium"
-                    ? "bg-yellow-100 text-yellow-800"
-                    : "bg-gray-100 text-gray-800"
-                }`}>
+                <span className={`px-3 py-1 inline-flex text-sm font-semibold rounded-full ${user.payment?.subscriptionType === "premium"
+                  ? "bg-yellow-100 text-yellow-800"
+                  : "bg-gray-100 text-gray-800"
+                  }`}>
                   {(user.payment?.subscriptionType || 'free').toUpperCase()}
                 </span>
               </div>
               <div>
                 <p className="text-xs text-gray-500 uppercase mb-1">Status</p>
-                <span className={`px-3 py-1 inline-flex text-xs font-semibold rounded-full ${
-                  user.payment?.subscriptionStatus === "active"
-                    ? "bg-green-100 text-green-800"
-                    : user.payment?.subscriptionStatus === "trial"
+                <span className={`px-3 py-1 inline-flex text-xs font-semibold rounded-full ${user.payment?.subscriptionStatus === "active"
+                  ? "bg-green-100 text-green-800"
+                  : user.payment?.subscriptionStatus === "trial"
                     ? "bg-blue-100 text-blue-800"
                     : "bg-red-100 text-red-800"
-                }`}>
+                  }`}>
                   {(user.payment?.subscriptionStatus || 'active').toUpperCase()}
                 </span>
               </div>
@@ -339,11 +332,26 @@ export default function UserDetail() {
                 </p>
                 <p className="text-sm text-gray-600 mt-1">Days Active</p>
               </div>
-              <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-center">
-                <p className="text-3xl font-bold text-green-600">
-                  {user.password ? "✓" : "○"}
-                </p>
-                <p className="text-sm text-gray-600 mt-1">Password Set</p>
+              <div className={`p-4 border rounded-lg text-center flex flex-col justify-center min-h-[104px] ${personalityTest?.dominantColor === 'R' ? 'bg-red-50 border-red-200' :
+                  (personalityTest?.dominantColor === 'V' || personalityTest?.dominantColor === 'G') ? 'bg-green-50 border-green-200' :
+                    (personalityTest?.dominantColor === 'J' || personalityTest?.dominantColor === 'Y') ? 'bg-yellow-50 border-yellow-200' :
+                      personalityTest?.dominantColor === 'B' ? 'bg-blue-50 border-blue-200' :
+                        'bg-gray-50 border-gray-200'
+                }`}>
+                {personalityTest?.dominantColor ? (
+                  <>
+                    <p className={`text-4xl font-bold ${personalityTest.dominantColor === 'R' ? 'text-red-600' :
+                        (personalityTest.dominantColor === 'V' || personalityTest.dominantColor === 'G') ? 'text-green-600' :
+                          (personalityTest.dominantColor === 'J' || personalityTest.dominantColor === 'Y') ? 'text-yellow-600' :
+                            'text-blue-600'
+                      }`}>
+                      {personalityTest.dominantColor}
+                    </p>
+                    <p className="text-sm text-gray-600 mt-1">Dominant Color</p>
+                  </>
+                ) : (
+                  <p className="text-sm font-medium text-gray-500 italic">User didn't complete the test yet!</p>
+                )}
               </div>
             </div>
           </div>
@@ -358,20 +366,18 @@ export default function UserDetail() {
               <div>
                 <p className="text-xs text-gray-500 uppercase mb-2">Subscription Plan</p>
                 <div className="flex items-center space-x-2">
-                  <span className={`px-4 py-2 text-sm font-bold rounded-lg ${
-                    user.payment?.subscriptionType === "premium"
-                      ? "bg-yellow-500 text-white"
-                      : "bg-gray-600 text-white"
-                  }`}>
+                  <span className={`px-4 py-2 text-sm font-bold rounded-lg ${user.payment?.subscriptionType === "premium"
+                    ? "bg-yellow-500 text-white"
+                    : "bg-gray-600 text-white"
+                    }`}>
                     {(user.payment?.subscriptionType || 'free').toUpperCase()}
                   </span>
-                  <span className={`px-2 py-1 text-xs font-semibold rounded ${
-                    user.payment?.subscriptionStatus === "active"
-                      ? "bg-green-100 text-green-800"
-                      : user.payment?.subscriptionStatus === "trial"
+                  <span className={`px-2 py-1 text-xs font-semibold rounded ${user.payment?.subscriptionStatus === "active"
+                    ? "bg-green-100 text-green-800"
+                    : user.payment?.subscriptionStatus === "trial"
                       ? "bg-blue-100 text-blue-800"
                       : "bg-red-100 text-red-800"
-                  }`}>
+                    }`}>
                     {(user.payment?.subscriptionStatus || 'active').toUpperCase()}
                   </span>
                 </div>
@@ -498,7 +504,7 @@ export default function UserDetail() {
           <div className="bg-white rounded-xl p-6 w-full max-w-md">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Block User</h3>
             <p className="text-gray-600 mb-6">
-              Are you sure you want to block {user.firstName} {user.lastName}? 
+              Are you sure you want to block {user.firstName} {user.lastName}?
               This will prevent them from accessing the platform.
             </p>
             <div className="mb-4">
@@ -513,7 +519,8 @@ export default function UserDetail() {
               <button
                 type="button"
                 onClick={() => setShowBlockModal(false)}
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50"
+                style={{ color: 'red' }}
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 text-black"
               >
                 Cancel
               </button>

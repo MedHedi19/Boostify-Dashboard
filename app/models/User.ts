@@ -46,7 +46,6 @@ const userSchema = new Schema<IUser>({
   phone: {
     type: String,
     required: false,
-    sparse: true,
   },
   email: {
     type: String,
@@ -55,7 +54,7 @@ const userSchema = new Schema<IUser>({
     lowercase: true,
     trim: true,
     validate: {
-      validator: function(v: string) {
+      validator: function (v: string) {
         return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(v);
       },
       message: (props: any) => `${props.value} is not a valid email address!`
@@ -68,15 +67,12 @@ const userSchema = new Schema<IUser>({
   socialAuth: {
     googleId: {
       type: String,
-      sparse: true,
     },
     facebookId: {
       type: String,
-      sparse: true,
     },
     linkedinId: {
       type: String,
-      sparse: true,
     },
   },
   profilePhoto: {

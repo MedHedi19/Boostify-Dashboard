@@ -11,8 +11,8 @@ const navItems: NavItem[] = [
   { name: "Users", path: "/dashboard/users", icon: "👥" },
   { name: "Admins", path: "/dashboard/admins", icon: "👨‍💼" },
   { name: "Challenges", path: "/dashboard/challenges", icon: "🎯" },
-  { name: "Quizzes", path: "/dashboard/quizzes", icon: "📝" },
-  { name: "Certificates", path: "/dashboard/certificates", icon: "🎓" },
+  { name: "7P", path: "/dashboard/quizzes", icon: "📝" },
+  { name: "21 day challenge", path: "/dashboard/certificates", icon: "🎓" },
   { name: "Job Offers", path: "/dashboard/job-offers", icon: "💼" },
   { name: "Analytics", path: "/dashboard/analytics", icon: "📈" },
 ];
@@ -31,11 +31,10 @@ export default function Sidebar() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
-                  isActive
-                    ? "bg-blue-600 text-white"
-                    : "text-gray-300 hover:bg-gray-800"
-                }`}
+                className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${isActive
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-300 hover:bg-gray-800"
+                  }`}
               >
                 <span className="text-xl">{item.icon}</span>
                 <span className="font-medium">{item.name}</span>

@@ -1,0 +1,184 @@
+{
+  "Postulation": [
+    {
+      "question": "Avant d’envoyer ta candidature, il est utile de :",
+      "options": [
+        "Ne rien vérifier",
+        "Vérifier l’offre et personnaliser ton dossier",
+        "Envoyer le même mail à tout le monde"
+      ],
+      "correct": "Vérifier l’offre et personnaliser ton dossier"
+    },
+    {
+      "question": "Quel site est essentiel pour la recherche d’emploi aujourd’hui ?",
+      "options": [
+        "Registre local papier",
+        "Jobboards et sites d’entreprises + LinkedIn",
+        "Petites annonces dans le journal uniquement"
+      ],
+      "correct": "Jobboards et sites d’entreprises + LinkedIn"
+    },
+    {
+      "question": "Quel objet d’e-mail est recommandé pour postuler ?",
+      "options": [
+        "Vide",
+        "Clair et précis (poste + nom)",
+        "Très long et détaillé"
+      ],
+      "correct": "Clair et précis (poste + nom)"
+    },
+    {
+      "question": "Pour une candidature spontanée, que faire en plus du CV ?",
+      "options": [
+        "Rien d’autre",
+        "Rédiger une lettre expliquant ce que tu proposes",
+        "Envoyer un message générique"
+      ],
+      "correct": "Rédiger une lettre expliquant ce que tu proposes"
+    },
+    {
+      "question": "Quel document est parfois demandé en plus du CV ?",
+      "options": [
+        "Ton relevé de comptes",
+        "Attestations de stage ou certificats",
+        "Tes notes complètes de lycée"
+      ],
+      "correct": "Attestations de stage ou certificats"
+    },
+    {
+      "question": "Quand postuler à une offre, il est conseillé de :",
+      "options": [
+        "Répondre immédiatement si tu es intéressé",
+        "Attendre des mois",
+        "Envoyer des messages privés sans dossier"
+      ],
+      "correct": "Répondre immédiatement si tu es intéressé"
+    },
+    {
+      "question": "Quel est l’avantage d’appliquer via le site de l’entreprise ?",
+      "options": [
+        "Aucune trace de ta candidature",
+        "Ton dossier arrive directement au recruteur concerné",
+        "C’est plus long, donc meilleur"
+      ],
+      "correct": "Ton dossier arrive directement au recruteur concerné"
+    },
+    {
+      "question": "Que signifie “postuler stratégiquement” ?",
+      "options": [
+        "Postuler massivement sans tri",
+        "Cibler les offres correspondant réellement à ton profil",
+        "Postuler uniquement aux postes les mieux payés"
+      ],
+      "correct": "Cibler les offres correspondant réellement à ton profil"
+    },
+    {
+      "question": "Quelle info vérifier dans l’annonce avant d’envoyer ton dossier ?",
+      "options": [
+        "La couleur du logo de l’entreprise",
+        "Les missions, compétences requises et modalités de candidature",
+        "Le nombre d’employés uniquement"
+      ],
+      "correct": "Les missions, compétences requises et modalités de candidature"
+    },
+    {
+      "question": "Pourquoi est-il utile d’ajouter une phrase personnalisée dans l’e-mail de candidature ?",
+      "options": [
+        "Pour remplir des lignes",
+        "Pour montrer que tu as compris l’offre et l’entreprise",
+        "Pour demander un salaire tout de suite"
+      ],
+      "correct": "Pour montrer que tu as compris l’offre et l’entreprise"
+    },
+    {
+      "question": "Quel format doit avoir ton portfolio numérique ?",
+      "options": [
+        "Un PDF ou un site web facile à parcourir",
+        "Un dossier compressé sans organisation",
+        "Plusieurs fichiers non nommés"
+      ],
+      "correct": "Un PDF ou un site web facile à parcourir"
+    },
+    {
+      "question": "Comment vérifier si ta candidature est parfaite ?",
+      "options": [
+        "Envoyer sans relecture",
+        "Faire relire par quelqu’un et vérifier orthographe",
+        "La publier sur un forum public"
+      ],
+      "correct": "Faire relire par quelqu’un et vérifier orthographe"
+    },
+    {
+      "question": "Quel élément augmente tes chances d’être remarqué ?",
+      "options": [
+        "Envoyer une candidature en retard",
+        "Adapter ton CV au poste et mentionner un projet concret",
+        "Mettre des couleurs vives partout"
+      ],
+      "correct": "Adapter ton CV au poste et mentionner un projet concret"
+    },
+    {
+      "question": "Que faire si l’annonce demande un document précis (ex. portfolio) ?",
+      "options": [
+        "L’ignorer",
+        "Fournir exactement ce qui est demandé",
+        "Remplacer par autre chose"
+      ],
+      "correct": "Fournir exactement ce qui est demandé"
+    },
+    {
+      "question": "Pour un envoi par LinkedIn, que faut-il faire ?",
+      "options": [
+        "Envoyer le CV en message sans introduction",
+        "Écrire un court message personnalisé expliquant ton intérêt",
+        "Envoyer le CV en commentaire"
+      ],
+      "correct": "Écrire un court message personnalisé expliquant ton intérêt"
+    },
+    {
+      "question": "Quelle est la meilleure attitude lors de candidatures multiples ?",
+      "options": [
+        "Envoyer le même message automatique",
+        "Adapter chaque candidature au poste ciblé",
+        "Postuler uniquement au hasard"
+      ],
+      "correct": "Adapter chaque candidature au poste ciblé"
+    },
+    {
+      "question": "Pourquoi indiquer un titre de poste précis dans ton CV ?",
+      "options": [
+        "Pour tromper le recruteur",
+        "Pour montrer clairement le rôle que tu vises",
+        "Pour masquer ta situation"
+      ],
+      "correct": "Pour montrer clairement le rôle que tu vises"
+    },
+    {
+      "question": "Quand suivre sa candidature après l’envoi ?",
+      "options": [
+        "Jamais",
+        "Après une semaine ou deux, par mail poli",
+        "Tous les jours par téléphone"
+      ],
+      "correct": "Après une semaine ou deux, par mail poli"
+    },
+    {
+      "question": "Quel est l’intérêt d’écrire une accroche synthétique dans ton CV ?",
+      "options": [
+        "Remplir l’espace",
+        "Résumer ta proposition de valeur en 2-3 lignes",
+        "Mettre un slogan"
+      ],
+      "correct": "Résumer ta proposition de valeur en 2-3 lignes"
+    },
+    {
+      "question": "Quel est l’impact d’un CV mal formaté pour la postulation en ligne ?",
+      "options": [
+        "Aucun",
+        "Ton CV peut être rejeté ou mal lu",
+        "Il sera préféré car original"
+      ],
+      "correct": "Ton CV peut être rejeté ou mal lu"
+    }
+  ]
+}

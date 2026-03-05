@@ -1,0 +1,247 @@
+{
+  "Paperwork": [
+    {
+      "question": "Une CV de junior devrait idéalement être :",
+      "options": [
+        "Trois pages",
+        "Deux pages",
+        "Une page"
+      ],
+      "correct": "Une page"
+    },
+    {
+      "question": "Qu’est-ce qui doit apparaître en haut de votre CV ?",
+      "options": [
+        "Une anecdote personnelle",
+        "Votre nom et vos coordonnées",
+        "Une liste de vos hobbies"
+      ],
+      "correct": "Votre nom et vos coordonnées"
+    },
+    {
+      "question": "Le but du paragraphe d’ouverture d’un CV est de :",
+      "options": [
+        "Résumer vos objectifs de carrière en quelques lignes",
+        "Répéter votre parcours académique",
+        "Lister vos hobbies"
+      ],
+      "correct": "Résumer vos objectifs de carrière en quelques lignes"
+    },
+    {
+      "question": "Pour qu’un recruteur lise votre CV, vous devez :",
+      "options": [
+        "Utiliser une mise en page claire et lisible",
+        "Utiliser une police très petite pour tout faire tenir",
+        "Ajouter plusieurs images décoratives"
+      ],
+      "correct": "Utiliser une mise en page claire et lisible"
+    },
+    {
+      "question": "Qu’est-ce qui améliore la visibilité d’un CV dans un logiciel de tri (ATS) ?",
+      "options": [
+        "L’utilisation de mots-clés pertinents",
+        "Ajouter un fond coloré",
+        "Écrire des phrases très longues"
+      ],
+      "correct": "L’utilisation de mots-clés pertinents"
+    },
+    {
+      "question": "Qu’est-ce qu’un portfolio ?",
+      "options": [
+        "Un type de CV papier",
+        "Une collection de réalisations/projets professionnels",
+        "Un simple « cover letter »"
+      ],
+      "correct": "Une collection de réalisations/projets professionnels"
+    },
+    {
+      "question": "Un bon « cover letter » doit :",
+      "options": [
+        "Répéter le CV mot pour mot",
+        "Expliquer votre motivation et ce que vous avez à offrir",
+        "Être une longue biographie"
+      ],
+      "correct": "Expliquer votre motivation et ce que vous avez à offrir"
+    },
+    {
+      "question": "Un CV de junior doit idéalement tenir sur :",
+      "options": [
+        "Trois pages",
+        "Deux pages",
+        "Une page"
+      ],
+      "correct": "Une page"
+    },
+    {
+      "question": "Quel élément doit figurer en haut du CV ?",
+      "options": [
+        "Une anecdote personnelle",
+        "L’en-tête avec nom et coordonnées",
+        "La liste des loisirs"
+      ],
+      "correct": "L’en-tête avec nom et coordonnées"
+    },
+    {
+      "question": "L’accroche d’un CV sert à :",
+      "options": [
+        "Résumer en quelques lignes ton projet professionnel",
+        "Répéter ta formation",
+        "Lister tes loisirs"
+      ],
+      "correct": "Résumer en quelques lignes ton projet professionnel"
+    },
+    {
+      "question": "Pour qu’un CV soit lu par un recruteur, il faut :",
+      "options": [
+        "Utiliser une mise en page claire et lisible",
+        "Mettre le texte en petits caractères pour tout rentrer",
+        "Ajouter plusieurs images décoratives"
+      ],
+      "correct": "Utiliser une mise en page claire et lisible"
+    },
+    {
+      "question": "Quel élément améliore la visibilité d’un CV dans les ATS (logiciels de tri) ?",
+      "options": [
+        "L’utilisation de mots-clés pertinents",
+        "L’ajout d’un fond coloré",
+        "L’écriture en phrases longues"
+      ],
+      "correct": "L’utilisation de mots-clés pertinents"
+    },
+    {
+      "question": "Qu’est-ce qu’un portfolio ?",
+      "options": [
+        "Un type de CV papier",
+        "Un recueil de réalisations professionnelles ou projets",
+        "Une lettre de motivation"
+      ],
+      "correct": "Un recueil de réalisations professionnelles ou projets"
+    },
+    {
+      "question": "Une lettre de motivation doit :",
+      "options": [
+        "Répéter mot pour mot le CV",
+        "Expliquer ta motivation et ce que tu apportes",
+        "Être une longue biographie"
+      ],
+      "correct": "Expliquer ta motivation et ce que tu apportes"
+    },
+    {
+      "question": "Quel conseil pour la photo de CV ?",
+      "options": [
+        "Photo professionnelle, sobre",
+        "Selfie pris dans la rue",
+        "Photo avec amis pour montrer sociabilité"
+      ],
+      "correct": "Photo professionnelle, sobre"
+    },
+    {
+      "question": "Quelle rubrique n’est pas recommandée sur un CV en Tunisie (pour un junior) ?",
+      "options": [
+        "Formations",
+        "Détails personnels trop intimes (état civil complet, religion)",
+        "Expériences de stage"
+      ],
+      "correct": "Détails personnels trop intimes (état civil complet, religion)"
+    },
+    {
+      "question": "Pour un premier CV, quelle rubrique est importante à valoriser ?",
+      "options": [
+        "Centres d’intérêt uniquement",
+        "Stages et projets concrets",
+        "Les expériences non professionnelles sans lien"
+      ],
+      "correct": "Stages et projets concrets"
+    },
+    {
+      "question": "Quand personnaliser son CV ?",
+      "options": [
+        "Jamais, un CV suffit pour tout",
+        "Toujours : adapter aux exigences de l’offre",
+        "Seulement si on postule à l'étranger"
+      ],
+      "correct": "Toujours : adapter aux exigences de l’offre"
+    },
+    {
+      "question": "Quel est l’objectif premier d’un bon CV ?",
+      "options": [
+        "Remplir une page A4",
+        "Obtenir une invitation en entretien",
+        "Montrer toutes tes expériences même non pertinentes"
+      ],
+      "correct": "Obtenir une invitation en entretien"
+    },
+    {
+      "question": "Un bon titre de CV (sous ton nom) devrait :",
+      "options": [
+        "Être vague pour plaire à tout le monde",
+        "Indiquer ton poste ciblé ou ton profil (ex. 'Assistant marketing')",
+        "Donner ton âge"
+      ],
+      "correct": "Indiquer ton poste ciblé ou ton profil (ex. \"Assistant marketing\")"
+    },
+    {
+      "question": "Quel style d’écriture privilégier dans un CV ?",
+      "options": [
+        "Des phrases longues et théoriques",
+        "Des bullets points clairs et quantifiés",
+        "Des formulations humoristiques"
+      ],
+      "correct": "Des bullets points clairs et quantifiés"
+    },
+    {
+      "question": "Pour améliorer un portfolio, il est conseillé de :",
+      "options": [
+        "Mettre tous les fichiers possibles",
+        "Choisir projets représentatifs et expliquer ton rôle",
+        "Ne mettre que des titres sans détails"
+      ],
+      "correct": "Choisir projets représentatifs et expliquer ton rôle"
+    },
+    {
+      "question": "Les certificats et formations complémentaires doivent :",
+      "options": [
+        "Être listés s’ils sont pertinents pour le poste",
+        "Être tous cités sans tri",
+        "Jamais être mentionnés"
+      ],
+      "correct": "Être listés s’ils sont pertinents pour le poste"
+    },
+    {
+      "question": "Quelle erreur fréquente sur la paperasse ?",
+      "options": [
+        "Relire le document",
+        "Fautes d’orthographe ou de grammaire",
+        "Mettre un téléphone de contact"
+      ],
+      "correct": "Fautes d’orthographe ou de grammaire"
+    },
+    {
+      "question": "Pour un CV destiné à un poste digital, que vaut la section “compétences” ?",
+      "options": [
+        "Indiquer uniquement “informatique”",
+        "Détail des outils maîtrisés (ex. Excel, Photoshop)",
+        "Omettre cette section"
+      ],
+      "correct": "Détail des outils maîtrisés (ex. Excel, Photoshop)"
+    },
+    {
+      "question": "Quel format envoyer aux recruteurs pour le CV ?",
+      "options": [
+        "Papier uniquement",
+        "PDF pour préserver la mise en page",
+        "Un lien Word modifiable"
+      ],
+      "correct": "PDF pour préserver la mise en page"
+    },
+    {
+      "question": "Une lettre de motivation efficace :",
+      "options": [
+        "Contient des répétitions du CV",
+        "Se concentre sur pourquoi tu veux ce poste et ce que tu apportes",
+        "Est très générale"
+      ],
+      "correct": "Se concentre sur pourquoi tu veux ce poste et ce que tu apportes"
+    }
+  ]
+}
