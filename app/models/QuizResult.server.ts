@@ -1,7 +1,5 @@
 
 import mongoose, { Schema, Document, Model } from 'mongoose';
-import type { IUser } from './User';
-
 export interface IQuizResult extends Document {
 	userId: mongoose.Types.ObjectId | string;
 	userName: string;

@@ -1,10 +1,12 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = "mongodb+srv://boostifyskills_db_user:3VQj5P30WwVhBvTH@juniorscv.olpfhjw.mongodb.net/?appName=JuniorsCV";
+const RAW_MONGODB_URI = process.env.DASHBOARD_MONGODB_URI || process.env.MONGODB_URI;
 
-if (!MONGODB_URI) {
-  throw new Error('Please define the MONGODB_URI environment variable');
+if (!RAW_MONGODB_URI) {
+  throw new Error('Please define DASHBOARD_MONGODB_URI or MONGODB_URI environment variable');
 }
+
+const MONGODB_URI: string = RAW_MONGODB_URI;
 
 interface MongooseCache {
   conn: typeof mongoose | null;

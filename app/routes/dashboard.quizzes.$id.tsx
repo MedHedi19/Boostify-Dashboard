@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Link, useLoaderData } from "react-router";
-import fs from "node:fs";
-import path from "node:path";
+import mongoose from "mongoose";
 import connectDB from "../lib/db.server";
 import User from "../models/User.server";
 import UserProgress from "../models/UserProgress.server";
@@ -26,48 +25,170 @@ export async function loader({ params }: any) {
         throw new Response("User not found", { status: 404 });
     }
 
-    const userProgress = await UserProgress.findOne({ userId }).lean();
-
-    // Fetch quiz questions from JSON files
-    const dataDir = path.join(process.cwd(), "app", "data", "7P");
-    const quizData: Record<string, any[]> = {};
-
-    try {
-        const files = fs.readdirSync(dataDir);
-        for (const file of files) {
-            if (file.endsWith(".json")) {
-                const name = file.replace(".json", "");
-                const content = JSON.parse(fs.readFileSync(path.join(dataDir, file), "utf-8"));
-                // Store the first array found in the JSON as the questions for that quiz Name
-                const questionsKey = Object.keys(content).find(key => Array.isArray(content[key]));
-                if (questionsKey) {
-                    quizData[name] = content[questionsKey];
+    const [userProgress, quizModules] = await Promise.all([
+        UserProgress.findOne({ userId }).lean(),
+        mongoose.connection
+            .collection("quizmodules")
+            .find(
+                { isActive: true },
+                {
+                    projection: {
+                        _id: 1,
+                        slug: 1,
+                        name: 1,
+                        order: 1,
+                        "questions._id": 1,
+                        "questions.order": 1,
+                        "questions.question": 1,
+                    },
                 }
-            }
-        }
-    } catch (err) {
-        console.warn("Could not load quiz data files:", err);
-    }
+            )
+            .toArray(),
+    ]);
 
     return {
         user: JSON.parse(JSON.stringify(user)),
         userProgress: userProgress ? JSON.parse(JSON.stringify(userProgress)) : null,
-        quizData
+        quizModules: JSON.parse(JSON.stringify(quizModules || [])),
     };
 }
 
 export default function UserQuizDetail() {
-    const { user, userProgress, quizData } = useLoaderData<typeof loader>();
+    const { user, userProgress, quizModules } = useLoaderData<typeof loader>();
     const [expandedModule, setExpandedModule] = useState<number | null>(null);
 
-    const completedCount = userProgress?.quizProgress?.filter((q: any) => q.completed).length || 0;
-    const totalQuizzes = 7;
-    const globalScore = Math.round(
-        (userProgress?.quizProgress?.reduce((acc: number, curr: any) => {
-            const p = curr.percentage ?? (curr.totalQuestions > 0 ? (curr.score / curr.totalQuestions) * 100 : 0);
-            return acc + p;
-        }, 0) || 0) / totalQuizzes
-    );
+    const quizProgressEntries = Array.isArray(userProgress?.quizProgress) ? userProgress.quizProgress : [];
+    const completedCount = quizProgressEntries.filter((entry: any) => entry.completed).length;
+    const totalQuizzes = quizProgressEntries.length;
+    const globalScore = totalQuizzes > 0
+        ? Math.round(
+            quizProgressEntries.reduce((acc: number, curr: any) => {
+                const p = curr.percentage ?? (curr.totalQuestions > 0 ? (curr.score / curr.totalQuestions) * 100 : 0);
+                return acc + p;
+            }, 0) / totalQuizzes
+        )
+        : 0;
+    const completionPercentage = totalQuizzes > 0 ? Math.round((completedCount / totalQuizzes) * 100) : 0;
+
+    const quizModulesById = useMemo(() => {
+        const map = new Map<string, any>();
+        (quizModules || []).forEach((quizModule: any) => {
+            map.set(String(quizModule._id), quizModule);
+        });
+        return map;
+    }, [quizModules]);
+
+    const getLocalizedQuestionText = (value: any): string | null => {
+        if (!value) {
+            return null;
+        }
+
+        if (typeof value === "string") {
+            const normalized = value.trim();
+            return normalized.length > 0 ? normalized : null;
+        }
+
+        if (typeof value !== "object") {
+            return null;
+        }
+
+        const localized = [value.fr, value.en, value.ar].find(
+            (entry) => typeof entry === "string" && entry.trim().length > 0
+        );
+
+        return typeof localized === "string" ? localized : null;
+    };
+
+    const findQuizModuleForProgress = (quizProgressEntry: any) => {
+        if (!quizProgressEntry) {
+            return null;
+        }
+
+        if (quizProgressEntry.moduleId) {
+            const byId = quizModulesById.get(String(quizProgressEntry.moduleId));
+            if (byId) {
+                return byId;
+            }
+        }
+
+        if (quizProgressEntry.moduleSlug) {
+            const bySlug = (quizModules || []).find(
+                (quizModule: any) => quizModule.slug === quizProgressEntry.moduleSlug
+            );
+            if (bySlug) {
+                return bySlug;
+            }
+        }
+
+        if (quizProgressEntry.quizName) {
+            return (quizModules || []).find(
+                (quizModule: any) => quizModule.name === quizProgressEntry.quizName
+            ) || null;
+        }
+
+        return null;
+    };
+
+    const findQuestionTextFromQuizModule = (quizProgressEntry: any, answer: any): string | null => {
+        const quizModule = findQuizModuleForProgress(quizProgressEntry);
+        if (!quizModule || !Array.isArray(quizModule.questions)) {
+            return null;
+        }
+
+        let questionId = answer?.questionId;
+
+        if (!questionId && Number.isInteger(answer?.questionIndex)) {
+            questionId = quizProgressEntry?.selectedQuestionIds?.[answer.questionIndex];
+        }
+
+        if (questionId) {
+            const questionById = quizModule.questions.find(
+                (question: any) => String(question._id) === String(questionId)
+            );
+            const questionByIdText = getLocalizedQuestionText(questionById?.question);
+            if (questionByIdText) {
+                return questionByIdText;
+            }
+        }
+
+        if (Number.isInteger(answer?.questionIndex) && Array.isArray(quizProgressEntry?.selectedQuestions)) {
+            const legacyOrder = quizProgressEntry.selectedQuestions[answer.questionIndex];
+            const questionByLegacyOrder = quizModule.questions.find(
+                (question: any) => Number(question.order) === Number(legacyOrder)
+            );
+            const questionByLegacyOrderText = getLocalizedQuestionText(questionByLegacyOrder?.question);
+            if (questionByLegacyOrderText) {
+                return questionByLegacyOrderText;
+            }
+        }
+
+        return null;
+    };
+
+    const resolveQuestionText = (quizProgressEntry: any, answer: any): string => {
+        const answerSnapshotText = getLocalizedQuestionText(answer?.questionSnapshot?.question);
+        if (answerSnapshotText) {
+            return answerSnapshotText;
+        }
+
+        const progressSnapshotText = getLocalizedQuestionText(
+            quizProgressEntry?.selectedQuestionSnapshots?.[answer?.questionIndex]?.question
+        );
+        if (progressSnapshotText) {
+            return progressSnapshotText;
+        }
+
+        const moduleQuestionText = findQuestionTextFromQuizModule(quizProgressEntry, answer);
+        if (moduleQuestionText) {
+            return moduleQuestionText;
+        }
+
+        if (Number.isInteger(answer?.questionIndex)) {
+            return `Question ${answer.questionIndex + 1} (snapshot missing)`;
+        }
+
+        return "Question (snapshot missing)";
+    };
 
     return (
         <div className="p-6 max-w-7xl mx-auto bg-gray-50 min-h-screen">
@@ -107,7 +228,7 @@ export default function UserQuizDetail() {
                             {user.payment?.subscriptionType || 'Gratuit'}
                         </span>
                         <span className="px-4 py-1.5 bg-green-50 text-green-700 rounded-full text-sm font-semibold border border-green-100 font-inter">
-                            {completedCount}/{totalQuizzes} Quiz complétés
+                            {completedCount}/{totalQuizzes || 0} Quiz complétés
                         </span>
                     </div>
                 </div>
@@ -124,12 +245,12 @@ export default function UserQuizDetail() {
                             <div>
                                 <div className="flex justify-between items-center mb-2">
                                     <span className="text-sm font-medium text-gray-600 font-inter">Progression Globale</span>
-                                    <span className="text-sm font-bold text-blue-600 font-inter">{Math.round((completedCount / totalQuizzes) * 100)}%</span>
+                                    <span className="text-sm font-bold text-blue-600 font-inter">{completionPercentage}%</span>
                                 </div>
                                 <div className="w-full bg-gray-100 rounded-full h-3">
                                     <div
                                         className="bg-gradient-to-r from-blue-500 to-indigo-600 h-3 rounded-full transition-all duration-1000"
-                                        style={{ width: `${(completedCount / totalQuizzes) * 100}%` }}
+                                        style={{ width: `${completionPercentage}%` }}
                                     ></div>
                                 </div>
                             </div>
@@ -141,7 +262,7 @@ export default function UserQuizDetail() {
                                         <p className="text-xl font-black text-blue-600 font-inter">{globalScore}%</p>
                                     </div>
                                     <div className="text-right">
-                                        <p className="text-[10px] text-gray-400 uppercase font-bold font-inter">Moyenne sur 7 modules</p>
+                                        <p className="text-[10px] text-gray-400 uppercase font-bold font-inter">Moyenne sur {totalQuizzes || 0} modules</p>
                                     </div>
                                 </div>
                                 <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
@@ -213,15 +334,12 @@ export default function UserQuizDetail() {
                                         {expandedModule === idx && (
                                             <div className="mt-4 space-y-3">
                                                 {qp.answers.map((ans: any, aIdx: number) => {
-                                                    const hasAnswer = ans?.selectedAnswer && ans.selectedAnswer.trim() !== "" && ans.selectedAnswer !== "N/A";
+                                                    const hasAnswer =
+                                                        typeof ans?.selectedAnswer === "string" &&
+                                                        ans.selectedAnswer.trim() !== "" &&
+                                                        ans.selectedAnswer !== "N/A";
 
-                                                    // Mapping logic: Find the real question text
-                                                    // qp.quizName is the key like "Paperwork"
-                                                    // qp.selectedQuestions[ans.questionIndex] is the absolute index in JSON
-                                                    const absoluteIndex = qp.selectedQuestions?.[ans.questionIndex];
-                                                    const quizPool = quizData[qp.quizName] || [];
-                                                    const fullQuestion = quizPool[absoluteIndex];
-                                                    const questionText = fullQuestion?.question || `Question ${ans.questionIndex}`;
+                                                    const questionText = resolveQuestionText(qp, ans);
 
                                                     return (
                                                         <div key={aIdx} className="flex items-start space-x-3 text-sm p-3 bg-white rounded-lg border border-gray-100">

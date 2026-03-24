@@ -9,6 +9,8 @@ export default [
     route("dashboard/admins", "routes/dashboard.admins.tsx"),
     route("dashboard/challenges", "routes/dashboard.challenges.tsx"),
     route("dashboard/quizzes", "routes/dashboard.quizzes.tsx"),
+    route("dashboard/quizzes/management", "routes/dashboard.quizzes.management.tsx"),
+    route("dashboard/quizzes/management/:moduleId", "routes/dashboard.quizzes.management.$moduleId.tsx"),
     route("dashboard/quizzes/:id", "routes/dashboard.quizzes.$id.tsx"),
     route("dashboard/certificates", "routes/dashboard.certificates.tsx"),
     route("dashboard/certificates/:id", "routes/dashboard.certificates.id.tsx"),

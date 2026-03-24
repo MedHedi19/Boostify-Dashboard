@@ -38,6 +38,7 @@ export default function QuizzesManagement() {
   const [selectedBox, setSelectedBox] = useState<'none' | 'all' | 'validated' | 'nonValidated'>('none');
   const totalUsers = loaderData?.totalUsers ?? results.length;
   const [userSearch, setUserSearch] = useState('');
+
   const getInitials = (name = '') => {
     return name.split(' ').map(s => s[0]).join('').slice(0, 2).toUpperCase();
   };
@@ -69,8 +70,16 @@ export default function QuizzesManagement() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4 text-black">7P — Résultats par utilisateur</h1>
-
+      <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <h1 className="text-2xl font-bold text-black">7P — Résultats par utilisateur</h1>
+      <Link
+        to="/dashboard/quizzes/management"
+        className="group inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-blue-700 via-indigo-600 to-cyan-500 px-5 py-2.5 text-sm font-bold text-white shadow-[0_12px_30px_-14px_rgba(29,78,216,0.95)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-14px_rgba(29,78,216,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+      >
+        Management 7P
+        <span className="transition-transform duration-200 group-hover:translate-x-0.5">-&gt;</span>
+      </Link>
+      </div>
       {loading && <p>Chargement...</p>}
       {error && <p className="text-red-600">Erreur: {error}</p>}
 
@@ -132,7 +141,7 @@ export default function QuizzesManagement() {
                       <li><strong>Utilisateur:</strong> {u.firstName} {u.lastName}</li>
                       <li><strong>Email:</strong> {u.email || '—'}</li>
                       <li><strong>Score Global:</strong> {u.globalScore}%</li>
-                      <li><strong>Quiz complétés:</strong> {u.completedQuizzes}/7</li>
+                      <li><strong>Quiz complétés:</strong> {u.completedQuizzes}/{u.totalQuizzes ?? 0}</li>
                       <li><strong>Certificats envoyés:</strong> {u.certificateSentCount ?? 0}</li>
                     </ul>
                   </div>
@@ -223,7 +232,7 @@ export default function QuizzesManagement() {
                           <div className="text-sm text-gray-500">{u.email || '—'}</div>
                         </div>
                         <div className="text-sm text-gray-600 text-right">
-                          <div className="font-semibold text-gray-800">{u.completedQuizzes ?? 0}/7</div>
+                          <div className="font-semibold text-gray-800">{u.completedQuizzes ?? 0}/{u.totalQuizzes ?? 0}</div>
                         </div>
                       </div>
                       <div className="mt-3 flex items-center justify-between text-sm text-gray-500">
@@ -472,15 +481,17 @@ export async function loader({ request }: any) {
     const mappedUsers = users.map((u: any) => {
       const uId = String(u._id);
       const userProg = userProgresses.find((p: any) => String(p.userId) === uId);
-      const completedQuizzes = userProg?.quizProgress?.filter((q: any) => q.completed).length || 0;
-
-      const totalQuizzes = 7;
-      const globalScore = Math.round(
-        (userProg?.quizProgress?.reduce((acc: number, curr: any) => {
-          const p = curr.percentage ?? (curr.totalQuestions > 0 ? (curr.score / curr.totalQuestions) * 100 : 0);
-          return acc + p;
-        }, 0) || 0) / totalQuizzes
-      );
+      const quizProgressEntries = Array.isArray(userProg?.quizProgress) ? userProg.quizProgress : [];
+      const completedQuizzes = quizProgressEntries.filter((q: any) => q.completed).length;
+      const totalQuizzes = quizProgressEntries.length;
+      const globalScore = totalQuizzes > 0
+        ? Math.round(
+          quizProgressEntries.reduce((acc: number, curr: any) => {
+            const p = curr.percentage ?? (curr.totalQuestions > 0 ? (curr.score / curr.totalQuestions) * 100 : 0);
+            return acc + p;
+          }, 0) / totalQuizzes
+        )
+        : 0;
 
       return {
         _id: uId, // Ensure this is a string
@@ -492,6 +503,7 @@ export async function loader({ request }: any) {
         payment: u.payment,
         createdAt: u.createdAt,
         completedQuizzes,
+        totalQuizzes,
         globalScore
       };
     });
