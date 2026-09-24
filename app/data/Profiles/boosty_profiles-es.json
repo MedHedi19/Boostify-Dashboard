@@ -1,0 +1,450 @@
+{
+  "Business & Management": {
+    "Management": {
+      "D": ["Director de sucursal", "Director de unidad de negocio", "Director de operaciones", "Consultor de estrategia", "Project manager"],
+      "I": ["Gestor de cuentas", "Responsable de alianzas", "Director comercial", "Responsable de eventos", "Responsable de éxito del cliente"],
+      "S": ["Director de oficina", "Coordinador administrativo", "Responsable de atención al cliente", "Responsable de back-office", "Asistente de dirección"],
+      "C": ["Controller de gestión", "Analista de negocio", "Auditor interno", "PMO", "Responsable de procesos"]
+    },
+    "Marketing": {
+      "D": ["Responsable de growth", "Brand manager", "Responsable de adquisición", "Traffic manager", "Business developer digital"],
+      "I": ["Community manager", "Responsable de influencia", "Estratega de redes sociales", "Responsable de marketing de eventos", "Creador de contenido"],
+      "S": ["Responsable de CRM", "Marketing de éxito del cliente", "Responsable de fidelización", "Especialista en email marketing", "Responsable de relaciones con clientes"],
+      "C": ["Analista de marketing", "Especialista SEO", "Analista de data marketing", "Investigador UX", "Optimizador de tasa de conversión"]
+    },
+    "Digital Marketing": {
+      "D": ["Growth hacker", "Responsable de marketing de rendimiento", "Responsable de adquisición", "Responsable de e-commerce", "Director digital"],
+      "I": ["Responsable de contenido", "Estratega de redes sociales", "Estratega de TikTok", "Responsable de influencia", "Estratega de YouTube"],
+      "S": ["Especialista CRM", "Responsable del viaje del cliente", "Constructor de comunidad", "Especialista en automatización de email", "Responsable de soporte online"],
+      "C": ["Especialista SEO/SEA", "Especialista en marketing automation", "Analista web", "Analista UX", "Analista de data marketing"]
+    },
+    "International Trade": {
+      "D": ["Responsable de exportación", "Business developer internacional", "Country manager", "Responsable de importación-exportación", "Trader"],
+      "I": ["Key account manager", "Responsable de alianzas", "Conector de negocios", "Responsable de ferias internacionales", "Negociador internacional"],
+      "S": ["Coordinador de exportación", "Atención al cliente internacional", "Coordinador logístico", "Soporte de cuentas", "Enlace de suministro"],
+      "C": ["Analista de mercados internacionales", "Especialista en aduanas", "Responsable de cumplimiento", "Analista de precios", "Analista de compras"]
+    },
+    "Finance": {
+      "D": ["CFO", "Responsable de inversiones", "Analista de capital riesgo", "Consultor financiero", "Risk manager"],
+      "I": ["Asesor patrimonial", "Asesor financiero", "Responsable de relación con clientes", "Ventas fintech", "Asesor de seguros"],
+      "S": ["Asistente de tesorería", "Oficial de crédito", "Asesor bancario", "Gestor de carteras", "Finanzas back-office"],
+      "C": ["Analista financiero", "Controller financiero", "Analista de cumplimiento", "Auditor financiero", "Analista de datos financieros"]
+    },
+    "Accounting": {
+      "D": ["Jefe de contabilidad", "Responsable fiscal", "Director administrativo y financiero", "Responsable de cobros", "Consultor ERP"],
+      "I": ["Asesor fiscal", "Consultor contable", "Formador ERP", "Account manager (software contable)", "Asesor empresarial"],
+      "S": ["Contable", "Auxiliar de contabilidad", "Responsable de facturación", "Responsable de nóminas", "Asistente financiero"],
+      "C": ["Contador colegiado", "Auditor", "Especialista fiscal", "Controller interno", "Analista de cumplimiento"]
+    },
+    "Audit": {
+      "D": ["Director de auditoría", "Responsable de auditoría interna", "Responsable de gobernanza", "Investigador de fraude", "Consultor de riesgos"],
+      "I": ["Consultor de auditoría", "Consultor de negocio", "Formador de cumplimiento", "Asesoría al cliente", "Consultor financiero"],
+      "S": ["Asistente de auditoría", "Responsable de control de calidad", "Responsable de documentación", "Soporte de cumplimiento", "Revisor de procesos"],
+      "C": ["Auditor interno", "Auditor externo", "Analista de riesgos", "Controlador de calidad", "Analista de cumplimiento"]
+    },
+    "Entrepreneurship": {
+      "D": ["Fundador de startup", "CEO", "Estratega de negocio", "Product owner", "Franquiciado"],
+      "I": ["Evangelista de startup", "Fundador comercial", "Emprendedor de marca", "Consultor de pitch", "Especialista en networking"],
+      "S": ["Cofundador de operaciones", "Dueño de negocio de servicios", "Fundador de éxito del cliente", "Responsable de comunidad startup", "Fundador de RR. HH."],
+      "C": ["Analista SaaS", "Fundador financiero", "Fundador data startup", "Responsable de procesos startup", "Analista tech startup"]
+    },
+    "Human Resources Management": {
+      "D": ["Responsable de RR. HH.", "Responsable de atracción de talento", "HR business partner", "Headhunter", "Responsable de aprendizaje"],
+      "I": ["Reclutador", "Responsable de marca empleadora", "Coach de carrera", "Formador de soft skills", "Community HR"],
+      "S": ["Asistente de RR. HH.", "Responsable de nóminas", "Responsable de bienestar", "Coordinador de formación", "Responsable de éxito del empleado"],
+      "C": ["Analista de RR. HH.", "Analista de compensación", "Especialista HRIS", "RR. HH. de cumplimiento", "Analista de datos de talento"]
+    },
+    "Logistics & Supply Chain": {
+      "D": ["Responsable de cadena de suministro", "Director de operaciones", "Responsable de compras", "Responsable de flota", "Responsable de almacén"],
+      "I": ["Responsable de relación con proveedores", "Ventas de logística", "Desarrollo de negocio supply", "Negociador", "Coordinador de transporte"],
+      "S": ["Coordinador logístico", "Responsable de inventario", "Asistente de planificación", "Agente de despacho", "Operaciones de cliente"],
+      "C": ["Planificador de demanda", "Analista de compras", "Analista de supply", "Analista de datos supply", "Responsable de calidad supply"]
+    }
+  },
+  "IT & Digital": {
+    "Web Development": {
+      "D": ["Tech lead", "Product manager web", "CTO de startup", "Scrum master", "Project manager web"],
+      "I": ["Consultor web", "Customer success tech", "Ingeniero de ventas", "Formador web", "Evangelista tech"],
+      "S": ["Integrador web", "Tester QA", "Soporte web", "Webmaster", "Especialista WordPress"],
+      "C": ["Desarrollador front-end", "Desarrollador back-end", "Desarrollador full stack", "Ingeniero DevOps", "Ingeniero de software"]
+    },
+    "Mobile Development": {
+      "D": ["Project manager móvil", "Product owner de app", "CTO móvil", "Fundador de startup (app)", "Tech lead móvil"],
+      "I": ["Consultor móvil", "Ingeniero de ventas de apps", "Formador móvil", "Evangelista tech", "Customer success móvil"],
+      "S": ["Tester QA móvil", "Soporte móvil", "Integrador de apps", "Especialista en mantenimiento de apps", "Asistente UX móvil"],
+      "C": ["Desarrollador Android", "Desarrollador iOS", "Desarrollador Flutter", "Desarrollador React Native", "Ingeniero móvil"]
+    },
+    "Artificial Intelligence": {
+      "D": ["Product manager de IA", "Estratega de IA", "Director de innovación", "Consultor de IA", "Responsable de IA"],
+      "I": ["Formador de IA", "Consultor de IA", "Prompt engineer", "Especialista de ventas de IA", "Data storyteller"],
+      "S": ["Analista de soporte de IA", "Coordinador de datos", "Asistente de BI", "Asistente de operaciones de IA", "Especialista en reporting"],
+      "C": ["Ingeniero de machine learning", "Ingeniero NLP", "Ingeniero de visión por computador", "Ingeniero de IA", "Ingeniero de deep learning"]
+    },
+    "Data Science / Big Data": {
+      "D": ["Responsable de datos", "Estratega de datos", "Chief data officer", "Responsable de BI", "Product manager de datos"],
+      "I": ["Data storyteller", "Consultor de BI", "Consultor de analytics", "Formador de datos", "Presales de datos"],
+      "S": ["Analista de reporting", "Coordinador de datos", "Analista de CRM", "Asistente de BI", "Analista de soporte de datos"],
+      "C": ["Científico de datos", "Analista de datos", "Ingeniero de datos", "Ingeniero de big data", "Analista de business intelligence"]
+    },
+    "Cybersecurity": {
+      "D": ["Responsable de seguridad", "Responsable de SOC", "Consultor de ciberseguridad", "Lead de ethical hacking", "Risk manager"],
+      "I": ["Formador de concienciación en seguridad", "Presales de ciberseguridad", "Consultor cyber", "Comunicador tech", "Asesor de clientes"],
+      "S": ["Analista de SOC", "Operador de seguridad", "Respondedor de incidentes", "Especialista en monitorización", "Soporte de seguridad"],
+      "C": ["Hacker ético", "Tester de penetración", "Analista de malware", "Analista forense", "Analista GRC"]
+    },
+    "Networks & Telecoms": {
+      "D": ["Project manager de telecom", "Responsable de red", "Responsable de innovación", "Director de operaciones", "Consultor de telecom"],
+      "I": ["Ventas de telecom", "Presales de telecom", "Customer success de telecom", "Formador de telecom", "Consultor de redes"],
+      "S": ["Analista NOC", "Helpdesk de telecom", "Soporte de red", "Ingeniero de campo", "Especialista de soporte"],
+      "C": ["Ingeniero de redes", "Ingeniero de red cloud", "Ingeniero RF", "Ingeniero VoIP", "Analista cyber de telecom"]
+    },
+    "UX/UI Design": {
+      "D": ["Product designer", "Director creativo", "Responsable de UX", "Design lead", "Diseñador de marca"],
+      "I": ["Influencer de UI", "Motion designer", "Content designer", "Diseñador de redes sociales", "Diseñador de eventos"],
+      "S": ["Diseñador gráfico", "Asistente de UX", "Soporte de diseño", "Ilustrador", "Diseñador de impresión"],
+      "C": ["Investigador UX", "Diseñador UI", "Diseñador UX/UI", "Analista de diseño", "Diseñador de interacción"]
+    },
+    "Game Development": {
+      "D": ["Productor de juegos", "Product owner gaming", "Responsable de estudio", "Emprendedor gaming", "Project manager gaming"],
+      "I": ["Streamer de juegos", "Community manager gaming", "Especialista de marketing de juegos", "Creador de contenido gaming", "Evangelista gaming"],
+      "S": ["Tester QA de juegos", "Soporte gaming", "Asistente de levels", "Soporte de comunidad gaming", "Especialista en experiencia del jugador"],
+      "C": ["Desarrollador de juegos", "Desarrollador Unity", "Desarrollador Unreal Engine", "Programador de gameplay", "Game designer"]
+    },
+    "Cloud Computing": {
+      "D": ["Manager de arquitectura cloud", "Lead DevOps", "Project manager cloud", "CTO cloud", "Responsable de innovación"],
+      "I": ["Consultor cloud", "Presales cloud", "Formador cloud", "Evangelista tech cloud", "Customer success cloud"],
+      "S": ["Ingeniero de soporte cloud", "Administrador de sistemas", "Soporte DevOps", "Especialista de soporte IT", "Operaciones cloud"],
+      "C": ["Ingeniero cloud", "Ingeniero DevOps", "Ingeniero AWS", "Ingeniero Azure", "Site reliability engineer"]
+    }
+  },
+  "Engineering & Technical": {
+    "Industrial Engineering": {
+      "D": ["Director de planta", "Director de producción", "Responsable lean", "Director de operaciones", "Consultor industrial"],
+      "I": ["Ingeniero de negocio", "Ingeniero de ventas técnicas", "Formador lean", "Account manager industrial", "Consultor"],
+      "S": ["Planificador de producción", "Coordinador de mantenimiento", "Asistente HSE", "Asistente de procesos", "Supervisor"],
+      "C": ["Ingeniero de procesos", "Ingeniero de calidad", "Analista lean", "Analista de datos industriales", "Ingeniero de mantenimiento"]
+    },
+    "Mechanical Engineering": {
+      "D": ["Responsable de mantenimiento", "Project manager mecánico", "Supervisor de planta", "Responsable de operaciones", "Consultor mecánico"],
+      "I": ["Ingeniero de ventas", "Formador técnico", "Asesor de servicio", "Ingeniero de cliente", "Consultor mecánico"],
+      "S": ["Técnico de mantenimiento", "Supervisor de taller", "Ingeniero de soporte", "Técnico de servicio", "Asistente de producción"],
+      "C": ["Ingeniero de diseño", "Ingeniero CAD", "Ingeniero de simulación", "Ingeniero de I+D", "Ingeniero de calidad"]
+    },
+    "Electrical Engineering": {
+      "D": ["Project manager eléctrico", "Director de operaciones", "Energy manager", "Director de planta", "Consultor"],
+      "I": ["Ingeniero de ventas", "Formador técnico", "Ingeniero de presales", "Ingeniero de negocio", "Ingeniero de soporte al cliente"],
+      "S": ["Ingeniero de mantenimiento", "Ingeniero de instalación", "Ingeniero de soporte", "Técnico QA", "Técnico de campo"],
+      "C": ["Ingeniero de automatización", "Ingeniero de sistemas embebidos", "Ingeniero electrónico", "Ingeniero IoT", "Ingeniero de I+D"]
+    },
+    "Civil Engineering": {
+      "D": ["Jefe de obra", "Director de construcción", "Project manager de construcción", "Director de obra", "Emprendedor de construcción"],
+      "I": ["Consultor inmobiliario", "Business developer de construcción", "Ventas de construcción", "Asesor urbano", "Negociador"],
+      "S": ["Supervisor de obra", "Coordinador de obra", "Responsable de seguridad", "Asistente de planificación", "Asistente técnico"],
+      "C": ["Ingeniero estructural", "Ingeniero BIM", "Aparejador", "Ingeniero de planificación", "Ingeniero de diseño"]
+    },
+    "Chemical Engineering": {
+      "D": ["Director de producción química", "Director de planta", "Director de operaciones", "Consultor industrial", "Responsable HSE"],
+      "I": ["Ingeniero de ventas químicas", "Consultor técnico", "Formador químico", "Business developer químico", "Asesor de clientes"],
+      "S": ["Asistente de procesos", "Coordinador de laboratorio", "Asistente de seguridad", "Soporte de calidad", "Soporte de producción"],
+      "C": ["Ingeniero de procesos químicos", "Ingeniero de I+D", "Ingeniero de calidad", "Ingeniero de formulación", "Analista de laboratorio"]
+    },
+    "Energy Engineering": {
+      "D": ["Energy manager", "Project manager de energías renovables", "Director de operaciones", "Responsable de sostenibilidad", "Consultor energético"],
+      "I": ["Ingeniero de ventas energéticas", "Formador técnico", "Consultor energético", "Business developer energético", "Asesor de clientes"],
+      "S": ["Ingeniero de campo", "Mantenimiento energético", "Ingeniero de soporte", "Coordinador de instalación", "Asistente técnico"],
+      "C": ["Ingeniero de energías renovables", "Analista energético", "Ingeniero solar", "Ingeniero HVAC", "Ingeniero de eficiencia"]
+    },
+    "Industrial Maintenance": {
+      "D": ["Responsable de mantenimiento", "Director de operaciones", "Supervisor de planta", "Responsable de fiabilidad", "Responsable técnico"],
+      "I": ["Consultor técnico", "Ingeniero de ventas", "Formador de mantenimiento", "Asesor de servicio", "Business developer"],
+      "S": ["Técnico de mantenimiento", "Técnico de campo", "Supervisor de taller", "Soporte de servicio", "Técnico de instalación"],
+      "C": ["Ingeniero de fiabilidad", "Planificador de mantenimiento", "Ingeniero de diagnóstico", "Ingeniero de mantenimiento de automatización", "Ingeniero QA"]
+    },
+    "Automation & Robotics": {
+      "D": ["Project manager de robótica", "Responsable de automatización", "Responsable de innovación", "CTO de robótica", "Consultor industrial"],
+      "I": ["Consultor de robótica", "Presales de robótica", "Formador de robótica", "Evangelista tech", "Ingeniero de negocio"],
+      "S": ["Soporte de automatización", "Técnico de robótica", "Mantenimiento de robótica", "Soporte de instalación", "QA de robótica"],
+      "C": ["Ingeniero de automatización", "Ingeniero de robótica", "Programador PLC", "Ingeniero embebido", "Ingeniero de IA robótica"]
+    }
+  },
+  "Sciences & Health": {
+    "Biology": {
+      "D": ["Director de laboratorio", "Responsable de calidad", "Project manager científico", "Consultor científico", "Emprendedor biotech"],
+      "I": ["Formador de biología", "Consultor científico", "Visitador médico", "Comunicador científico", "Ventas biotech"],
+      "S": ["Técnico de laboratorio", "Asistente de investigación", "Coordinador de laboratorio", "Soporte de calidad", "Asistente clínico"],
+      "C": ["Biólogo", "Investigador de biología", "Analista biomédico", "Microbiólogo", "Genetista"]
+    },
+    "Biochemistry": {
+      "D": ["Responsable de laboratorio", "Director de producción farmacéutica", "Responsable de calidad", "Consultor de bioquímica", "Emprendedor científico"],
+      "I": ["Consultor de bioquímica", "Ventas farmacéuticas", "Formador científico", "Visitador médico", "Asesor científico"],
+      "S": ["Asistente de laboratorio", "Control de calidad", "Técnico de bioquímica", "Asistente clínico", "Soporte científico"],
+      "C": ["Bioquímico", "Analista bioquímico", "Investigador de I+D", "Controlador de calidad", "Científico de formulación"]
+    },
+    "Biotechnology": {
+      "D": ["Project manager biotech", "Responsable de innovación", "Emprendedor biotech", "Director de producción", "Consultor biotech"],
+      "I": ["Business developer biotech", "Ventas científicas", "Formador biotech", "Comunicador científico", "Asesor médico"],
+      "S": ["Asistente de investigación", "Soporte clínico", "Soporte de calidad", "Asistente de producción", "Coordinador de laboratorio"],
+      "C": ["Ingeniero biotech", "Científico investigador", "Analista de datos clínicos", "Ingeniero de I+D", "Analista de calidad"]
+    },
+    "Chemistry": {
+      "D": ["Director de planta", "Director de producción", "Responsable HSE", "Consultor de química", "Director de operaciones"],
+      "I": ["Ingeniero de ventas químicas", "Consultor de química", "Formador de química", "Business developer", "Asesor de clientes"],
+      "S": ["Técnico de laboratorio", "Asistente de producción", "Asistente de seguridad", "Soporte de calidad", "Asistente de procesos"],
+      "C": ["Químico", "Analista de laboratorio", "Controlador de calidad", "Ingeniero de formulación", "Investigador de química"]
+    },
+    "Physics": {
+      "D": ["Project manager científico", "Consultor técnico", "Responsable de innovación", "Emprendedor tech", "Director de operaciones"],
+      "I": ["Formador científico", "Consultor de física", "Comunicador científico", "Ingeniero de ventas", "Asesor técnico"],
+      "S": ["Asistente de laboratorio", "Soporte técnico", "Técnico de instrumentación", "Soporte QA", "Asistente de investigación"],
+      "C": ["Físico", "Analista de datos científicos", "Investigador", "Ingeniero de instrumentación", "Ingeniero de simulación"]
+    },
+    "Medicine": {
+      "D": ["Jefe de departamento", "Director clínico", "Emprendedor de salud", "Médico de urgencias", "Director de hospital"],
+      "I": ["Médico de familia", "Coach de salud", "Asesor médico", "Visitador médico", "Ponente de salud"],
+      "S": ["Médico de familia", "Cuidados paliativos", "Asistente médico", "Care manager", "Enfermero coordinador"],
+      "C": ["Radiólogo", "Biólogo médico", "Investigador médico", "Farmacovigilancia", "Analista de salud"]
+    },
+    "Pharmacy": {
+      "D": ["Responsable de farmacia", "Product manager farmacéutico", "Emprendedor farmacéutico", "Responsable regulatorio", "Responsable de operaciones"],
+      "I": ["Visitador médico", "Formador farmacéutico", "Ventas farmacéuticas", "Consultor de belleza", "Brand pharma"],
+      "S": ["Farmacéutico (oficina)", "Asistente de farmacia", "Asesor de cuidados", "Coach de bienestar", "Asesor de clientes"],
+      "C": ["Farmacéutico industrial", "QA farmacéutico", "Especialista en asuntos regulatorios", "I+D farmacéutico", "Analista clínico"]
+    },
+    "Nursing": {
+      "D": ["Jefe de enfermería", "Coordinador de cuidados", "Responsable clínico", "Responsable de unidad", "Emprendedor de cuidados"],
+      "I": ["Coach de salud", "Asesor de pacientes", "Formador de cuidados", "Educador de salud comunitaria", "Asesor de soporte médico"],
+      "S": ["Enfermero hospitalario", "Enfermero a domicilio", "Asistente de cuidados", "Cuidador", "Enfermero coordinador"],
+      "C": ["Enfermero de anestesia", "Enfermero de quirófano", "Enfermero especializado", "Analista clínico", "Analista de calidad de cuidados"]
+    },
+    "Nutrition": {
+      "D": ["Responsable de nutrición", "Emprendedor de nutrición", "Responsable de bienestar", "Consultor de nutrición", "Responsable de programa de salud"],
+      "I": ["Coach de nutrición", "Influencer de salud", "Asesor de nutrición", "Ponente de bienestar", "Embajador de marca de salud"],
+      "S": ["Nutricionista", "Asesor dietético", "Asistente dietético", "Asesor de soporte de salud", "Cuidados nutricionales"],
+      "C": ["Dietista", "Analista de nutrición", "Investigador de nutrición", "Controlador de calidad alimentaria", "Analista de nutrición clínica"]
+    },
+    "Public Health": {
+      "D": ["Responsable de programa de salud", "Asesor de políticas", "Responsable de ONG", "Director de salud pública", "Consultor de salud"],
+      "I": ["Responsable de salud comunitaria", "Educador de salud", "Ponente de salud", "Comunicación de salud", "Responsable de advocacy"],
+      "S": ["Coordinador de ONG", "Trabajador social de salud", "Asistente de programa", "Soporte comunitario", "Case manager"],
+      "C": ["Epidemiólogo", "Analista de datos de salud", "Investigador de salud pública", "Analista de políticas", "Responsable de seguimiento y evaluación"]
+    }
+  },
+  "Creative & Media": {
+    "Graphic Design": {
+      "D": ["Director creativo", "Director de arte", "Diseñador de marca", "Product designer", "Emprendedor creativo"],
+      "I": ["Diseñador de redes sociales", "Creador de contenido", "Motion designer", "Diseñador de eventos", "Influencer de UI"],
+      "S": ["Diseñador gráfico", "Diseñador de impresión", "Ilustrador", "Soporte de diseño", "Asistente de diseño"],
+      "C": ["Diseñador UX/UI", "Analista de diseño", "Diseñador de packaging", "Diseñador visual", "Diseñador UI"]
+    },
+    "Audiovisual": {
+      "D": ["Director de producción", "Productor audiovisual", "Project manager de medios", "Emprendedor audiovisual", "Responsable de estudio"],
+      "I": ["Presentador de TV", "Anfitrión", "Reportero", "Creador de contenido", "Presentador de medios"],
+      "S": ["Asistente de producción", "Coordinador de plató", "Soporte técnico", "Asistente de dirección", "Comunidad de medios"],
+      "C": ["Director", "Editor de vídeo", "Técnico de sonido", "Técnico de iluminación", "Motion designer"]
+    },
+    "Journalism": {
+      "D": ["Editor jefe", "Director de medios", "Periodista de investigación", "Estratega de medios", "Emprendedor de medios"],
+      "I": ["Periodista de TV", "Reportero", "Presentador", "Podcaster", "Locutor de radio"],
+      "S": ["Asistente editorial", "Community manager de medios", "Coordinador de contenido", "Soporte editorial", "Asistente de investigación"],
+      "C": ["Periodista web", "Copywriter", "Redactor SEO", "Analista de medios", "Fact checker"]
+    },
+    "Communication": {
+      "D": ["Responsable de comunicación", "Responsable de RR. PP.", "Estratega de marca", "Responsable de medios", "Consultor de comunicación"],
+      "I": ["Community manager", "Social media manager", "Responsable de eventos", "Responsable de influencia", "Ponente"],
+      "S": ["Asistente de comunicación", "Relaciones públicas", "Atención al cliente", "Soporte de comunidad", "Asistente de comunicación interna"],
+      "C": ["Copywriter", "Estratega de contenido", "Redactor SEO", "Analista de comunicación", "Responsable de documentación"]
+    },
+    "Photography": {
+      "D": ["Emprendedor de fotografía", "Director de arte fotográfico", "Responsable de estudio", "Fotógrafo de marca", "Fotógrafo de eventos"],
+      "I": ["Fotógrafo de eventos", "Influencer de fotografía", "Fotógrafo de viajes", "Creador de contenido social", "Fotógrafo de retrato"],
+      "S": ["Asistente de fotografía", "Retocador fotográfico", "Soporte de estudio", "Comunidad fotográfica", "Archivista fotográfico"],
+      "C": ["Fotógrafo de producto", "Retocador profesional", "Editor fotográfico", "Analista de contenido visual", "Fotógrafo de catálogo"]
+    },
+    "Video Editing": {
+      "D": ["Director de postproducción", "Emprendedor de vídeo", "Project manager de vídeo", "Responsable de estudio", "Lead creativo"],
+      "I": ["Creador de contenido de vídeo", "Editor de YouTube", "Estratega de vídeo social", "Creador de vídeo de influencia", "Presentador de medios"],
+      "S": ["Asistente de edición", "Soporte de producción", "Comunidad de vídeo", "Editor de vídeo junior", "Asistente de contenido"],
+      "C": ["Editor de vídeo", "Motion designer", "Editor de vídeo (técnico)", "Especialista en postproducción", "Editor VFX"]
+    },
+    "2D/3D Animation": {
+      "D": ["Director creativo", "Responsable de estudio de animación", "Project manager de animación", "Emprendedor de animación", "Art lead"],
+      "I": ["Creador de contenido de animación", "Presentador de storyboard", "Influencer de animación", "Animador de medios", "Formador creativo"],
+      "S": ["Asistente de animación", "Diseñador junior", "Soporte de animación", "Asistente de producción", "Comunidad de diseño"],
+      "C": ["Animador 2D", "Animador 3D", "Motion designer", "Modelador 3D", "Artista VFX"]
+    },
+    "Content Creation": {
+      "D": ["Responsable de brand content", "Emprendedor digital", "Estratega de medios", "Director creativo", "Productor de contenido"],
+      "I": ["Influencer", "YouTuber", "TikToker", "Podcaster", "Creador de redes sociales"],
+      "S": ["Constructor de comunidad", "Asistente de contenido", "Asistente de redes sociales", "Soporte creativo", "Coordinador de contenido"],
+      "C": ["Estratega de contenido", "Redactor SEO", "Guionista", "Analista de contenido", "Copywriter"]
+    }
+  },
+  "Law & Social Sciences": {
+    "Law": {
+      "D": ["Abogado de negocios", "Director jurídico", "Responsable de cumplimiento", "Emprendedor LegalTech", "Negociador"],
+      "I": ["Abogado", "Asesor jurídico", "Mediador", "Consultor jurídico de RR. HH.", "Relaciones públicas legales"],
+      "S": ["Asistente jurídico", "Responsable de contratos", "Asesor administrativo", "Asistente notarial", "Soporte de RR. HH."],
+      "C": ["Asesor legal", "Responsable de cumplimiento", "Abogado fiscal", "Delegado de protección de datos", "Analista jurídico"]
+    },
+    "Political Science": {
+      "D": ["Asesor de políticas", "Director de ONG", "Consultor político", "Responsable de campaña", "Diplomático"],
+      "I": ["Portavoz", "Responsable de comunicación política", "Lobbyista", "Community manager político", "Ponente"],
+      "S": ["Coordinador de ONG", "Asistente parlamentario", "Responsable de proyecto", "Coordinador de programa social", "Case manager"],
+      "C": ["Analista político", "Investigador", "Analista de políticas públicas", "Responsable de seguimiento y evaluación", "Analista de datos políticos"]
+    },
+    "Sociology": {
+      "D": ["Consultor social", "Project manager de ONG", "Emprendedor social", "Asesor de políticas", "Responsable de asociación"],
+      "I": ["Formador", "Facilitador", "Constructor de comunidad", "Asesor social", "Periodista social"],
+      "S": ["Asistente de trabajador social", "Coordinador de proyecto", "Educador", "Trabajador social", "Soporte de ONG"],
+      "C": ["Investigador", "Analista social", "Investigador UX", "Analista de datos sociales", "Especialista en documentación"]
+    },
+    "Psychology": {
+      "D": ["Coach ejecutivo", "Consultor de RR. HH.", "Emprendedor de coaching", "Formador de liderazgo", "Responsable de bienestar"],
+      "I": ["Psicólogo clínico", "Life coach", "Formador de soft skills", "Orientador profesional", "Ponente"],
+      "S": ["Psicólogo escolar", "Asesor familiar", "Asistente de terapeuta", "Consejero de cuidados", "Asesor social"],
+      "C": ["Neuropsicólogo", "Analista conductual", "Investigador UX", "Investigador", "Analista de datos de comportamiento"]
+    },
+    "International Relations": {
+      "D": ["Diplomático", "Country manager", "Consultor internacional", "Asesor de políticas", "Director de ONG"],
+      "I": ["Negociador internacional", "RR. PP. internacionales", "Responsable de alianzas", "Lobbyista", "Conector de negocios"],
+      "S": ["Coordinador de ONG", "Responsable de programa", "Responsable de soporte internacional", "Community manager", "Asistente de proyecto"],
+      "C": ["Analista geopolítico", "Analista de mercados internacionales", "Investigador", "Analista de políticas", "Responsable de seguimiento"]
+    },
+    "Social Work": {
+      "D": ["Responsable de ONG", "Responsable de programa", "Emprendedor social", "Project manager social", "Asesor de políticas"],
+      "I": ["Asesor social", "Facilitador social", "Coach comunitario", "Ponente social", "Community manager"],
+      "S": ["Asistente de trabajador social", "Trabajador social", "Case manager", "Responsable de apoyo familiar", "Soporte comunitario"],
+      "C": ["Analista social", "Investigador social", "Responsable de seguimiento y evaluación", "Especialista en documentación", "Analista de datos sociales"]
+    },
+    "Philosophy": {
+      "D": ["Consultor de estrategia", "Emprendedor intelectual", "Coach de liderazgo", "Director académico", "Ponente"],
+      "I": ["Formador", "Conferenciante", "Life coach", "Facilitador de debates", "Creador de contenido educativo"],
+      "S": ["Profesor", "Asesor académico", "Mentor", "Asistente académico", "Constructor de comunidad"],
+      "C": ["Investigador", "Escritor", "Analista de contenido", "Copywriter", "Responsable de documentación"]
+    },
+    "History": {
+      "D": ["Director cultural", "Project manager de patrimonio", "Emprendedor cultural", "Consultor de patrimonio", "Responsable de museo"],
+      "I": ["Guía cultural", "Periodista histórico", "Conferenciante", "Creador de contenido histórico", "Facilitador cultural"],
+      "S": ["Archivista", "Asistente de museo", "Asistente educativo", "Comunidad cultural", "Soporte de patrimonio"],
+      "C": ["Historiador", "Investigador", "Especialista en documentación", "Analista de contenido histórico", "Escritor especializado"]
+    }
+  },
+  "Architecture & Environment": {
+    "Architecture": {
+      "D": ["Arquitecto principal", "Director de estudio de arquitectura", "Diseñador urbano", "Project manager de construcción", "Emprendedor de arquitectura"],
+      "I": ["Asesor de arquitectura", "Consultor inmobiliario", "Ventas de diseño", "RR. PP. de arquitectura", "Facilitador de proyectos urbanos"],
+      "S": ["Asistente de arquitecto", "Delineante", "Coordinador de obra", "Soporte técnico", "Asistente de diseño"],
+      "C": ["Arquitecto", "BIM manager", "Arquitecto técnico", "Diseñador estructural", "Analista de proyectos arquitectónicos"]
+    },
+    "Urban Planning": {
+      "D": ["Urbanista (manager)", "Director de proyectos urbanos", "Consultor territorial", "Responsable de urbanismo", "Responsable de política urbana"],
+      "I": ["Consultor de desarrollo urbano", "Facilitador territorial", "Lobbyista urbano", "Comunicación de proyectos urbanos", "Facilitador de proyectos"],
+      "S": ["Asistente de urbanismo", "Coordinador de proyectos urbanos", "Soporte de planificación", "Asistente administrativo urbano", "Responsable de desarrollo local"],
+      "C": ["Urbanista", "Analista territorial", "Cartógrafo urbano", "Analista de datos espaciales", "Especialista en urbanismo"]
+    },
+    "Interior Design": {
+      "D": ["Director de diseño de interiores", "Project manager de diseño", "Emprendedor de decoración", "Responsable de diseño retail", "Responsable de estudio"],
+      "I": ["Decorador de eventos", "Consultor de diseño", "Creador de contenido de decoración", "Influencer de diseño", "Ventas de diseño de interiores"],
+      "S": ["Asistente de decorador", "Coordinador de proyecto de interiores", "Soporte de obra de decoración", "Asistente de arquitecto de interiores", "Decorador junior"],
+      "C": ["Diseñador de interiores", "Planificador de espacios", "Diseñador técnico", "Diseñador CAD de interiores", "Visual merchandiser"]
+    },
+    "Environment & Sustainable Development": {
+      "D": ["Responsable de sostenibilidad", "Consultor ambiental", "Emprendedor green", "Project manager de RSC", "Estratega climático"],
+      "I": ["Formador ambiental", "Activista ambiental", "Comunicación de RSC", "Consultor de ONG", "Ponente green"],
+      "S": ["Asistente de RSC", "Coordinador de proyecto ambiental", "Soporte de ONG", "Responsable de campo ambiental", "Responsable de comunidad green"],
+      "C": ["Ingeniero ambiental", "Analista de carbono", "Experto en RSC", "Analista de datos ambientales", "Auditor ambiental"]
+    },
+    "Geomatics": {
+      "D": ["Project manager SIG", "Consultor geoespacial", "Responsable de innovación geodata", "Emprendedor geo-tech", "Lead de proyecto de cartografía"],
+      "I": ["Consultor SIG", "Formador de geomática", "Ventas de geodata", "Business developer geoespacial", "Comunicación cartográfica"],
+      "S": ["Técnico SIG", "Asistente de cartógrafo", "Soporte de geomática", "Operador de datos geográficos", "Asistente de campo"],
+      "C": ["Ingeniero de geomática", "Analista SIG", "Cartógrafo", "Analista de datos espaciales", "Experto en teledetección"]
+    }
+  },
+  "Agriculture & Agri-food": {
+    "Agronomy": {
+      "D": ["Responsable de agroindustria", "Director de operaciones agrícolas", "Emprendedor agrícola", "Consultor de agronomía", "Project manager agri"],
+      "I": ["Consultor agrícola", "Ventas agri", "Formador agrícola", "Business developer agri", "Asesor agrícola"],
+      "S": ["Técnico agrícola", "Asistente de agrónomo", "Agente de campo", "Coordinador de operaciones", "Soporte de producción"],
+      "C": ["Ingeniero agrónomo", "Analista de suelos y cultivos", "Experto en fertilización", "Investigador de agronomía", "Analista de datos agrícolas"]
+    },
+    "Animal Production": {
+      "D": ["Director de ganadería", "Emprendedor agrícola", "Responsable de producción animal", "Consultor de ganadería", "Director de operaciones"],
+      "I": ["Asesor agrícola", "Ventas de piensos", "Formador de ganadería", "Business developer agri", "Consultor de bienestar animal"],
+      "S": ["Técnico de ganadería", "Asistente veterinario", "Agente de operaciones de granja", "Cuidador de animales", "Coordinador de granja"],
+      "C": ["Zootecnista", "Veterinario", "Analista de nutrición animal", "Controlador de calidad ganadera", "Investigador de producción animal"]
+    },
+    "Agri-food": {
+      "D": ["Responsable de producción agroalimentaria", "Director de fábrica", "Emprendedor de industria alimentaria", "Director de calidad", "Director de operaciones"],
+      "I": ["Ventas agroalimentarias", "Marketing alimentario", "Consultor de producto alimentario", "Formador de industria alimentaria", "Business developer"],
+      "S": ["Técnico de producción", "Controlador de calidad", "Asistente de laboratorio agri", "Agente de logística alimentaria", "Soporte de producción"],
+      "C": ["Ingeniero agroalimentario", "Responsable de calidad", "Analista de seguridad alimentaria", "Científico de I+D alimentaria", "Auditor de calidad"]
+    },
+    "Agricultural Technologies": {
+      "D": ["Fundador AgriTech", "Product manager de agricultura digital", "Director de innovación agrícola", "Consultor de smart farming", "Project manager agri-tech"],
+      "I": ["Consultor de agricultura digital", "Formador AgriTech", "Ventas de soluciones agrícolas", "Business developer AgriTech", "Comunidad agri-tech"],
+      "S": ["Técnico de sistemas agrícolas", "Soporte IoT agrícola", "Asistente de operaciones digitales", "Técnico de campo", "Coordinador de campo"],
+      "C": ["Ingeniero AgriTech", "Analista de datos agrícolas", "Experto en riego inteligente", "Ingeniero IoT agrícola", "Analista de producción agrícola"]
+    }
+  },
+  "Services & Hospitality": {
+    "Tourism": {
+      "D": ["Director de agencia de viajes", "Travel manager", "Emprendedor de turismo", "Product manager de turismo", "Responsable de operaciones de turismo"],
+      "I": ["Guía turístico", "Facilitador de turismo", "Influencer de viajes", "Consultor de viajes", "Ventas de turismo"],
+      "S": ["Agente de viajes", "Asesor de clientes de turismo", "Recepcionista de agencia", "Asistente de reservas", "Soporte al cliente de turismo"],
+      "C": ["Analista de turismo", "Analista de revenue hotelero", "Planificador de itinerarios", "Controlador de calidad turística", "Analista de datos de turismo"]
+    },
+    "Hospitality": {
+      "D": ["Director de hotel", "Responsable de resort", "Responsable de front office", "Emprendedor hotelero", "Responsable de operaciones hoteleras"],
+      "I": ["Responsable de relaciones con huéspedes", "Conserje", "Anfitrión de hotel", "Responsable de comunicación hotelera", "Ventas hoteleras"],
+      "S": ["Recepcionista", "Asistente de hotel", "Gobernanta", "Agente de atención al cliente", "Soporte de housekeeping"],
+      "C": ["Revenue manager", "Responsable de calidad hotelera", "Analista de rendimiento hotelero", "Controller de operaciones", "Responsable de reservas"]
+    },
+    "Food Service": {
+      "D": ["Director de restaurante", "Emprendedor de restauración", "Chef ejecutivo", "Responsable de operaciones F&B", "Director de franquicia de restaurante"],
+      "I": ["Chef de eventos", "Camarero premium", "Influencer gastronómico", "Responsable de marketing de restaurante", "Consultor de restauración"],
+      "S": ["Camarero", "Ayudante de cocina", "Auxiliar de cocina", "Agente de atención al cliente", "Asistente de director de restaurante"],
+      "C": ["Chef de producción culinaria", "Controlador de calidad alimentaria", "Higienista", "Responsable de seguridad alimentaria", "Analista de costes de restaurante"]
+    },
+    "Events": {
+      "D": ["Responsable de eventos", "Director de agencia de eventos", "Project manager de eventos", "Emprendedor de eventos", "Wedding planner senior"],
+      "I": ["Anfitrión de eventos", "Presentador", "Community manager de eventos", "Influencer de eventos", "Consultor de comunicación de eventos"],
+      "S": ["Coordinador de eventos", "Asistente de organización", "Soporte logístico de eventos", "Agente de recepción", "Asistente de producción"],
+      "C": ["Planificador de eventos", "Analista de logística de eventos", "Controller de presupuesto de eventos", "Responsable de calidad de eventos", "Analista de operaciones"]
+    }
+  },
+  "Education & Training": {
+    "Teaching": {
+      "D": ["Director de escuela", "Inspector pedagógico", "Responsable académico", "Jefe de departamento", "Emprendedor de educación"],
+      "I": ["Profesor", "Docente", "Formador", "Facilitador pedagógico", "Ponente de educación"],
+      "S": ["Asistente de enseñanza", "Supervisor educativo", "Coordinador escolar", "Responsable de apoyo al estudiante", "Tutor"],
+      "C": ["Investigador de educación", "Diseñador curricular", "Analista curricular", "Redactor de programas", "Evaluador académico"]
+    },
+    "Vocational Training": {
+      "D": ["Director de centro de formación", "Consultor de formación", "Emprendedor de formación", "Responsable de L&D", "Responsable de formación"],
+      "I": ["Formador", "Coach profesional", "Facilitador de formación", "Consultor de formación de RR. HH.", "Business developer de formación"],
+      "S": ["Asistente de formación", "Coordinador de formación", "Soporte administrativo de formación", "Responsable de alumnos", "Facilitador de formación"],
+      "C": ["Diseñador instruccional", "Diseñador e-learning", "Analista de competencias", "Responsable de calidad del aprendizaje", "Analista de datos de formación"]
+    },
+    "Coaching & Personal Development": {
+      "D": ["Coach ejecutivo", "Business coach", "Consultor de rendimiento", "Emprendedor de coaching", "Mentor de liderazgo"],
+      "I": ["Coach motivacional", "Life coach", "Ponente", "Formador de soft skills", "Influencer de desarrollo personal"],
+      "S": ["Coach de apoyo", "Orientador profesional", "Coach escolar", "Asistente de coaching", "Soporte de bienestar"],
+      "C": ["Coach analítico", "Consultor conductual", "Coach de carrera", "Analista de comportamiento", "Coach de rendimiento estructurado"]
+    }
+  },
+  "Modern Languages & Literature": {
+    "Modern Languages": {
+      "D": ["Business developer internacional", "Responsable de exportación lingüística", "Project manager internacional", "Consultor de comunicación global", "Emprendedor de servicios lingüísticos"],
+      "I": ["Intérprete", "Traductor", "Guía turístico internacional", "Facilitador cultural", "Community manager multilingüe"],
+      "S": ["Asistente bilingüe", "Soporte al cliente internacional", "Secretario multilingüe", "Agente de comunicación", "Asistente administrativo internacional"],
+      "C": ["Traductor especializado", "Lingüista", "Analista lingüístico", "Corrector profesional", "Terminólogo"]
+    },
+    "Literature": {
+      "D": ["Director editorial", "Editor", "Emprendedor de medios", "Responsable de contenido", "Consultor de comunicación cultural"],
+      "I": ["Escritor", "Periodista", "Blogger", "Guionista", "Creador de contenido literario"],
+      "S": ["Asistente editorial", "Bibliotecario", "Asistente de escritura", "Soporte cultural", "Facilitador de lectura"],
+      "C": ["Crítico literario", "Investigador de literatura", "Escritor profesional", "Corrector", "Analista de contenido"]
+    }
+  }
+}

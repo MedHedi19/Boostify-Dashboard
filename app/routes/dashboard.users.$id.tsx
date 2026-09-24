@@ -4,6 +4,68 @@ import connectDB from "../lib/db.server";
 import User from "../models/User.server";
 import PersonalityTest from "../models/PersonalityTest.server";
 import type { Route } from "./+types/dashboard.users.$id";
+import { discProfilesFr } from "../data/discProfiles";
+import { personalitySignaturesFr } from "../data/personalitySignatures";
+import { getRecommendedJobs } from "../data/Profiles/getProfileJobs";
+import { getDomainChoiceLabels } from "../data/Domains/getDomains";
+
+// Profile details mapping for strengths, effort points, and recommendations
+const PROFILE_DETAILS_MAP: Record<string, {
+  title: string;
+  description: string;
+  strengths: string[];
+  efforts: string[];
+  recommendations: string[];
+}> = {
+  R: {
+    title: "Leader / Compétiteur",
+    description: "Orienté vers l'action, les résultats et les défis. Aime prendre des décisions rapides et diriger.",
+    strengths: ["Prise de décision rapide", "Leadership naturel", "Résolution de problèmes complexes"],
+    efforts: ["Patience avec les autres", "Écoute active"],
+    recommendations: ["Développer l'empathie", "Déléguer davantage", "Accepter le rythme des autres"],
+  },
+  J: {
+    title: "Communicant / Inspirateur",
+    description: "Enthousiaste, créatif et orienté vers les relations humaines. Aime inspirer et convaincre.",
+    strengths: ["Excellente communication", "Créativité & Innovation", "Capacité à motiver les équipes"],
+    efforts: ["Suivi des détails", "Organisation du temps"],
+    recommendations: ["Structurer les idées", "Finaliser les projets commencés", "Canaliser l'énergie"],
+  },
+  V: {
+    title: "Collaborateur / Médiateur",
+    description: "Calme, loyal et à l'écoute. Valorise l'harmonie, la stabilité et le travail d'équipe.",
+    strengths: ["Écoute active & Empathie", "Esprit d'équipe fort", "Gestion des conflits / Médiation"],
+    efforts: ["Affirmation de soi", "Gestion du changement"],
+    recommendations: ["Exprimer ses besoins clairement", "Sortir de sa zone de confort", "Dire non quand c'est nécessaire"],
+  },
+  B: {
+    title: "Analyste / Perfectionniste",
+    description: "Rigoureux, méthodique et attentif aux détails. Recherche la précision et la qualité.",
+    strengths: ["Analyse approfondie", "Rigueur & Précision", "Organisation méthodique"],
+    efforts: ["Gestion du stress", "Prise de risque"],
+    recommendations: ["Lâcher prise sur la perfection", "Communiquer de manière plus directe", "Accepter l'incertitude"],
+  },
+};
+
+function getDiscLetter(dominantColor?: string | null): string {
+  if (!dominantColor) return 'S';
+  const c = dominantColor.toUpperCase();
+  if (c === 'R') return 'D';
+  if (c === 'J' || c === 'Y') return 'I';
+  if (c === 'V' || c === 'G') return 'S';
+  if (c === 'B') return 'C';
+  return 'S';
+}
+
+function getColorKey(dominantColor?: string | null): 'R' | 'J' | 'V' | 'B' {
+  if (!dominantColor) return 'V';
+  const c = dominantColor.toUpperCase();
+  if (c === 'R') return 'R';
+  if (c === 'J' || c === 'Y') return 'J';
+  if (c === 'V' || c === 'G') return 'V';
+  if (c === 'B') return 'B';
+  return 'V';
+}
 
 // Loader function to fetch user data from MongoDB
 export async function loader({ params }: Route.LoaderArgs) {
@@ -56,6 +118,15 @@ export default function UserDetail() {
   const { user, personalityTest } = useLoaderData<typeof loader>();
   const [showBlockModal, setShowBlockModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
+
+  const colorKey = getColorKey(personalityTest?.dominantColor);
+  const discLetter = getDiscLetter(personalityTest?.dominantColor);
+  const discProfile = discProfilesFr[colorKey] || discProfilesFr.V;
+  const signature = personalitySignaturesFr[colorKey] || personalitySignaturesFr.V;
+  const profileDetail = PROFILE_DETAILS_MAP[colorKey] || PROFILE_DETAILS_MAP.V;
+
+  const domainInfo = getDomainChoiceLabels("fr", user.domaine, user.speciality);
+  const recommendedJobs = getRecommendedJobs("fr", user.domaine, user.speciality, discLetter);
 
   const handleBlock = () => {
     alert("User blocked successfully!");
@@ -113,20 +184,20 @@ export default function UserDetail() {
             </div>
             <div className="flex items-center space-x-3 mt-4">
               <button
-                onClick={() => alert('Message feature coming soon!')}
-                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+                onClick={() => setShowEditModal(true)}
+                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
               >
                 ✏️ Edit Profile
               </button>
               <button
                 onClick={() => alert('Message feature coming soon!')}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
               >
                 💬 Message
               </button>
               <button
-                onClick={() => alert('Message feature coming soon!')}
-                className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
+                onClick={() => setShowBlockModal(true)}
+                className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition"
               >
                 🚫 Block User
               </button>
@@ -143,7 +214,7 @@ export default function UserDetail() {
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Activity Stats</h3>
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <span className="text-gray-600">� Certificates Sent</span>
+                <span className="text-gray-600">📜 Certificates Sent</span>
                 <span className="font-bold text-gray-900">{user.certificateSentCount || 0}</span>
               </div>
               <div className="flex items-center justify-between">
@@ -159,9 +230,30 @@ export default function UserDetail() {
               {user.profilePhoto && (
                 <div className="flex items-center justify-between border-t pt-4">
                   <span className="text-gray-600">📸 Profile Photo</span>
-                  <span className="text-xs text-green-600">✓ Set</span>
+                  <span className="text-xs text-green-600 font-semibold">✓ Set</span>
                 </div>
               )}
+            </div>
+          </div>
+
+          {/* User Onboarding Guide Preferences */}
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <span>🎯</span> Target Domain & Specialty
+            </h3>
+            <div className="space-y-3">
+              <div>
+                <p className="text-xs text-gray-500 uppercase mb-1">Domain (Domaine)</p>
+                <p className="text-sm font-semibold text-gray-900">
+                  {domainInfo?.domainLabel || (user.domaine != null ? `Domain #${user.domaine}` : "Not selected yet")}
+                </p>
+              </div>
+              <div>
+                <p className="text-xs text-gray-500 uppercase mb-1">Specialty (Spécialité)</p>
+                <p className="text-sm font-semibold text-blue-600">
+                  {domainInfo?.specialtyLabel || (user.speciality != null ? `Specialty #${user.speciality}` : "Not selected yet")}
+                </p>
+              </div>
             </div>
           </div>
 
@@ -213,43 +305,131 @@ export default function UserDetail() {
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Payment Info Card */}
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Subscription</h3>
-            <div className="space-y-3">
-              <div>
-                <p className="text-xs text-gray-500 uppercase mb-1">Plan</p>
-                <span className={`px-3 py-1 inline-flex text-sm font-semibold rounded-full ${user.payment?.subscriptionType === "premium"
-                  ? "bg-yellow-100 text-yellow-800"
-                  : "bg-gray-100 text-gray-800"
-                  }`}>
-                  {(user.payment?.subscriptionType || 'free').toUpperCase()}
-                </span>
-              </div>
-              <div>
-                <p className="text-xs text-gray-500 uppercase mb-1">Status</p>
-                <span className={`px-3 py-1 inline-flex text-xs font-semibold rounded-full ${user.payment?.subscriptionStatus === "active"
-                  ? "bg-green-100 text-green-800"
-                  : user.payment?.subscriptionStatus === "trial"
-                    ? "bg-blue-100 text-blue-800"
-                    : "bg-red-100 text-red-800"
-                  }`}>
-                  {(user.payment?.subscriptionStatus || 'active').toUpperCase()}
-                </span>
-              </div>
-              {user.payment?.totalSpent !== undefined && (
-                <div className="border-t pt-3">
-                  <p className="text-xs text-gray-500 uppercase mb-1">Total Spent</p>
-                  <p className="text-lg font-bold text-green-600">${user.payment.totalSpent.toFixed(2)}</p>
+        {/* Right Column - Additional Info & Personality Profile */}
+        <div className="lg:col-span-2 space-y-6">
+
+          {/* 🌟 Personality Profile & Recommendations Card */}
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200 space-y-6">
+            <div className="flex items-center justify-between border-b pb-4">
+              <div className="flex items-center space-x-3">
+                <span className="text-3xl">{signature.emoji}</span>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    Personality Profile & Recommendations
+                  </h3>
+                  <p className="text-sm text-gray-500">
+                    {discProfile.profileName} — {profileDetail.title}
+                  </p>
                 </div>
+              </div>
+              <span className={`px-4 py-1.5 text-sm font-bold rounded-full ${
+                colorKey === 'R' ? 'bg-red-100 text-red-800 border border-red-300' :
+                colorKey === 'J' ? 'bg-yellow-100 text-yellow-800 border border-yellow-300' :
+                colorKey === 'B' ? 'bg-blue-100 text-blue-800 border border-blue-300' :
+                'bg-green-100 text-green-800 border border-green-300'
+              }`}>
+                DISC ({discLetter}) — {signature.colorName}
+              </span>
+            </div>
+
+            {/* Motivational Signature Quote */}
+            <div className="p-4 bg-gray-50 border-l-4 border-blue-500 rounded-r-lg italic text-gray-700 text-sm">
+              "{signature.signature}"
+            </div>
+
+            {/* Profile Overview Description */}
+            <div>
+              <h4 className="text-xs uppercase font-semibold text-gray-500 mb-1">Overview</h4>
+              <p className="text-sm text-gray-700">{profileDetail.description}</p>
+            </div>
+
+            {/* Main Traits */}
+            <div>
+              <h4 className="text-xs uppercase font-semibold text-gray-500 mb-2">Main Traits (Traits Principaux)</h4>
+              <div className="flex flex-wrap gap-2">
+                {discProfile.traits.map((trait: string, idx: number) => (
+                  <span
+                    key={`trait-${idx}`}
+                    className="px-3 py-1 bg-purple-50 text-purple-700 border border-purple-200 text-xs font-medium rounded-lg"
+                  >
+                    ✦ {trait}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Strengths & Effort Points Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2 border-t">
+              <div>
+                <h4 className="text-xs uppercase font-semibold text-green-700 mb-2 flex items-center gap-1">
+                  <span>💪</span> Strengths (Points Forts)
+                </h4>
+                <div className="space-y-1.5">
+                  {profileDetail.strengths.map((item: string, idx: number) => (
+                    <div key={`str-${idx}`} className="flex items-center text-xs text-gray-700 bg-green-50/70 p-2 rounded-lg border border-green-100">
+                      <span className="mr-2 text-green-600 font-bold">✓</span> {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-xs uppercase font-semibold text-amber-700 mb-2 flex items-center gap-1">
+                  <span>🎯</span> Effort Points (Axes d'amélioration)
+                </h4>
+                <div className="space-y-1.5">
+                  {profileDetail.efforts.map((item: string, idx: number) => (
+                    <div key={`eff-${idx}`} className="flex items-center text-xs text-gray-700 bg-amber-50/70 p-2 rounded-lg border border-amber-100">
+                      <span className="mr-2 text-amber-600 font-bold">▲</span> {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Growth Recommendations */}
+            <div className="pt-2 border-t">
+              <h4 className="text-xs uppercase font-semibold text-blue-700 mb-2 flex items-center gap-1">
+                <span>🚀</span> Actionable Recommendations
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {profileDetail.recommendations.map((item: string, idx: number) => (
+                  <span
+                    key={`reco-${idx}`}
+                    className="px-3 py-1.5 bg-blue-50 text-blue-700 border border-blue-200 text-xs font-medium rounded-lg"
+                  >
+                    💡 {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Recommended Jobs */}
+            <div className="pt-2 border-t">
+              <h4 className="text-xs uppercase font-semibold text-indigo-700 mb-2 flex items-center gap-1">
+                <span>💼</span> Recommended Jobs (Métiers Recommandés)
+              </h4>
+              {recommendedJobs.length > 0 ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {recommendedJobs.map((job: string, idx: number) => (
+                    <div
+                      key={`job-${idx}`}
+                      className="p-2.5 bg-indigo-50/80 border border-indigo-200 rounded-lg text-xs font-medium text-indigo-900 flex items-center"
+                    >
+                      <span className="mr-2 text-indigo-500">📌</span> {job}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-xs text-gray-500 italic">
+                  No specific job recommendations found for this domain ({user.domaine ?? "none"}) & specialty ({user.speciality ?? "none"}).
+                </p>
               )}
             </div>
           </div>
-        </div>
 
-        {/* Right Column - Additional Info */}
-        <div className="lg:col-span-2 space-y-6">
           {/* User Details Card */}
           <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">User Information</h3>
@@ -519,8 +699,7 @@ export default function UserDetail() {
               <button
                 type="button"
                 onClick={() => setShowBlockModal(false)}
-                style={{ color: 'red' }}
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 text-black"
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 text-gray-700"
               >
                 Cancel
               </button>

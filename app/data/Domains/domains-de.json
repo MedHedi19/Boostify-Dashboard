@@ -1,0 +1,126 @@
+{
+  "domains": [
+    {
+      "label": "A. Business & Management",
+      "specialties": [
+        "Management",
+        "Marketing",
+        "Digitales Marketing",
+        "Internationaler Handel",
+        "Finanzen",
+        "Buchhaltung",
+        "Prüfung (Audit)",
+        "Unternehmertum",
+        "Personalmanagement",
+        "Logistik & Lieferkette"
+      ]
+    },
+    {
+      "label": "B. IT & Digital",
+      "specialties": [
+        "Webentwicklung",
+        "Mobile Entwicklung",
+        "Künstliche Intelligenz",
+        "Data Science / Big Data",
+        "Cybersicherheit",
+        "Netzwerke & Telekom",
+        "UX/UI Design",
+        "Spielentwicklung",
+        "Cloud Computing"
+      ]
+    },
+    {
+      "label": "C. Ingenieurwesen & Technik",
+      "specialties": [
+        "Industrielle Technik",
+        "Maschinenbau",
+        "Elektrotechnik",
+        "Bauingenieurwesen",
+        "Chemieingenieurwesen",
+        "Energietechnik",
+        "Industrielle Instandhaltung",
+        "Automatisierung & Robotik"
+      ]
+    },
+    {
+      "label": "D. Naturwissenschaften & Gesundheit",
+      "specialties": [
+        "Biologie",
+        "Biochemie",
+        "Biotechnologie",
+        "Chemie",
+        "Physik",
+        "Medizin",
+        "Pharmazie",
+        "Krankenpflege",
+        "Ernährung",
+        "Öffentliche Gesundheit"
+      ]
+    },
+    {
+      "label": "E. Kreativ & Medien",
+      "specialties": [
+        "Grafikdesign",
+        "Audiovisuell",
+        "Journalismus",
+        "Kommunikation",
+        "Fotografie",
+        "Videoschnitt",
+        "2D/3D Animation",
+        "Content Creation"
+      ]
+    },
+    {
+      "label": "F. Recht & Sozialwissenschaften",
+      "specialties": [
+        "Recht",
+        "Politikwissenschaft",
+        "Soziologie",
+        "Psychologie",
+        "Internationale Beziehungen",
+        "Soziale Arbeit",
+        "Philosophie",
+        "Geschichte"
+      ]
+    },
+    {
+      "label": "G. Architektur & Umwelt",
+      "specialties": [
+        "Architektur",
+        "Stadtplanung",
+        "Innenarchitektur",
+        "Umwelt & nachhaltige Entwicklung",
+        "Geomatik"
+      ]
+    },
+    {
+      "label": "H. Landwirtschaft & Lebensmittelindustrie",
+      "specialties": [
+        "Agronomie",
+        "Tierproduktion",
+        "Lebensmittelindustrie",
+        "Agrartechnologie"
+      ]
+    },
+    {
+      "label": "I. Dienstleistungen & Gastgewerbe",
+      "specialties": ["Tourismus", "Gastgewerbe", "Gastronomie", "Events"]
+    },
+    {
+      "label": "J. Bildung & Ausbildung",
+      "specialties": [
+        "Lehre",
+        "Berufliche Bildung",
+        "Coaching & persönliche Entwicklung"
+      ]
+    },
+    {
+      "label": "K. Sprachen & Literatur",
+      "specialties": [
+        "Übersetzung & Dolmetschen",
+        "Sprachunterricht",
+        "Philologie & Literatur"
+      ]
+    }
+  ]
+}

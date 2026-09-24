@@ -1,0 +1,126 @@
+{
+  "domains": [
+    {
+      "label": "A. Business & Management",
+      "specialties": [
+        "Gestion",
+        "Marketing",
+        "Marketing digital",
+        "Commerce international",
+        "Finance",
+        "Comptabilité",
+        "Audit",
+        "Entrepreneuriat",
+        "Management des ressources humaines",
+        "Logistique & Supply Chain"
+      ]
+    },
+    {
+      "label": "B. Informatique & Digital",
+      "specialties": [
+        "Développement web",
+        "Développement mobile",
+        "Intelligence artificielle",
+        "Data Science / Big Data",
+        "Cybersécurité",
+        "Réseaux & Télécoms",
+        "UX/UI Design",
+        "Game Development",
+        "Cloud Computing"
+      ]
+    },
+    {
+      "label": "C. Ingénierie & Technique",
+      "specialties": [
+        "Génie industriel",
+        "Génie mécanique",
+        "Génie électrique",
+        "Génie civil",
+        "Génie chimique",
+        "Génie énergétique",
+        "Maintenance industrielle",
+        "Automatique & Robotique"
+      ]
+    },
+    {
+      "label": "D. Sciences & Santé",
+      "specialties": [
+        "Biologie",
+        "Biochimie",
+        "Biotechnologie",
+        "Chimie",
+        "Physique",
+        "Médecine",
+        "Pharmacie",
+        "Soins infirmiers",
+        "Nutrition",
+        "Santé publique"
+      ]
+    },
+    {
+      "label": "E. Créatif & Média",
+      "specialties": [
+        "Design graphique",
+        "Audiovisuel",
+        "Journalisme",
+        "Communication",
+        "Photographie",
+        "Montage vidéo",
+        "Animation 2D/3D",
+        "Création de contenu"
+      ]
+    },
+    {
+      "label": "F. Droit & Sciences Sociales",
+      "specialties": [
+        "Droit",
+        "Sciences politiques",
+        "Sociologie",
+        "Psychologie",
+        "Relations internationales",
+        "Travail social",
+        "Philosophie",
+        "Histoire"
+      ]
+    },
+    {
+      "label": "G. Architecture & Environnement",
+      "specialties": [
+        "Architecture",
+        "Urbanisme",
+        "Design d'intérieur",
+        "Environnement & Développement durable",
+        "Géomatique"
+      ]
+    },
+    {
+      "label": "H. Agriculture & Agroalimentaire",
+      "specialties": [
+        "Agronomie",
+        "Production animale",
+        "Agroalimentaire",
+        "Technologies agricoles"
+      ]
+    },
+    {
+      "label": "I. Services & Hospitality",
+      "specialties": ["Tourisme", "Hôtellerie", "Restauration", "Événementiel"]
+    },
+    {
+      "label": "J. Éducation & Formation",
+      "specialties": [
+        "Enseignement",
+        "Formation professionnelle",
+        "Coaching & Développement personnel"
+      ]
+    },
+    {
+      "label": "K. Langues Vivantes & Littérature",
+      "specialties": [
+        "Traduction & Interprétation",
+        "Enseignement des langues",
+        "Lettres & Littérature"
+      ]
+    }
+  ]
+}

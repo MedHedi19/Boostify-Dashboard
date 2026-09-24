@@ -18,6 +18,8 @@ export interface IUser extends Document {
   deletionTokenExpires?: Date;
   refreshToken?: string;
   certificateSentCount: number;
+  domaine?: number;
+  speciality?: number;
   payment?: {
     subscriptionType?: 'free' | 'premium';
     subscriptionStatus?: 'active' | 'expired' | 'cancelled' | 'trial';
@@ -96,6 +98,14 @@ const userSchema = new Schema<IUser>({
   certificateSentCount: {
     type: Number,
     default: 0,
+  },
+  domaine: {
+    type: Number,
+    default: null,
+  },
+  speciality: {
+    type: Number,
+    default: null,
   },
   payment: {
     subscriptionType: {

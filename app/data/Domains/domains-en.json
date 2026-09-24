@@ -1,0 +1,126 @@
+{
+  "domains": [
+    {
+      "label": "A. Business & Management",
+      "specialties": [
+        "Management",
+        "Marketing",
+        "Digital Marketing",
+        "International Trade",
+        "Finance",
+        "Accounting",
+        "Audit",
+        "Entrepreneurship",
+        "Human Resources Management",
+        "Logistics & Supply Chain"
+      ]
+    },
+    {
+      "label": "B. IT & Digital",
+      "specialties": [
+        "Web Development",
+        "Mobile Development",
+        "Artificial Intelligence",
+        "Data Science / Big Data",
+        "Cybersecurity",
+        "Networks & Telecoms",
+        "UX/UI Design",
+        "Game Development",
+        "Cloud Computing"
+      ]
+    },
+    {
+      "label": "C. Engineering & Technical",
+      "specialties": [
+        "Industrial Engineering",
+        "Mechanical Engineering",
+        "Electrical Engineering",
+        "Civil Engineering",
+        "Chemical Engineering",
+        "Energy Engineering",
+        "Industrial Maintenance",
+        "Automation & Robotics"
+      ]
+    },
+    {
+      "label": "D. Science & Health",
+      "specialties": [
+        "Biology",
+        "Biochemistry",
+        "Biotechnology",
+        "Chemistry",
+        "Physics",
+        "Medicine",
+        "Pharmacy",
+        "Nursing",
+        "Nutrition",
+        "Public Health"
+      ]
+    },
+    {
+      "label": "E. Creative & Media",
+      "specialties": [
+        "Graphic Design",
+        "Audiovisual",
+        "Journalism",
+        "Communication",
+        "Photography",
+        "Video Editing",
+        "2D/3D Animation",
+        "Content Creation"
+      ]
+    },
+    {
+      "label": "F. Law & Social Sciences",
+      "specialties": [
+        "Law",
+        "Political Science",
+        "Sociology",
+        "Psychology",
+        "International Relations",
+        "Social Work",
+        "Philosophy",
+        "History"
+      ]
+    },
+    {
+      "label": "G. Architecture & Environment",
+      "specialties": [
+        "Architecture",
+        "Urban Planning",
+        "Interior Design",
+        "Environment & Sustainable Development",
+        "Geomatics"
+      ]
+    },
+    {
+      "label": "H. Agriculture & Food Industry",
+      "specialties": [
+        "Agronomy",
+        "Animal Production",
+        "Food Industry",
+        "Agricultural Technology"
+      ]
+    },
+    {
+      "label": "I. Services & Hospitality",
+      "specialties": ["Tourism", "Hospitality", "Restaurant", "Events"]
+    },
+    {
+      "label": "J. Education & Training",
+      "specialties": [
+        "Teaching",
+        "Vocational Training",
+        "Coaching & Personal Development"
+      ]
+    },
+    {
+      "label": "K. Languages & Literature",
+      "specialties": [
+        "Translation & Interpreting",
+        "Language Teaching",
+        "Letters & Literature"
+      ]
+    }
+  ]
+}

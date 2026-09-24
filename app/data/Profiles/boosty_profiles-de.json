@@ -1,0 +1,450 @@
+{
+  "Business & Management": {
+    "Management": {
+      "D": ["Filialleiter", "Geschäftsbereichsleiter", "Operations Manager", "Strategieberater", "Projektmanager"],
+      "I": ["Key Account Manager", "Partnership Manager", "Vertriebsleiter", "Eventmanager", "Customer Success Lead"],
+      "S": ["Büroleiter", "Verwaltungskoordinator", "Kundenservice-Manager", "Backoffice-Manager", "Assistent der Geschäftsführung"],
+      "C": ["Controller", "Business Analyst", "Interner Auditor", "PMO", "Prozessmanager"]
+    },
+    "Marketing": {
+      "D": ["Growth Manager", "Brand Manager", "Acquisition Manager", "Traffic Manager", "Digital Business Developer"],
+      "I": ["Community Manager", "Influence Manager", "Social-Media-Stratege", "Event-Marketing-Manager", "Content Creator"],
+      "S": ["CRM-Manager", "Customer Success Marketing", "Loyalty Manager", "E-Mail-Marketing-Spezialist", "Kundenbeziehungsbeauftragter"],
+      "C": ["Marketinganalyst", "SEO-Spezialist", "Data-Marketing-Analyst", "UX-Researcher", "Conversion-Rate-Optimizer"]
+    },
+    "Digital Marketing": {
+      "D": ["Growth Hacker", "Performance-Marketing-Manager", "Acquisition Manager", "E-Commerce-Manager", "Head of Digital"],
+      "I": ["Content Manager", "Social-Media-Stratege", "TikTok-Stratege", "Influence Manager", "YouTube-Stratege"],
+      "S": ["CRM-Spezialist", "Customer-Journey-Manager", "Community Builder", "E-Mail-Automation-Spezialist", "Online-Support-Manager"],
+      "C": ["SEO/SEA-Spezialist", "Marketing-Automation-Spezialist", "Webanalyst", "UX-Analyst", "Data-Marketing-Analyst"]
+    },
+    "International Trade": {
+      "D": ["Exportmanager", "International Business Developer", "Country Manager", "Import-Export-Manager", "Trader"],
+      "I": ["Key Account Manager", "Partnership Manager", "Business Connector", "Manager für internationale Messen", "Internationaler Verhandler"],
+      "S": ["Exportkoordinator", "Internationaler Kundenservice", "Logistikkoordinator", "Account Support", "Supply-Liaison-Officer"],
+      "C": ["Internationaler Marktanalyst", "Zollspezialist", "Compliance Officer", "Pricing Analyst", "Beschaffungsanalyst"]
+    },
+    "Finance": {
+      "D": ["CFO", "Investmentmanager", "Venture-Capital-Analyst", "Finanzberater", "Risikomanager"],
+      "I": ["Vermögensberater", "Finanzberater", "Relationship Manager", "Fintech-Vertrieb", "Versicherungsberater"],
+      "S": ["Treasury-Assistent", "Kreditbeauftragter", "Kundenbankberater", "Portfoliomanager", "Backoffice Finance"],
+      "C": ["Finanzanalyst", "Financial Controller", "Compliance-Analyst", "Finanzprüfer", "Data Analyst Finance"]
+    },
+    "Accounting": {
+      "D": ["Hauptbuchhalter", "Steuer-Manager", "Kaufmännischer Leiter", "Inkasso-Manager", "ERP-Berater"],
+      "I": ["Steuerberater", "Buchhaltungsberater", "ERP-Trainer", "Account Manager (Buchhaltungssoftware)", "Unternehmensberater"],
+      "S": ["Buchhalter", "Buchhaltungsassistent", "Abrechnungsmanager", "Lohnsachbearbeiter", "Finanzassistent"],
+      "C": ["Wirtschaftsprüfer", "Auditor", "Steuerspezialist", "Interner Controller", "Compliance-Analyst"]
+    },
+    "Audit": {
+      "D": ["Leiter Revision", "Manager Interne Revision", "Governance-Manager", "Betrugsermittler", "Risikoberater"],
+      "I": ["Prüfungsberater", "Unternehmensberater", "Compliance-Trainer", "Kundenberatung", "Finanzberater"],
+      "S": ["Prüfungsassistent", "Qualitätskontrollbeauftragter", "Dokumentationsbeauftragter", "Compliance Support", "Prozessprüfer"],
+      "C": ["Interner Auditor", "Externer Auditor", "Risikoanalyst", "Qualitätscontroller", "Compliance-Analyst"]
+    },
+    "Entrepreneurship": {
+      "D": ["Startup-Gründer", "CEO", "Business-Stratege", "Product Owner", "Franchise-Inhaber"],
+      "I": ["Startup-Evangelist", "Sales-Gründer", "Markenunternehmer", "Pitch-Berater", "Networking-Spezialist"],
+      "S": ["Operations-Mitgründer", "Inhaber eines Dienstleistungsunternehmens", "Customer-Success-Gründer", "Community-Startup-Manager", "HR-Gründer"],
+      "C": ["SaaS-Analyst", "Finanzgründer", "Data-Startup-Gründer", "Prozess-Startup-Manager", "Tech-Startup-Analyst"]
+    },
+    "Human Resources Management": {
+      "D": ["HR-Manager", "Talent Acquisition Lead", "HR Business Partner", "Headhunter", "Learning Manager"],
+      "I": ["Recruiter", "Employer-Branding-Manager", "Karrierecoach", "Soft-Skills-Trainer", "Community HR"],
+      "S": ["HR-Assistent", "Lohnmanager", "Mitarbeiterbetreuer", "Schulungskoordinator", "Employee Success Manager"],
+      "C": ["HR-Analyst", "Vergütungsanalyst", "HRIS-Spezialist", "Compliance HR", "Talent-Data-Analyst"]
+    },
+    "Logistics & Supply Chain": {
+      "D": ["Supply-Chain-Manager", "Operations Manager", "Einkaufsleiter", "Fuhrparkleiter", "Lagerleiter"],
+      "I": ["Lieferantenbeziehungsmanager", "Logistikvertrieb", "Business Development Supply", "Verhandler", "Transportkoordinator"],
+      "S": ["Logistikkoordinator", "Bestandsmanager", "Planungsassistent", "Disponent", "Kundenoperationen"],
+      "C": ["Demand Planner", "Einkaufsanalyst", "Supply Analyst", "Data Supply Analyst", "Qualitätsbeauftragter Supply"]
+    }
+  },
+  "IT & Digital": {
+    "Web Development": {
+      "D": ["Tech Lead", "Web Product Manager", "Startup-CTO", "Scrum Master", "Web-Projektmanager"],
+      "I": ["Webberater", "Customer Success Tech", "Sales Engineer", "Web-Trainer", "Tech Evangelist"],
+      "S": ["Web-Integrator", "QA-Tester", "Web-Support", "Webmaster", "WordPress-Spezialist"],
+      "C": ["Frontend-Entwickler", "Backend-Entwickler", "Full-Stack-Entwickler", "DevOps Engineer", "Softwareentwickler"]
+    },
+    "Mobile Development": {
+      "D": ["Mobile-Projektmanager", "App Product Owner", "Mobile CTO", "Startup-Gründer (App)", "Mobile Tech Lead"],
+      "I": ["Mobile-Berater", "App Sales Engineer", "Mobile-Trainer", "Tech Evangelist", "Mobile Customer Success"],
+      "S": ["Mobile QA-Tester", "Mobile Support", "App-Integrator", "App-Wartungsspezialist", "Mobile UX-Assistent"],
+      "C": ["Android-Entwickler", "iOS-Entwickler", "Flutter-Entwickler", "React-Native-Entwickler", "Mobile Engineer"]
+    },
+    "Artificial Intelligence": {
+      "D": ["AI Product Manager", "AI-Stratege", "Chief Innovation Officer", "AI-Berater", "Head of AI"],
+      "I": ["AI-Trainer", "AI-Berater", "Prompt Engineer", "AI-Vertriebsspezialist", "Data Storyteller"],
+      "S": ["AI-Support-Analyst", "Datenkoordinator", "BI-Assistent", "AI-Operations-Assistent", "Reporting-Spezialist"],
+      "C": ["Machine-Learning-Engineer", "NLP-Engineer", "Computer-Vision-Engineer", "AI Engineer", "Deep-Learning-Engineer"]
+    },
+    "Data Science / Big Data": {
+      "D": ["Head of Data", "Data-Stratege", "Chief Data Officer", "BI-Manager", "Data Product Manager"],
+      "I": ["Data Storyteller", "BI-Berater", "Analytics-Berater", "Data-Trainer", "Presales Data"],
+      "S": ["Reporting-Analyst", "Datenkoordinator", "CRM-Analyst", "BI-Assistent", "Data Support Analyst"],
+      "C": ["Data Scientist", "Data Analyst", "Data Engineer", "Big-Data-Engineer", "Business-Intelligence-Analyst"]
+    },
+    "Cybersecurity": {
+      "D": ["Sicherheitsmanager", "SOC-Manager", "Cybersicherheitsberater", "Ethical-Hacking-Lead", "Risikomanager"],
+      "I": ["Security-Awareness-Trainer", "Presales Cybersicherheit", "Cyber-Berater", "Tech Communicator", "Kundenberater"],
+      "S": ["SOC-Analyst", "Sicherheitsoperator", "Incident Responder", "Monitoring-Spezialist", "Security Support"],
+      "C": ["Ethical Hacker", "Penetrationstester", "Malware-Analyst", "Forensik-Analyst", "GRC-Analyst"]
+    },
+    "Networks & Telecoms": {
+      "D": ["Telecom-Projektmanager", "Netzwerkmanager", "Innovationsmanager", "Operations Manager", "Telecom-Berater"],
+      "I": ["Telecom-Vertrieb", "Telecom Presales", "Telecom Customer Success", "Telecom-Trainer", "Netzwerkberater"],
+      "S": ["NOC-Analyst", "Telecom-Helpdesk", "Netzwerksupport", "Außendienstingenieur", "Support-Spezialist"],
+      "C": ["Netzwerkingenieur", "Cloud-Netzwerkingenieur", "RF-Ingenieur", "VoIP-Ingenieur", "Cyber-Telecom-Analyst"]
+    },
+    "UX/UI Design": {
+      "D": ["Product Designer", "Creative Director", "UX-Manager", "Design Lead", "Brand Designer"],
+      "I": ["UI-Influencer", "Motion Designer", "Content Designer", "Social-Media-Designer", "Event Designer"],
+      "S": ["Grafikdesigner", "UX-Assistent", "Design Support", "Illustrator", "Printdesigner"],
+      "C": ["UX-Researcher", "UI-Designer", "UX/UI-Designer", "Design-Analyst", "Interaction Designer"]
+    },
+    "Game Development": {
+      "D": ["Game Producer", "Gaming Product Owner", "Studio Manager", "Gaming-Unternehmer", "Gaming-Projektmanager"],
+      "I": ["Game Streamer", "Gaming Community Manager", "Game-Marketing-Spezialist", "Gaming Content Creator", "Gaming Evangelist"],
+      "S": ["QA Game Tester", "Gaming Support", "Level-Assistent", "Gaming Community Support", "Player Experience Specialist"],
+      "C": ["Game Developer", "Unity-Entwickler", "Unreal-Engine-Entwickler", "Gameplay-Programmierer", "Game Designer"]
+    },
+    "Cloud Computing": {
+      "D": ["Cloud-Architektur-Manager", "DevOps Lead", "Cloud-Projektmanager", "Cloud CTO", "Innovationsmanager"],
+      "I": ["Cloud-Berater", "Cloud Presales", "Cloud-Trainer", "Cloud Tech Evangelist", "Cloud Customer Success"],
+      "S": ["Cloud Support Engineer", "Systemadministrator", "DevOps Support", "IT-Support-Spezialist", "Cloud Operations"],
+      "C": ["Cloud Engineer", "DevOps Engineer", "AWS Engineer", "Azure Engineer", "Site Reliability Engineer"]
+    }
+  },
+  "Engineering & Technical": {
+    "Industrial Engineering": {
+      "D": ["Werksleiter", "Produktionsleiter", "Lean Manager", "Operations Manager", "Industrieberater"],
+      "I": ["Business Engineer", "Technischer Vertriebsingenieur", "Lean-Trainer", "Industrial Account Manager", "Berater"],
+      "S": ["Produktionsplaner", "Wartungskoordinator", "HSE-Assistent", "Prozessassistent", "Vorgesetzter"],
+      "C": ["Prozessingenieur", "Qualitätsingenieur", "Lean-Analyst", "Industrie-Data-Analyst", "Wartungsingenieur"]
+    },
+    "Mechanical Engineering": {
+      "D": ["Wartungsleiter", "Maschinenbau-Projektmanager", "Werkaufseher", "Operations Lead", "Maschinenbauberater"],
+      "I": ["Vertriebsingenieur", "Technischer Trainer", "Serviceberater", "Kundeningenieur", "Maschinenbauberater"],
+      "S": ["Wartungstechniker", "Werkstattleiter", "Support Engineer", "Servicetechniker", "Produktionsassistent"],
+      "C": ["Konstrukteur", "CAD-Ingenieur", "Simulationsingenieur", "F&E-Ingenieur", "Qualitätsingenieur"]
+    },
+    "Electrical Engineering": {
+      "D": ["Elektro-Projektmanager", "Operations Manager", "Energiemanager", "Werksleiter", "Berater"],
+      "I": ["Vertriebsingenieur", "Technischer Trainer", "Presales Engineer", "Business Engineer", "Customer Support Engineer"],
+      "S": ["Wartungsingenieur", "Installationsingenieur", "Support Engineer", "QA-Techniker", "Außendiensttechniker"],
+      "C": ["Automatisierungsingenieur", "Embedded-Systems-Ingenieur", "Elektronikingenieur", "IoT-Ingenieur", "F&E-Ingenieur"]
+    },
+    "Civil Engineering": {
+      "D": ["Polier", "Bauleiter", "Bau-Projektmanager", "Standortleiter", "Bauunternehmer"],
+      "I": ["Immobilienberater", "Bau Business Developer", "Bauvertrieb", "Stadtberater", "Verhandler"],
+      "S": ["Baustellenaufseher", "Standortkoordinator", "Sicherheitsbeauftragter", "Planungsassistent", "Technischer Assistent"],
+      "C": ["Tragwerksplaner", "BIM-Ingenieur", "Mengenermittler", "Planungsingenieur", "Konstrukteur"]
+    },
+    "Chemical Engineering": {
+      "D": ["Chemische Produktionsleitung", "Werksleiter", "Operations Manager", "Industrieberater", "HSE-Manager"],
+      "I": ["Chemie-Vertriebsingenieur", "Technischer Berater", "Chemie-Trainer", "Chemie Business Developer", "Kundenberater"],
+      "S": ["Prozessassistent", "Laborkoordinator", "Sicherheitsassistent", "Qualitätssupport", "Produktionssupport"],
+      "C": ["Chemieprozessingenieur", "F&E-Ingenieur", "Qualitätsingenieur", "Formulierungsingenieur", "Laboranalyst"]
+    },
+    "Energy Engineering": {
+      "D": ["Energiemanager", "Projektmanager Erneuerbare Energien", "Operations Manager", "Nachhaltigkeitsmanager", "Energieberater"],
+      "I": ["Energie-Vertriebsingenieur", "Technischer Trainer", "Energieberater", "Energie Business Developer", "Kundenberater"],
+      "S": ["Außendienstingenieur", "Energiewartung", "Support Engineer", "Installationskoordinator", "Technischer Assistent"],
+      "C": ["Ingenieur Erneuerbare Energien", "Energieanalyst", "Solaringenieur", "HLK-Ingenieur", "Effizienzingenieur"]
+    },
+    "Industrial Maintenance": {
+      "D": ["Wartungsleiter", "Operations Manager", "Werkaufseher", "Zuverlässigkeitsmanager", "Technischer Manager"],
+      "I": ["Technischer Berater", "Vertriebsingenieur", "Wartungstrainer", "Serviceberater", "Business Developer"],
+      "S": ["Wartungstechniker", "Außendiensttechniker", "Werkstattleiter", "Service Support", "Installationstechniker"],
+      "C": ["Zuverlässigkeitsingenieur", "Wartungsplaner", "Diagnoseingenieur", "Automatisierungs-Wartungsingenieur", "QA-Ingenieur"]
+    },
+    "Automation & Robotics": {
+      "D": ["Robotik-Projektmanager", "Automatisierungsmanager", "Innovationsmanager", "Robotik-CTO", "Industrieberater"],
+      "I": ["Robotik-Berater", "Robotik Presales", "Robotik-Trainer", "Tech Evangelist", "Business Engineer"],
+      "S": ["Automatisierungs-Support", "Robotik-Techniker", "Robotik-Wartung", "Installations-Support", "QA Robotik"],
+      "C": ["Automatisierungsingenieur", "Robotikingenieur", "SPS-Programmierer", "Embedded Engineer", "AI-Robotik-Ingenieur"]
+    }
+  },
+  "Sciences & Health": {
+    "Biology": {
+      "D": ["Laborleiter", "Qualitätsmanager", "Wissenschaftlicher Projektmanager", "Wissenschaftlicher Berater", "Biotech-Unternehmer"],
+      "I": ["Biologie-Trainer", "Wissenschaftlicher Berater", "Pharmareferent", "Wissenschaftskommunikator", "Biotech-Vertrieb"],
+      "S": ["Labortechniker", "Forschungsassistent", "Laborkoordinator", "Qualitätssupport", "Klinischer Assistent"],
+      "C": ["Biologe", "Biologieforscher", "Biomedizinischer Analyst", "Mikrobiologe", "Genetiker"]
+    },
+    "Biochemistry": {
+      "D": ["Labormanager", "Pharma-Produktionsleiter", "Qualitätsmanager", "Biochemie-Berater", "Wissenschaftlicher Unternehmer"],
+      "I": ["Biochemie-Berater", "Pharma-Vertrieb", "Wissenschaftlicher Trainer", "Pharmareferent", "Wissenschaftlicher Berater"],
+      "S": ["Laborassistent", "Qualitätskontrolle", "Biochemie-Techniker", "Klinischer Assistent", "Wissenschaftlicher Support"],
+      "C": ["Biochemiker", "Biochemischer Analyst", "F&E-Forscher", "Qualitätscontroller", "Formulierungswissenschaftler"]
+    },
+    "Biotechnology": {
+      "D": ["Biotech-Projektmanager", "Innovationsmanager", "Biotech-Unternehmer", "Produktionsleiter", "Biotech-Berater"],
+      "I": ["Biotech Business Developer", "Wissenschaftlicher Vertrieb", "Biotech-Trainer", "Wissenschaftskommunikator", "Medizinischer Berater"],
+      "S": ["Forschungsassistent", "Klinischer Support", "Qualitätssupport", "Produktionsassistent", "Laborkoordinator"],
+      "C": ["Biotech-Ingenieur", "Forschungswissenschaftler", "Klinischer Datenanalyst", "F&E-Ingenieur", "Qualitätsanalyst"]
+    },
+    "Chemistry": {
+      "D": ["Werksleiter", "Produktionsleiter", "HSE-Manager", "Chemie-Berater", "Operations Manager"],
+      "I": ["Chemie-Vertriebsingenieur", "Chemie-Berater", "Chemie-Trainer", "Business Developer", "Kundenberater"],
+      "S": ["Labortechniker", "Produktionsassistent", "Sicherheitsassistent", "Qualitätssupport", "Prozessassistent"],
+      "C": ["Chemiker", "Laboranalyst", "Qualitätscontroller", "Formulierungsingenieur", "Chemieforscher"]
+    },
+    "Physics": {
+      "D": ["Wissenschaftlicher Projektmanager", "Technischer Berater", "Innovationsmanager", "Tech-Unternehmer", "Operations Manager"],
+      "I": ["Wissenschaftlicher Trainer", "Physik-Berater", "Wissenschaftskommunikator", "Vertriebsingenieur", "Technischer Berater"],
+      "S": ["Laborassistent", "Technischer Support", "Instrumentierungstechniker", "QA Support", "Forschungsassistent"],
+      "C": ["Physiker", "Wissenschaftlicher Datenanalyst", "Forscher", "Instrumentierungsingenieur", "Simulationsingenieur"]
+    },
+    "Medicine": {
+      "D": ["Abteilungsleiter", "Klinischer Direktor", "Gesundheitsunternehmer", "Notarzt", "Krankenhausmanager"],
+      "I": ["Allgemeinmediziner", "Gesundheitscoach", "Medizinischer Berater", "Pharmareferent", "Gesundheitsredner"],
+      "S": ["Hausarzt", "Palliativpflege", "Medizinischer Assistent", "Care Manager", "Koordinierende Pflegekraft"],
+      "C": ["Radiologe", "Medizinischer Biologe", "Medizinischer Forscher", "Pharmakovigilanz", "Gesundheitsanalyst"]
+    },
+    "Pharmacy": {
+      "D": ["Apothekenleiter", "Pharma Product Manager", "Pharma-Unternehmer", "Regulatory Lead", "Operations Lead"],
+      "I": ["Pharmareferent", "Pharma-Trainer", "Pharma-Vertrieb", "Beauty-Berater", "Brand Pharma"],
+      "S": ["Apotheker (Offizin)", "Apothekenassistent", "Pflegeberater", "Wellness-Coach", "Kundenberater"],
+      "C": ["Industrieapotheker", "QA Pharma", "Regulatory-Affairs-Spezialist", "F&E Pharma", "Klinischer Analyst"]
+    },
+    "Nursing": {
+      "D": ["Pflegedienstleitung", "Pflegekoordinator", "Klinischer Manager", "Stationsleiter", "Pflegeunternehmer"],
+      "I": ["Gesundheitscoach", "Patientenberater", "Pflegetrainer", "Gemeindegesundheitserzieher", "Medizinischer Supportberater"],
+      "S": ["Krankenhauspfleger", "Ambulante Pflegekraft", "Pflegehelfer", "Betreuer", "Pflegekoordinator"],
+      "C": ["Anästhesiepfleger", "OP-Pfleger", "Fachpfleger", "Klinischer Analyst", "Pflegequalitätsanalyst"]
+    },
+    "Nutrition": {
+      "D": ["Ernährungsmanager", "Ernährungsunternehmer", "Wellness-Manager", "Ernährungsberater", "Gesundheitsprogramm-Manager"],
+      "I": ["Ernährungscoach", "Gesundheitsinfluencer", "Ernährungsberater", "Wellness-Redner", "Gesundheitsmarkenbotschafter"],
+      "S": ["Ernährungswissenschaftler", "Diätberater", "Diätassistent", "Gesundheitssupport-Berater", "Ernährungspflege"],
+      "C": ["Diätassistent", "Ernährungsanalyst", "Ernährungsforscher", "Lebensmittelqualitätscontroller", "Klinischer Ernährungsanalyst"]
+    },
+    "Public Health": {
+      "D": ["Gesundheitsprogramm-Manager", "Politikberater", "NGO-Manager", "Direktor für öffentliche Gesundheit", "Gesundheitsberater"],
+      "I": ["Gemeindegesundheitsmanager", "Gesundheitserzieher", "Gesundheitsredner", "Gesundheitskommunikation", "Advocacy-Manager"],
+      "S": ["NGO-Koordinator", "Sozialarbeiter Gesundheit", "Programmassistent", "Gemeinschaftssupport", "Case Manager"],
+      "C": ["Epidemiologe", "Gesundheitsdatenanalyst", "Forscher öffentliche Gesundheit", "Politikanalyst", "Monitoring- und Evaluierungsbeauftragter"]
+    }
+  },
+  "Creative & Media": {
+    "Graphic Design": {
+      "D": ["Creative Director", "Art Director", "Brand Designer", "Product Designer", "Kreativunternehmer"],
+      "I": ["Social-Media-Designer", "Content Creator", "Motion Designer", "Event Designer", "UI-Influencer"],
+      "S": ["Grafikdesigner", "Printdesigner", "Illustrator", "Design Support", "Designassistent"],
+      "C": ["UX/UI-Designer", "Design-Analyst", "Packaging Designer", "Visual Designer", "UI-Designer"]
+    },
+    "Audiovisual": {
+      "D": ["Produktionsleiter", "Audiovisueller Produzent", "Medien-Projektmanager", "AV-Unternehmer", "Studio Manager"],
+      "I": ["TV-Moderator", "Moderator", "Reporter", "Content Creator", "Medienmoderator"],
+      "S": ["Produktionsassistent", "Floor-Koordinator", "Technischer Support", "Regieassistent", "Medien-Community"],
+      "C": ["Regisseur", "Videoeditor", "Tontechniker", "Beleuchtungstechniker", "Motion Designer"]
+    },
+    "Journalism": {
+      "D": ["Chefredakteur", "Mediendirektor", "Investigativjournalist", "Medienstratege", "Medienunternehmer"],
+      "I": ["TV-Journalist", "Reporter", "Moderator", "Podcaster", "Radiomoderator"],
+      "S": ["Redaktionsassistent", "Medien Community Manager", "Content-Koordinator", "Redaktionssupport", "Forschungsassistent"],
+      "C": ["Webjournalist", "Copywriter", "SEO-Autor", "Medienanalyst", "Fact Checker"]
+    },
+    "Communication": {
+      "D": ["Kommunikationsmanager", "PR-Manager", "Markenstratege", "Medienmanager", "Kommunikationsberater"],
+      "I": ["Community Manager", "Social-Media-Manager", "Eventmanager", "Influence Manager", "Redner"],
+      "S": ["Kommunikationsassistent", "Öffentlichkeitsarbeit", "Kundenbetreuung", "Community Support", "Assistent interne Kommunikation"],
+      "C": ["Copywriter", "Content-Stratege", "SEO-Autor", "Kommunikationsanalyst", "Dokumentationsbeauftragter"]
+    },
+    "Photography": {
+      "D": ["Fotografie-Unternehmer", "Fotografie Art Director", "Studio Manager", "Markenfotograf", "Eventfotograf"],
+      "I": ["Eventfotograf", "Fotografie-Influencer", "Reisefotograf", "Social Content Creator", "Porträtfotograf"],
+      "S": ["Fotoassistent", "Fotoretuscheur", "Studio Support", "Foto-Community", "Fotoarchivar"],
+      "C": ["Produktfotograf", "Professioneller Retuscheur", "Fotoredakteur", "Visueller Content-Analyst", "Katalogfotograf"]
+    },
+    "Video Editing": {
+      "D": ["Postproduktionsleiter", "Video-Unternehmer", "Video-Projektmanager", "Studio Manager", "Creative Lead"],
+      "I": ["Video Content Creator", "YouTube-Editor", "Social-Video-Stratege", "Influence Video Creator", "Medienmoderator"],
+      "S": ["Schnittassistent", "Produktionssupport", "Video-Community", "Junior Videoeditor", "Content-Assistent"],
+      "C": ["Videoeditor", "Motion Designer", "Videoeditor (technisch)", "Postproduktionsspezialist", "VFX-Editor"]
+    },
+    "2D/3D Animation": {
+      "D": ["Creative Director", "Animationsstudio-Manager", "Animations-Projektmanager", "Animationsunternehmer", "Art Lead"],
+      "I": ["Animations Content Creator", "Storyboard-Präsentator", "Animations-Influencer", "Medienanimator", "Kreativtrainer"],
+      "S": ["Animationsassistent", "Junior Designer", "Animations-Support", "Produktionsassistent", "Design-Community"],
+      "C": ["2D-Animator", "3D-Animator", "Motion Designer", "3D-Modellierer", "VFX-Artist"]
+    },
+    "Content Creation": {
+      "D": ["Brand Content Manager", "Digitalunternehmer", "Medienstratege", "Creative Director", "Content Producer"],
+      "I": ["Influencer", "YouTuber", "TikToker", "Podcaster", "Social-Media-Creator"],
+      "S": ["Community Builder", "Content-Assistent", "Social-Media-Assistent", "Kreativsupport", "Content-Koordinator"],
+      "C": ["Content-Stratege", "SEO Content Writer", "Drehbuchautor", "Content-Analyst", "Copywriter"]
+    }
+  },
+  "Law & Social Sciences": {
+    "Law": {
+      "D": ["Wirtschaftsanwalt", "Rechtsdirektor", "Compliance Manager", "LegalTech-Unternehmer", "Verhandler"],
+      "I": ["Anwalt", "Rechtsberater", "Mediator", "Rechtlicher HR-Berater", "Rechtliche Öffentlichkeitsarbeit"],
+      "S": ["Rechtsassistent", "Vertragsmanager", "Verwaltungsberater", "Notarassistent", "HR Support"],
+      "C": ["Rechtsberater", "Compliance Officer", "Steueranwalt", "Datenschutzbeauftragter", "Rechtsanalyst"]
+    },
+    "Political Science": {
+      "D": ["Politikberater", "NGO-Direktor", "Politikberater", "Kampagnenmanager", "Diplomat"],
+      "I": ["Sprecher", "Politischer Kommunikationsbeauftragter", "Lobbyist", "Politischer Community Manager", "Redner"],
+      "S": ["NGO-Koordinator", "Parlamentsassistent", "Projektoffizier", "Sozialprogramm-Koordinator", "Case Manager"],
+      "C": ["Politikanalyst", "Forscher", "Analyst öffentlicher Politik", "Monitoring- und Evaluierungsbeauftragter", "Politischer Datenanalyst"]
+    },
+    "Sociology": {
+      "D": ["Sozialberater", "NGO-Projektmanager", "Sozialunternehmer", "Politikberater", "Vereinsmanager"],
+      "I": ["Trainer", "Facilitator", "Community Builder", "Sozialberater", "Sozialjournalist"],
+      "S": ["Sozialarbeiterassistent", "Projektkoordinator", "Pädagoge", "Sozialarbeiter", "NGO Support"],
+      "C": ["Forscher", "Sozialanalyst", "UX-Researcher", "Sozialdatenanalyst", "Dokumentationsspezialist"]
+    },
+    "Psychology": {
+      "D": ["Executive Coach", "HR-Berater", "Coaching-Unternehmer", "Leadership-Trainer", "Wellbeing Manager"],
+      "I": ["Klinischer Psychologe", "Life Coach", "Soft-Skills-Trainer", "Karriereberater", "Redner"],
+      "S": ["Schulpsychologe", "Familienberater", "Therapieassistent", "Pflegeberater", "Sozialberater"],
+      "C": ["Neuropsychologe", "Verhaltensanalyst", "UX-Researcher", "Forscher", "Verhaltensdatenanalyst"]
+    },
+    "International Relations": {
+      "D": ["Diplomat", "Country Manager", "Internationaler Berater", "Politikberater", "NGO-Direktor"],
+      "I": ["Internationaler Verhandler", "Internationale PR", "Partnership Manager", "Lobbyist", "Business Connector"],
+      "S": ["NGO-Koordinator", "Programmbeauftragter", "Internationaler Supportbeauftragter", "Community Manager", "Projektassistent"],
+      "C": ["Geopolitischer Analyst", "Internationaler Marktanalyst", "Forscher", "Politikanalyst", "Monitoring Officer"]
+    },
+    "Social Work": {
+      "D": ["NGO-Manager", "Programmmanager", "Sozialunternehmer", "Sozialprojektmanager", "Politikberater"],
+      "I": ["Sozialberater", "Sozialfacilitator", "Community Coach", "Sozialredner", "Community Manager"],
+      "S": ["Sozialarbeiterassistent", "Sozialarbeiter", "Case Manager", "Familienunterstützungsbeauftragter", "Gemeinschaftssupport"],
+      "C": ["Sozialanalyst", "Sozialforscher", "Monitoring- und Evaluierungsbeauftragter", "Dokumentationsspezialist", "Sozialdatenanalyst"]
+    },
+    "Philosophy": {
+      "D": ["Strategieberater", "Intellektueller Unternehmer", "Leadership Coach", "Akademischer Direktor", "Redner"],
+      "I": ["Trainer", "Konferenzsprecher", "Life Coach", "Debattenfacilitator", "Bildungs-Content-Creator"],
+      "S": ["Lehrer", "Akademischer Berater", "Mentor", "Akademischer Assistent", "Community Builder"],
+      "C": ["Forscher", "Autor", "Content-Analyst", "Copywriter", "Dokumentationsbeauftragter"]
+    },
+    "History": {
+      "D": ["Kulturdirektor", "Kulturerbe-Projektmanager", "Kulturunternehmer", "Kulturerbe-Berater", "Museumsmanager"],
+      "I": ["Kulturführer", "Historischer Journalist", "Konferenzsprecher", "Historischer Content Creator", "Kulturfacilitator"],
+      "S": ["Archivar", "Museumsassistent", "Bildungsassistent", "Kultur-Community", "Kulturerbe-Support"],
+      "C": ["Historiker", "Forscher", "Dokumentationsspezialist", "Historischer Content-Analyst", "Fachautor"]
+    }
+  },
+  "Architecture & Environment": {
+    "Architecture": {
+      "D": ["Leitender Architekt", "Architekturbüro-Direktor", "Stadtgestalter", "Bau-Projektmanager", "Architekturunternehmer"],
+      "I": ["Architekturberater", "Immobilienberater", "Designvertrieb", "Architektur-PR", "Facilitator für Stadtprojekte"],
+      "S": ["Architekturassistent", "Zeichner", "Standortkoordinator", "Technischer Support", "Designassistent"],
+      "C": ["Architekt", "BIM Manager", "Technischer Architekt", "Tragwerksplaner", "Architekturprojekt-Analyst"]
+    },
+    "Urban Planning": {
+      "D": ["Stadtplaner (Manager)", "Stadtprojektdirektor", "Territorialberater", "Stadtplanungsmanager", "Stadtpolitikgestalter"],
+      "I": ["Stadtentwicklungsberater", "Territorialfacilitator", "Stadtlobbyist", "Kommunikation Stadtprojekte", "Projektfacilitator"],
+      "S": ["Stadtplanungsassistent", "Stadtprojektkoordinator", "Planungssupport", "Städtischer Verwaltungsassistent", "Beauftragter lokale Entwicklung"],
+      "C": ["Stadtplaner", "Territorialanalyst", "Stadt-Kartograf", "Räumlicher Datenanalyst", "Stadtplanungsspezialist"]
+    },
+    "Interior Design": {
+      "D": ["Innenarchitektur-Direktor", "Design-Projektmanager", "Dekorationsunternehmer", "Retail Design Manager", "Studio Manager"],
+      "I": ["Eventdekorateur", "Designberater", "Dekor-Content-Creator", "Design-Influencer", "Innenarchitekturvertrieb"],
+      "S": ["Dekorationsassistent", "Innenprojektkoordinator", "Dekor-Baustellensupport", "Innenarchitekturassistent", "Junior-Dekorateur"],
+      "C": ["Innenarchitekt", "Space Planner", "Technischer Designer", "Innen-CAD-Designer", "Visual Merchandiser"]
+    },
+    "Environment & Sustainable Development": {
+      "D": ["Nachhaltigkeitsmanager", "Umweltberater", "Green-Unternehmer", "CSR-Projektmanager", "Klimastratege"],
+      "I": ["Umwelttrainer", "Umweltaktivist", "CSR-Kommunikation", "NGO-Berater", "Green-Redner"],
+      "S": ["CSR-Assistent", "Umweltprojektkoordinator", "NGO Support", "Umwelt-Außendienstbeauftragter", "Community Green Officer"],
+      "C": ["Umweltingenieur", "Kohlenstoffanalyst", "CSR-Experte", "Umweltdatenanalyst", "Umweltprüfer"]
+    },
+    "Geomatics": {
+      "D": ["GIS-Projektmanager", "Geospatial-Berater", "Geodata-Innovationsmanager", "Geo-Tech-Unternehmer", "Kartografie-Projektleiter"],
+      "I": ["GIS-Berater", "Geomatik-Trainer", "Geodata-Vertrieb", "Geospatial Business Developer", "Kartografische Kommunikation"],
+      "S": ["GIS-Techniker", "Kartografieassistent", "Geomatik-Support", "Geodatenoperator", "Außendienstassistent"],
+      "C": ["Geomatikingenieur", "GIS-Analyst", "Kartograf", "Räumlicher Datenanalyst", "Fernerkundungsexperte"]
+    }
+  },
+  "Agriculture & Agri-food": {
+    "Agronomy": {
+      "D": ["Agribusiness-Manager", "Landwirtschaftlicher Betriebsleiter", "Landwirtschaftlicher Unternehmer", "Agronomie-Berater", "Agri-Projektmanager"],
+      "I": ["Landwirtschaftsberater", "Agri-Vertrieb", "Landwirtschaftstrainer", "Agri Business Developer", "Landwirtschaftlicher Berater"],
+      "S": ["Landwirtschaftstechniker", "Agronom-Assistent", "Außendienstmitarbeiter", "Operationskoordinator", "Produktionssupport"],
+      "C": ["Agraringenieur", "Boden- und Pflanzenanalyst", "Düngungsexperte", "Agronomieforscher", "Landwirtschaftlicher Datenanalyst"]
+    },
+    "Animal Production": {
+      "D": ["Tierhaltungsleiter", "Landwirtschaftlicher Unternehmer", "Manager Tierproduktion", "Tierhaltungsberater", "Operations Manager"],
+      "I": ["Landwirtschaftlicher Berater", "Futtermittelvertrieb", "Tierhaltungstrainer", "Agri Business Developer", "Tierschutzberater"],
+      "S": ["Tierhaltungstechniker", "Tierarztassistent", "Betriebsmitarbeiter", "Tierpfleger", "Hofkoordinator"],
+      "C": ["Zootechniker", "Tierarzt", "Tierernährungsanalyst", "Qualitätscontroller Tierhaltung", "Forscher Tierproduktion"]
+    },
+    "Agri-food": {
+      "D": ["Agri-Food-Produktionsleiter", "Werksleiter", "Lebensmittelindustrie-Unternehmer", "Qualitätsdirektor", "Operations Manager"],
+      "I": ["Agri-Food-Vertrieb", "Lebensmittelmarketing", "Lebensmittelproduktberater", "Lebensmittelindustrie-Trainer", "Business Developer"],
+      "S": ["Produktionstechniker", "Qualitätscontroller", "Agri-Laborassistent", "Lebensmittellogistik-Agent", "Produktionssupport"],
+      "C": ["Agri-Food-Ingenieur", "Qualitätsmanager", "Lebensmittelsicherheitsanalyst", "F&E-Lebensmittelwissenschaftler", "Qualitätsauditor"]
+    },
+    "Agricultural Technologies": {
+      "D": ["AgriTech-Gründer", "Digital Agriculture Product Manager", "Landwirtschaftlicher Innovationsdirektor", "Smart-Farming-Berater", "Agri-Tech-Projektmanager"],
+      "I": ["Digital Agriculture-Berater", "AgriTech-Trainer", "Vertrieb landwirtschaftlicher Lösungen", "AgriTech Business Developer", "Agri-Tech-Community"],
+      "S": ["Techniker landwirtschaftlicher Systeme", "Landwirtschaftlicher IoT-Support", "Digital Operations Assistent", "Außendiensttechniker", "Außendienstkoordinator"],
+      "C": ["AgriTech-Ingenieur", "Landwirtschaftlicher Datenanalyst", "Smart-Irrigation-Experte", "Landwirtschaftlicher IoT-Ingenieur", "Landwirtschaftlicher Produktionsanalyst"]
+    }
+  },
+  "Services & Hospitality": {
+    "Tourism": {
+      "D": ["Reisebüroleiter", "Travel Manager", "Tourismusunternehmer", "Tourismus Product Manager", "Tourismus Operations Manager"],
+      "I": ["Reiseleiter", "Tourismusfacilitator", "Reiseinfluencer", "Reiseberater", "Tourismusvertrieb"],
+      "S": ["Reisebüromitarbeiter", "Tourismus-Kundenberater", "Agentur-Rezeptionist", "Buchungsassistent", "Tourismus-Kundensupport"],
+      "C": ["Tourismusanalyst", "Hotel Revenue Analyst", "Reiseplaner", "Tourismus-Qualitätscontroller", "Tourismus-Datenanalyst"]
+    },
+    "Hospitality": {
+      "D": ["Hoteldirektor", "Resort Manager", "Front Office Manager", "Hotelunternehmer", "Hotel Operations Manager"],
+      "I": ["Guest Relations Manager", "Concierge", "Hotelgastgeber", "Hotel-Kommunikationsmanager", "Hotelvertrieb"],
+      "S": ["Rezeptionist", "Hotelassistent", "Housekeeping Manager", "Kundenservice-Mitarbeiter", "Housekeeping Support"],
+      "C": ["Revenue Manager", "Hotel-Qualitätsmanager", "Hotel Performance Analyst", "Operations Controller", "Reservierungsmanager"]
+    },
+    "Food Service": {
+      "D": ["Restaurantleiter", "Gastronomieunternehmer", "Küchenchef", "F&B Operations Manager", "Restaurant-Franchise-Direktor"],
+      "I": ["Event-Koch", "Premium-Kellner", "Food Influencer", "Restaurant-Marketing-Manager", "Gastronomieberater"],
+      "S": ["Kellner", "Küchenhilfe", "Küchenhelfer", "Kundenservice-Mitarbeiter", "Restaurant-Assistent Manager"],
+      "C": ["Kulinarischer Produktionskoch", "Lebensmittelqualitätscontroller", "Hygieniker", "Lebensmittelsicherheitsbeauftragter", "Restaurant-Kostenanalyst"]
+    },
+    "Events": {
+      "D": ["Eventmanager", "Eventagentur-Direktor", "Event-Projektmanager", "Eventunternehmer", "Senior Wedding Planner"],
+      "I": ["Event-Gastgeber", "Moderator", "Events Community Manager", "Events Influencer", "Events-Kommunikationsberater"],
+      "S": ["Eventkoordinator", "Organisationsassistent", "Event-Logistik-Support", "Empfangsmitarbeiter", "Produktionsassistent"],
+      "C": ["Eventplaner", "Events-Logistikanalyst", "Event-Budget-Controller", "Events-Qualitätsmanager", "Operations Analyst"]
+    }
+  },
+  "Education & Training": {
+    "Teaching": {
+      "D": ["Schulleiter", "Pädagogischer Inspektor", "Akademischer Manager", "Abteilungsleiter", "Bildungsunternehmer"],
+      "I": ["Lehrer", "Professor", "Trainer", "Pädagogischer Facilitator", "Bildungs-Konferenzsprecher"],
+      "S": ["Lehrassistent", "Bildungssupervisor", "Schulkoordinator", "Schülerunterstützungsbeauftragter", "Tutor"],
+      "C": ["Bildungsforscher", "Lehrplandesigner", "Lehrplananalyst", "Programmautor", "Akademischer Bewerter"]
+    },
+    "Vocational Training": {
+      "D": ["Bildungszentrumsleiter", "Schulungsberater", "Schulungsunternehmer", "L&D Manager", "Schulungsmanager"],
+      "I": ["Trainer", "Professioneller Coach", "Schulungsfacilitator", "HR-Schulungsberater", "Schulungs Business Developer"],
+      "S": ["Schulungsassistent", "Schulungskoordinator", "Schulungsverwaltungssupport", "Trainee Manager", "Schulungsfacilitator"],
+      "C": ["Instructional Designer", "E-Learning-Designer", "Kompetenzanalyst", "Quality Learning Officer", "Schulungsdatenanalyst"]
+    },
+    "Coaching & Personal Development": {
+      "D": ["Executive Coach", "Business Coach", "Performance-Berater", "Coaching-Unternehmer", "Leadership Mentor"],
+      "I": ["Motivationscoach", "Life Coach", "Redner", "Soft-Skills-Trainer", "Persönlichkeitsentwicklungs-Influencer"],
+      "S": ["Support Coach", "Karriereberater", "Schulcoach", "Coaching-Assistent", "Wellbeing Support"],
+      "C": ["Analytischer Coach", "Verhaltensberater", "Karrierecoach", "Verhaltensanalyst", "Strukturierter Performance Coach"]
+    }
+  },
+  "Modern Languages & Literature": {
+    "Modern Languages": {
+      "D": ["International Business Developer", "Linguistischer Exportmanager", "Internationaler Projektmanager", "Globaler Kommunikationsberater", "Sprachdienst-Unternehmer"],
+      "I": ["Dolmetscher", "Übersetzer", "Internationaler Reiseführer", "Kulturfacilitator", "Mehrsprachiger Community Manager"],
+      "S": ["Zweisprachiger Assistent", "Internationaler Kundensupport", "Mehrsprachiger Sekretär", "Kommunikationsmitarbeiter", "Internationaler Verwaltungsassistent"],
+      "C": ["Fachübersetzer", "Linguist", "Linguistischer Analyst", "Professioneller Korrektor", "Terminologe"]
+    },
+    "Literature": {
+      "D": ["Verlagsleiter", "Verleger", "Medienunternehmer", "Content Manager", "Kultureller Kommunikationsberater"],
+      "I": ["Schriftsteller", "Journalist", "Blogger", "Drehbuchautor", "Literarischer Content Creator"],
+      "S": ["Redaktionsassistent", "Bibliothekar", "Schreibassistent", "Kultursupport", "Lesefacilitator"],
+      "C": ["Literaturkritiker", "Literaturforscher", "Professioneller Autor", "Korrektor", "Content-Analyst"]
+    }
+  }
+}
