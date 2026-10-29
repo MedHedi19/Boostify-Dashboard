@@ -31,13 +31,36 @@ async function connectDB() {
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
+      maxPoolSize: 10,
+      minPoolSize: 2,
+      socketTimeoutMS: 45000,
+      serverSelectionTimeoutMS: 5000,
+      heartbeatFrequencyMS: 10000,
+      retryWrites: true,
+      retryReads: true,
     };
 
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
       console.log('✅ MongoDB connected successfully');
+      
+      mongoose.connection.on('error', (err) => {
+        console.error('❌ MongoDB connection error:', err);
+      });
+
+      mongoose.connection.on('disconnected', () => {
+        console.warn('⚠️  MongoDB disconnected');
+        cached.conn = null;
+        cached.promise = null;
+      });
+
+      mongoose.connection.on('reconnected', () => {
+        console.log('✅ MongoDB reconnected');
+      });
+
       return mongoose;
     }).catch((error) => {
       console.error('❌ MongoDB connection error:', error);
+      cached.promise = null;
       throw error;
     });
   }
