@@ -3,22 +3,33 @@ import { useState } from "react";
 import type { Route } from "./+types/dashboard.users";
 import connectDB from "~/lib/db.server";
 import User from "~/models/User.server";
-import UserProgress from "~/models/UserProgress.server";
-import UpskillingProgress from "~/models/UpskillingProgress.server";
+import PersonalityTest from "~/models/PersonalityTest.server";
+
+const DISC_COLOR_STYLES: Record<string, { label: string; className: string }> = {
+  R: { label: "Rouge (D)", className: "bg-red-100 text-red-800" },
+  J: { label: "Jaune (I)", className: "bg-yellow-100 text-yellow-800" },
+  Y: { label: "Jaune (I)", className: "bg-yellow-100 text-yellow-800" },
+  V: { label: "Vert (S)", className: "bg-green-100 text-green-800" },
+  G: { label: "Vert (S)", className: "bg-green-100 text-green-800" },
+  B: { label: "Bleu (C)", className: "bg-blue-100 text-blue-800" },
+};
 
 // Loader function to fetch users from MongoDB
 export async function loader() {
   try {
     await connectDB();
 
-    const [users, userProgresses, upskillingProgresses] = await Promise.all([
+    const [users, personalityTests] = await Promise.all([
       User.find()
         .select('firstName lastName email phone createdAt certificateSentCount profilePhoto payment')
         .sort({ createdAt: -1 })
         .lean(),
-      UserProgress.find().lean(),
-      UpskillingProgress.find().lean()
+      PersonalityTest.find({ completed: true }).select('userId dominantColor').lean(),
     ]);
+
+    const discColorsByUserId = new Map(
+      personalityTests.map((test) => [test.userId.toString(), test.dominantColor || null]),
+    );
 
     // Subscription types and statuses for variety
     const subscriptionTypes = ['free', 'premium'];
@@ -38,12 +49,6 @@ export async function loader() {
         if (subType === 'premium') totalSpent = 299.99;
       }
 
-      const userProg = userProgresses.find((p: any) => p.userId.toString() === user._id.toString());
-      const upskillProg = upskillingProgresses.find((p: any) => p.userId.toString() === user._id.toString());
-
-      const completedQuizzes = userProg?.quizProgress?.filter((q: any) => q.completed).length || 0;
-      const completedChallenges = upskillProg?.challenges?.filter((c: any) => c.completed).length || 0;
-
       return {
         id: user._id.toString(),
         firstName: user.firstName,
@@ -52,8 +57,7 @@ export async function loader() {
         phone: user.phone || '',
         status: accStatus,
         joinDate: user.createdAt,
-        completedQuizzes,
-        completedChallenges,
+        discColor: discColorsByUserId.get(user._id.toString()) || null,
         certificates: user.certificateSentCount || 0,
         profilePhoto: user.profilePhoto,
         subscriptionType: subType,
@@ -140,7 +144,7 @@ export default function UsersManagement() {
                 Join Date
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Activity
+                DISC Color Test
               </th>
               <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Actions
@@ -218,10 +222,13 @@ export default function UsersManagement() {
                   {new Date(user.joinDate).toLocaleDateString()}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="flex items-center space-x-4 text-sm text-gray-600">
-                    <span>🎯 {user.completedQuizzes}</span>
-                    <span>🎓 {user.completedChallenges}</span>
-                  </div>
+                  {user.discColor && DISC_COLOR_STYLES[user.discColor] ? (
+                    <span className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${DISC_COLOR_STYLES[user.discColor].className}`}>
+                      {DISC_COLOR_STYLES[user.discColor].label}
+                    </span>
+                  ) : (
+                    <span className="text-sm text-gray-400">Not taken</span>
+                  )}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <div className="flex items-center justify-end space-x-2">

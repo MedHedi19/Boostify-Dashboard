@@ -4,6 +4,20 @@ import connectDB from '../lib/db.server';
 import QuizResultModel from '../models/QuizResult.server';
 import User from '../models/User.server';
 import UserProgress from '../models/UserProgress.server';
+import PersonalityTest from '../models/PersonalityTest.server';
+
+const DISC_CARD_CLASS: Record<string, string> = {
+  R: 'border-red-200 bg-red-50',
+  J: 'border-yellow-200 bg-yellow-50',
+  Y: 'border-yellow-200 bg-yellow-50',
+  V: 'border-green-200 bg-green-50',
+  G: 'border-green-200 bg-green-50',
+  B: 'border-blue-200 bg-blue-50',
+};
+
+function getDiscCardClass(color?: string | null) {
+  return (color && DISC_CARD_CLASS[color]) || 'border-gray-100 bg-white';
+}
 
 type QuizResult = {
   _id: string;
@@ -15,6 +29,7 @@ type QuizResult = {
     lastName: string;
     email?: string;
     profilePhoto?: string;
+    discColor?: string | null;
     certificateSentCount?: number;
     payment?: any;
   } | null;
@@ -218,7 +233,7 @@ export default function QuizzesManagement() {
                     <Link
                       to={`/dashboard/quizzes/${u._id.toString()}`}
                       key={u._id.toString()}
-                      className="bg-white border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow block hover:border-blue-200"
+                      className={`${getDiscCardClass(u.discColor)} rounded-lg border p-4 shadow-sm transition-shadow hover:shadow-md block`}
                     >
                       <div className="flex items-center">
                         {u.profilePhoto ? (
@@ -277,7 +292,7 @@ export default function QuizzesManagement() {
                     return name.includes(q) || email.toLowerCase().includes(q);
                   })
                   .map((r) => (
-                    <div key={r._id.toString()} className="bg-white border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
+                    <div key={r._id.toString()} className={`${getDiscCardClass(r.user?.discColor)} rounded-lg border p-4 shadow-sm transition-shadow hover:shadow-md`}>
                       <Link to={`/dashboard/quizzes/${r.userId.toString()}`} className="flex items-center hover:opacity-80 transition-opacity">
                         {r.user?.profilePhoto ? (
                           // eslint-disable-next-line @next/next/no-img-element
@@ -338,7 +353,7 @@ export default function QuizzesManagement() {
                     return name.includes(q) || email.toLowerCase().includes(q);
                   })
                   .map((r) => (
-                    <div key={r._id.toString()} className="bg-white border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
+                    <div key={r._id.toString()} className={`${getDiscCardClass(r.user?.discColor)} rounded-lg border p-4 shadow-sm transition-shadow hover:shadow-md`}>
                       <Link to={`/dashboard/quizzes/${r.userId.toString()}`} className="flex items-center hover:opacity-80 transition-opacity">
                         {r.user?.profilePhoto ? (
                           // eslint-disable-next-line @next/next/no-img-element
@@ -439,7 +454,7 @@ export async function loader({ request }: any) {
 
   try {
     // Run all three isolated database queries concurrently for faster execution
-    const [results, totalUsers, users, userProgresses] = await Promise.all([
+    const [results, totalUsers, users, userProgresses, personalityTests] = await Promise.all([
       QuizResultModel.find({ quizKey: 'empowring' })
         .sort({ takenAt: -1 })
         .populate({ path: 'userId', select: '_id firstName lastName email profilePhoto certificateSentCount payment' })
@@ -449,8 +464,13 @@ export async function loader({ request }: any) {
         .select('_id firstName lastName email profilePhoto certificateSentCount payment createdAt')
         .sort({ createdAt: -1 })
         .lean(),
-      UserProgress.find().lean()
+      UserProgress.find().lean(),
+      PersonalityTest.find({ completed: true }).select('userId dominantColor').lean(),
     ]);
+
+    const discColorsByUserId = new Map(
+      personalityTests.map((test) => [String(test.userId), test.dominantColor || null]),
+    );
 
     // Map results to extract internal user object gracefully
     const mapped = results.map((r: any) => {
@@ -471,6 +491,7 @@ export async function loader({ request }: any) {
           lastName: u.lastName,
           email: u.email,
           profilePhoto: u.profilePhoto,
+          discColor: discColorsByUserId.get(uId) || null,
           certificateSentCount: u.certificateSentCount,
           payment: u.payment,
         } : null,
@@ -499,6 +520,7 @@ export async function loader({ request }: any) {
         lastName: u.lastName,
         email: u.email,
         profilePhoto: u.profilePhoto,
+        discColor: discColorsByUserId.get(uId) || null,
         certificateSentCount: u.certificateSentCount,
         payment: u.payment,
         createdAt: u.createdAt,

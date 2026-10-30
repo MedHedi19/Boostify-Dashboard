@@ -12,6 +12,7 @@ const navItems: NavItem[] = [
   { name: "Users Profiling", path: "/dashboard/users", icon: "👥" },
   { name: "Users Coaching", path: "/dashboard/quizzes", icon: "📝" },
   { name: "Users Empowering", path: "/dashboard/certificates", icon: "🎓" },
+  { name: "User Reports", path: "/dashboard/user-reports", icon: "📋" },
   { name: "21 days challenge", path: "/dashboard/challenges", icon: "🎯" },
   { name: "Job Offers", path: "/dashboard/job-offers", icon: "💼" },
   { name: "Admins", path: "/dashboard/admins", icon: "👨‍💼" },

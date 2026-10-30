@@ -6,6 +6,8 @@ export default [
     route("dashboard", "routes/dashboard.tsx"),
     route("dashboard/users", "routes/dashboard.users.tsx"),
     route("dashboard/users/:id", "routes/dashboard.users.$id.tsx"),
+    route("dashboard/user-reports", "routes/dashboard.user-reports.tsx"),
+    route("dashboard/user-reports/:id", "routes/dashboard.user-reports.$id.tsx"),
     route("dashboard/admins", "routes/dashboard.admins.tsx"),
     route("dashboard/challenges", "routes/dashboard.challenges.tsx"),
     route("dashboard/quizzes", "routes/dashboard.quizzes.tsx"),

@@ -4,6 +4,20 @@ import connectDB from '../lib/db.server';
 import QuizResultModel from '../models/QuizResult.server';
 import User from '../models/User.server';
 import UpskillingProgress from '../models/UpskillingProgress.server';
+import PersonalityTest from '../models/PersonalityTest.server';
+
+const DISC_CARD_CLASS: Record<string, string> = {
+  R: 'border-red-200 bg-red-50',
+  J: 'border-yellow-200 bg-yellow-50',
+  Y: 'border-yellow-200 bg-yellow-50',
+  V: 'border-green-200 bg-green-50',
+  G: 'border-green-200 bg-green-50',
+  B: 'border-blue-200 bg-blue-50',
+};
+
+function getDiscCardClass(color?: string | null) {
+  return (color && DISC_CARD_CLASS[color]) || 'border-gray-100 bg-white';
+}
 
 type QuizResult = {
   _id: string;
@@ -129,7 +143,7 @@ export default function CertificatesManagement() {
                     <Link
                       to={`/dashboard/certificates/${u._id.toString()}`}
                       key={u._id.toString()}
-                      className="bg-white border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow hover:border-indigo-200 block"
+                      className={`${getDiscCardClass(u.discColor)} rounded-lg border p-4 shadow-sm transition-shadow hover:shadow-md block`}
                     >
                       <div className="flex items-center">
                         {u.profilePhoto ? (
@@ -189,7 +203,7 @@ export default function CertificatesManagement() {
                     <Link
                       to={`/dashboard/certificates/${u._id.toString()}`}
                       key={u._id.toString()}
-                      className="bg-white border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow hover:border-indigo-200 block"
+                      className={`${getDiscCardClass(u.discColor)} rounded-lg border p-4 shadow-sm transition-shadow hover:shadow-md block`}
                     >
                       <div className="flex items-center">
                         {u.profilePhoto ? (
@@ -246,7 +260,7 @@ export default function CertificatesManagement() {
                     <Link
                       to={`/dashboard/certificates/${u._id.toString()}`}
                       key={u._id.toString()}
-                      className="bg-white border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow hover:border-indigo-200 block"
+                      className={`${getDiscCardClass(u.discColor)} rounded-lg border p-4 shadow-sm transition-shadow hover:shadow-md block`}
                     >
                       <div className="flex items-center">
                         {u.profilePhoto ? (
@@ -335,7 +349,7 @@ export default function CertificatesManagement() {
 export async function loader() {
   try {
     await connectDB();
-    const [results, totalUsers, users, upskillingProgresses] = await Promise.all([
+    const [results, totalUsers, users, upskillingProgresses, personalityTests] = await Promise.all([
       QuizResultModel.find({ quizKey: 'empowring' })
         .sort({ takenAt: -1 })
         .populate({ path: 'userId', select: '_id firstName lastName email profilePhoto certificateSentCount payment' })
@@ -345,8 +359,13 @@ export async function loader() {
         .select('_id firstName lastName email profilePhoto certificateSentCount payment createdAt')
         .sort({ createdAt: -1 })
         .lean(),
-      UpskillingProgress.find().lean()
+      UpskillingProgress.find().lean(),
+      PersonalityTest.find({ completed: true }).select('userId dominantColor').lean(),
     ]);
+
+    const discColorsByUserId = new Map(
+      personalityTests.map((test) => [String(test.userId), test.dominantColor || null]),
+    );
 
     const mapped = results.map((r: any) => {
       const u = r.userId;
@@ -365,6 +384,7 @@ export async function loader() {
           lastName: u.lastName,
           email: u.email,
           profilePhoto: u.profilePhoto,
+          discColor: discColorsByUserId.get(uId) || null,
           certificateSentCount: u.certificateSentCount,
           payment: u.payment,
         } : null,
@@ -382,6 +402,7 @@ export async function loader() {
         lastName: u.lastName,
         email: u.email,
         profilePhoto: u.profilePhoto,
+        discColor: discColorsByUserId.get(uId) || null,
         certificateSentCount: u.certificateSentCount,
         payment: u.payment,
         createdAt: u.createdAt,
