@@ -6,7 +6,6 @@
  *
  * Used exclusively by the Admin Dashboard (User Reports detail page).
  */
-import { json } from "@react-router/node";
 import connectDB from '../../lib/db.server';
 import User from '../../models/User.server';
 
@@ -17,7 +16,7 @@ export async function loader({ request }: { request: Request }) {
   const userId = url.searchParams.get('userId');
 
   if (!userId) {
-    return json({ error: 'userId required' }, { status: 400 });
+    return Response.json({ error: 'userId required' }, { status: 400 });
   }
 
   try {
@@ -25,17 +24,17 @@ export async function loader({ request }: { request: Request }) {
       .select('certificatePaid certificatePaidAt certificatePaidNote firstName lastName email')
       .lean();
     if (!user) {
-      return json({ error: 'User not found' }, { status: 404 });
+      return Response.json({ error: 'User not found' }, { status: 404 });
     }
 
-    return json({
+    return Response.json({
       certificatePaid: (user as any).certificatePaid ?? false,
       certificatePaidAt: (user as any).certificatePaidAt ?? null,
       certificatePaidNote: (user as any).certificatePaidNote ?? null,
     });
   } catch (e: any) {
     console.error('certificate-payment GET error', e);
-    return json({ error: e.message || 'Server error' }, { status: 500 });
+    return Response.json({ error: e.message || 'Server error' }, { status: 500 });
   }
 }
 
@@ -48,12 +47,12 @@ export async function action({ request }: { request: Request }) {
     const { userId, paid, note } = body ?? {};
 
     if (!userId) {
-      return json({ error: 'userId required' }, { status: 400 });
+      return Response.json({ error: 'userId required' }, { status: 400 });
     }
 
     const user = await User.findById(userId);
     if (!user) {
-      return json({ error: 'User not found' }, { status: 404 });
+      return Response.json({ error: 'User not found' }, { status: 404 });
     }
 
     // If `paid` is explicitly provided use it; otherwise toggle current value
@@ -68,7 +67,7 @@ export async function action({ request }: { request: Request }) {
       }
     );
 
-    return json({
+    return Response.json({
       success: true,
       certificatePaid: newPaid,
       certificatePaidAt: newPaid ? new Date().toISOString() : null,
@@ -76,7 +75,7 @@ export async function action({ request }: { request: Request }) {
     });
   } catch (e: any) {
     console.error('certificate-payment POST error', e);
-    return json({ error: e.message || 'Server error' }, { status: 500 });
+    return Response.json({ error: e.message || 'Server error' }, { status: 500 });
   }
 }
 

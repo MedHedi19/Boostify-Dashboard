@@ -211,14 +211,6 @@ export default function UserReportDetails() {
 
         {/* Action buttons */}
         <div className="flex flex-wrap gap-3">
-          {/* Open Certificate button — always visible, triggers payment gate */}
-          <button
-            type="button"
-            onClick={() => certPaid ? setShowCertModal(true) : setShowPaymentModal(true)}
-            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
-          >
-            📄 Open Certificate
-          </button>
 
           {/* Toggle payment button */}
           {certPaid ? (

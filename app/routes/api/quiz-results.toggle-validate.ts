@@ -1,4 +1,3 @@
-import { json } from "@react-router/node";
 import connectDB from '../../lib/db.server';
 import QuizResult from '../../models/QuizResult.server';
 
@@ -12,18 +11,18 @@ export async function action({ request }: { request: Request }) {
 		const { id } = body;
 
 		if (!id) {
-			return json({ error: 'id required' }, { status: 400 });
+			return Response.json({ error: 'id required' }, { status: 400 });
 		}
 
 		const doc = await QuizResult.findById(id);
 		if (!doc) {
-			return json({ error: 'not found' }, { status: 404 });
+			return Response.json({ error: 'not found' }, { status: 404 });
 		}
 
 		doc.validated = !doc.validated;
 		await doc.save();
 
-		return json({
+		return Response.json({
 			_id: String(doc._id),
 			userId: String(doc.userId),
 			userName: doc.userName,
@@ -34,6 +33,6 @@ export async function action({ request }: { request: Request }) {
 		});
 	} catch (e: any) {
 		console.error('quiz-results API error', e);
-		return json({ error: e.message || 'server error' }, { status: 500 });
+		return Response.json({ error: e.message || 'server error' }, { status: 500 });
 	}
 }
