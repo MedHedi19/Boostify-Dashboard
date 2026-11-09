@@ -17,7 +17,7 @@ const DISC_COLORS: Record<string, { label: string; badge: string }> = {
 export async function loader() {
   await connectDB();
   const [users, personalityTests] = await Promise.all([
-    User.find().select('_id firstName lastName email profilePhoto createdAt').sort({ createdAt: -1 }).lean(),
+    User.find().select('_id firstName lastName email profilePhoto createdAt certificatePaid').sort({ createdAt: -1 }).lean(),
     PersonalityTest.find({ completed: true }).select('userId dominantColor').lean(),
   ]);
   const discByUser = new Map(personalityTests.map((test) => [String(test.userId), test.dominantColor || null]));
@@ -30,6 +30,7 @@ export async function loader() {
       email: user.email,
       profilePhoto: user.profilePhoto || null,
       createdAt: user.createdAt,
+      certificatePaid: user.certificatePaid === true,
       discColor: discByUser.get(String(user._id)) || null,
     })),
   };
@@ -71,6 +72,7 @@ export default function UserReports() {
             <tr>
               <th className="p-4">User</th>
               <th className="p-4">Email</th>
+              <th className="p-4">Payment status</th>
               <th className="p-4">DISC Color</th>
               <th className="p-4">Joined</th>
               <th className="p-4 text-right">Details</th>
@@ -95,6 +97,17 @@ export default function UserReports() {
                   </td>
                   <td className="p-4 text-gray-600">{user.email}</td>
                   <td className="p-4">
+                    <span
+                      className={`inline-flex rounded-full border px-2.5 py-1 text-xs font-semibold ${
+                        user.certificatePaid
+                          ? 'border-green-200 bg-green-100 text-green-800'
+                          : 'border-red-200 bg-red-100 text-red-800'
+                      }`}
+                    >
+                      {user.certificatePaid ? 'Paid' : 'Not paid'}
+                    </span>
+                  </td>
+                  <td className="p-4">
                     {disc ? <span className={`inline-flex rounded-full border px-2.5 py-1 text-xs font-semibold ${disc.badge}`}>{disc.label}</span> : <span className="italic text-gray-400">Not completed</span>}
                   </td>
                   <td className="p-4 text-gray-600">{user.createdAt ? new Date(user.createdAt).toLocaleDateString() : '—'}</td>
@@ -106,7 +119,7 @@ export default function UserReports() {
                 </tr>
               );
             })}
-            {filtered.length === 0 && <tr><td colSpan={5} className="p-8 text-center text-gray-500">No users found.</td></tr>}
+            {filtered.length === 0 && <tr><td colSpan={6} className="p-8 text-center text-gray-500">No users found.</td></tr>}
           </tbody>
         </table>
       </div>

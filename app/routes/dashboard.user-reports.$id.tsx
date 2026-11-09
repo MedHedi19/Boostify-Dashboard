@@ -281,15 +281,7 @@ export default function UserReportDetails() {
           {certPaidAt && (
             <p className="mb-6 text-center text-xs text-gray-400">Paid on {new Date(certPaidAt).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
           )}
-          <div className="flex flex-col gap-3">
-            <a
-              href={`https://api.juniorscv.com/certification/download-certificate/${user.id}`}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
-            >
-              📄 Download PDF Certificate
-            </a>
+          <div className="flex flex-col gap-3">           
             <button
               type="button"
               onClick={() => setShowCertModal(false)}
