@@ -9,10 +9,9 @@ import UserProgress from '~/models/UserProgress.server';
 import UpskillingProgress from '~/models/UpskillingProgress.server';
 import VarkTest from '~/models/VarkTest.server';
 import QuizResult from '~/models/QuizResult.server';
-
 export async function loader({ params }: Route.LoaderArgs) {
   await connectDB();
-  const user = await User.findById(params.id).select('_id firstName lastName email profilePhoto createdAt').lean();
+  const user = await User.findById(params.id).select('_id firstName lastName email profilePhoto createdAt certificatePaid certificatePaidAt certificatePaidNote').lean();
   if (!user) throw new Response('User not found', { status: 404 });
 
   const [disc, coaching, challenge, vark, empowering] = await Promise.all([
@@ -27,6 +26,9 @@ export async function loader({ params }: Route.LoaderArgs) {
     user: {
       id: String(user._id), firstName: user.firstName, lastName: user.lastName,
       email: user.email, profilePhoto: user.profilePhoto || null, createdAt: user.createdAt,
+      certificatePaid: (user as any).certificatePaid ?? false,
+      certificatePaidAt: (user as any).certificatePaidAt ?? null,
+      certificatePaidNote: (user as any).certificatePaidNote ?? null,
     },
     disc: disc ? {
       completed: disc.completed, dominantColor: disc.dominantColor || null,
@@ -71,6 +73,57 @@ export default function UserReportDetails() {
   const maxColor = Math.max(1, ...Object.values(disc?.colorCounts || {}).map(Number));
   const maxStyle = Math.max(1, ...Object.values(vark?.styleCounts || {}).map(Number));
   const completedDays = challenge?.challenges.filter((item: any) => item.completed).length || 0;
+
+  // ── Certificate payment state ─────────────────────────────────────────────
+  const [certPaid, setCertPaid] = useState<boolean>(user.certificatePaid ?? false);
+  const [certPaidAt, setCertPaidAt] = useState<string | null>(user.certificatePaidAt ?? null);
+  const [paymentLoading, setPaymentLoading] = useState(false);
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [showCertModal, setShowCertModal] = useState(false);
+  const [paymentError, setPaymentError] = useState<string | null>(null);
+
+  const handleMarkAsPaid = async () => {
+    setPaymentLoading(true);
+    setPaymentError(null);
+    try {
+      const res = await fetch('/api/certificate-payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId: user.id, paid: true }),
+      });
+      if (!res.ok) throw new Error('Failed to update payment status');
+      const data = await res.json();
+      setCertPaid(data.certificatePaid);
+      setCertPaidAt(data.certificatePaidAt);
+      setShowPaymentModal(false);
+      setShowCertModal(true);
+    } catch (e: any) {
+      setPaymentError(e.message || 'Unknown error');
+    } finally {
+      setPaymentLoading(false);
+    }
+  };
+
+  const handleRevokePaid = async () => {
+    setPaymentLoading(true);
+    setPaymentError(null);
+    try {
+      const res = await fetch('/api/certificate-payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId: user.id, paid: false }),
+      });
+      if (!res.ok) throw new Error('Failed to update payment status');
+      const data = await res.json();
+      setCertPaid(data.certificatePaid);
+      setCertPaidAt(null);
+    } catch (e: any) {
+      setPaymentError(e.message || 'Unknown error');
+    } finally {
+      setPaymentLoading(false);
+    }
+  };
+
   const tabs = [
     { id: 'disc', icon: '🎭', label: 'DISC', detail: disc?.completed ? 'Completed' : 'No result' },
     { id: 'coaching', icon: '📝', label: 'Coaching (7P)', detail: `${coaching.length} ${coaching.length === 1 ? 'quiz' : 'quizzes'}` },
@@ -131,5 +184,131 @@ export default function UserReportDetails() {
     </>}
 
     </div>
+
+    {/* ── Certificate Payment Section ───────────────────────────────────── */}
+    <section className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+      <div className="mb-5 border-b border-gray-100 pb-4 flex items-center justify-between flex-wrap gap-3">
+        <div>
+          <h2 className="text-xl font-bold text-gray-900">🎓 Certificate</h2>
+          <p className="mt-1 text-sm text-gray-500">Hand-to-hand payment management &amp; certificate access</p>
+        </div>
+        {/* Payment Status Badge */}
+        <span className={`inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-semibold ${certPaid ? 'bg-green-100 text-green-800 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'}`}>
+          {certPaid ? '✅ Paid' : '❌ Not Paid'}
+        </span>
+      </div>
+
+      <div className="flex flex-wrap items-center gap-4">
+        {/* Info row */}
+        <div className="flex-1 min-w-0">
+          {certPaid && certPaidAt && (
+            <p className="text-sm text-gray-500">Payment confirmed on <strong>{new Date(certPaidAt).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</strong></p>
+          )}
+          {!certPaid && (
+            <p className="text-sm text-gray-500">No payment recorded yet. Use the button below after receiving cash payment.</p>
+          )}
+        </div>
+
+        {/* Action buttons */}
+        <div className="flex flex-wrap gap-3">
+          {/* Open Certificate button — always visible, triggers payment gate */}
+          <button
+            type="button"
+            onClick={() => certPaid ? setShowCertModal(true) : setShowPaymentModal(true)}
+            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+          >
+            📄 Open Certificate
+          </button>
+
+          {/* Toggle payment button */}
+          {certPaid ? (
+            <button
+              type="button"
+              disabled={paymentLoading}
+              onClick={handleRevokePaid}
+              className="inline-flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm font-semibold text-red-700 hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-400 transition-colors disabled:opacity-50"
+            >
+              {paymentLoading ? 'Updating…' : '↩ Revoke Payment'}
+            </button>
+          ) : (
+            <button
+              type="button"
+              disabled={paymentLoading}
+              onClick={() => setShowPaymentModal(true)}
+              className="inline-flex items-center gap-2 rounded-lg border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-green-700 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-400 transition-colors disabled:opacity-50"
+            >
+              {paymentLoading ? 'Updating…' : '💵 Mark as Paid'}
+            </button>
+          )}
+        </div>
+      </div>
+
+      {paymentError && <p className="mt-3 text-sm text-red-600">⚠ {paymentError}</p>}
+    </section>
+
+    {/* ── Payment Confirmation Modal ────────────────────────────────────── */}
+    {showPaymentModal && (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+        <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-2xl">
+          <div className="mb-1 text-3xl text-center">💵</div>
+          <h3 className="mb-2 text-center text-xl font-bold text-gray-900">Confirm Cash Payment</h3>
+          <p className="mb-6 text-center text-sm text-gray-600">
+            Please confirm that <strong>{user.firstName} {user.lastName}</strong> has already paid in person (hand-to-hand). This will unlock their certificate.
+          </p>
+          <div className="flex gap-3">
+            <button
+              type="button"
+              onClick={() => setShowPaymentModal(false)}
+              className="flex-1 rounded-lg border border-gray-200 px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              disabled={paymentLoading}
+              onClick={handleMarkAsPaid}
+              className="flex-1 rounded-lg bg-green-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-green-700 transition-colors disabled:opacity-50"
+            >
+              {paymentLoading ? 'Confirming…' : '✅ Yes, Confirm Payment'}
+            </button>
+          </div>
+          {paymentError && <p className="mt-3 text-center text-sm text-red-600">⚠ {paymentError}</p>}
+        </div>
+      </div>
+    )}
+
+    {/* ── Certificate View Modal ────────────────────────────────────────── */}
+    {showCertModal && (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+        <div className="w-full max-w-lg rounded-2xl bg-white p-8 shadow-2xl">
+          <div className="mb-1 text-3xl text-center">🎓</div>
+          <h3 className="mb-2 text-center text-xl font-bold text-gray-900">Certificate Access</h3>
+          <p className="mb-2 text-center text-sm text-gray-600">
+            Payment confirmed ✅ — you can now open <strong>{user.firstName}</strong>'s certificate.
+          </p>
+          {certPaidAt && (
+            <p className="mb-6 text-center text-xs text-gray-400">Paid on {new Date(certPaidAt).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          )}
+          <div className="flex flex-col gap-3">
+            <a
+              href={`https://api.juniorscv.com/certification/download-certificate/${user.id}`}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
+            >
+              📄 Download PDF Certificate
+            </a>
+            <button
+              type="button"
+              onClick={() => setShowCertModal(false)}
+              className="rounded-lg border border-gray-200 px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+
   </div>;
 }
