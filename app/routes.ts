@@ -2,6 +2,9 @@ import { type RouteConfig, index, layout, route } from "@react-router/dev/routes
 
 export default [
   index("routes/home.tsx"),
+  route("api/certificate-payment", "routes/api/certificate-payment.ts"),
+  route("api/quiz-results", "routes/api/quiz-results.ts"),
+  route("api/quiz-results/toggle-validate", "routes/api/quiz-results.toggle-validate.ts"),
   layout("components/DashboardLayout.tsx", [
     route("dashboard", "routes/dashboard.tsx"),
     route("dashboard/users", "routes/dashboard.users.tsx"),

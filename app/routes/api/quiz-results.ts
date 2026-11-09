@@ -1,22 +1,22 @@
+import { json } from "@react-router/node";
 import connectDB from '../../lib/db.server';
 import QuizResult from '../../models/QuizResult.server';
 
-export default async function handler(req: any, res: any) {
+export async function loader({ request }: { request: Request }) {
   await connectDB();
 
   try {
-    if (req.method === 'GET') {
-      const quizKey = String(req.query?.quizKey || '');
-      if (!quizKey) return res.status(400).json({ error: 'quizKey required' });
+    const url = new URL(request.url);
+    const quizKey = url.searchParams.get('quizKey');
 
-      const results = await QuizResult.find({ quizKey }).sort({ takenAt: -1 }).lean();
-      return res.json(results.map(r => ({ ...r, _id: String(r._id), takenAt: r.takenAt })));
+    if (!quizKey) {
+      return json({ error: 'quizKey required' }, { status: 400 });
     }
 
-    res.setHeader('Allow', 'GET');
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    const results = await QuizResult.find({ quizKey }).sort({ takenAt: -1 }).lean();
+    return json(results.map(r => ({ ...r, _id: String(r._id), takenAt: r.takenAt })));
   } catch (e: any) {
     console.error('quiz-results GET error', e);
-    return res.status(500).json({ error: e.message || 'server error' });
+    return json({ error: e.message || 'server error' }, { status: 500 });
   }
 }
